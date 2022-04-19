@@ -1,0 +1,19 @@
+/* global css variables
+ Here we can define the basic color scheme (and other repeatet stuff) of our page */
+/* color scheme example: https://colorhunt.co/palette/533e85488fb14fd3c4c1f8cf (if 19.04) */
+
+:root {
+    /* colors */
+    --col-main: #141E27;
+    /* main font-color */
+    --col-blue1: #533E85;
+    --col-blue2: #488FB1;
+    --col-blue3: #C1F8CF;
+    --col-teal: #4FD3C4;
+    /* border-radius */
+    --br-main: 4px;
+    /* fonts */
+    /* --font-main: 
+    --font-secondary: */
+    /* box-shadows */
+}
