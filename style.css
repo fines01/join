@@ -3,17 +3,53 @@
 /* color scheme example: https://colorhunt.co/palette/533e85488fb14fd3c4c1f8cf (if 19.04) */
 
 :root {
-    /* colors */
+    /*** colors ***/
     --col-main: #141E27;
-    /* main font-color */
+    /*** main font-color ***/
     --col-blue1: #533E85;
     --col-blue2: #488FB1;
     --col-blue3: #C1F8CF;
     --col-teal: #4FD3C4;
-    /* border-radius */
-    --br-main: 4px;
-    /* fonts */
-    /* --font-main: 
-    --font-secondary: */
-    /* box-shadows */
+    /*** border-radius ***/
+    /* 1rem ^= 16px (if not defined otherwise) */
+    --br-main: 0.25rem;
+    /*** fonts ***/
+    --font-main: 'PT Sans', sans-serif;
+    /*--font-secondary: */
+    /*** box-shadows ***/
 }
+
+/*** general ***/
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    min-height: 100vh;
+    position: relative;
+}
+
+img {
+    /* ensures that the image is never larger that its container */
+    max-width: 100%;
+    /* ensures that the image keeps its aspect ratio */
+    height: auto;
+}
+
+/*** generic classes ***/
+
+/*** footer ***/
+
+/* this container ensures that the footer always stays in place 
+see: https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+.content-wrap {
+    padding-bottom: 3rem; /* should match footer height */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left:0; right:0;
+    height: 3rem;
+    box-sizing: border-box;
+}
+
