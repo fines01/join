@@ -3,9 +3,11 @@
 /* color scheme example: https://colorhunt.co/palette/533e85488fb14fd3c4c1f8cf (if 19.04) */
 
 :root {
-    /*** colors ***/
+    /*** font-colors ***/
     --col-main: #141E27;
-    /*** main font-color ***/
+    --col-secondary: #515151;
+    --col-tertiary: #9a9a9a;
+    /*** colors ***/
     --col-blue1: #533E85;
     --col-blue2: #488FB1;
     --col-blue3: #C1F8CF;
@@ -13,19 +15,27 @@
     /*** border-radius ***/
     /* 1rem ^= 16px (if not defined otherwise) */
     --br-main: 0.25rem;
+    --br-secondary: 0.25rem;
     /*** fonts ***/
-    --font-main: 'PT Sans', sans-serif;
+    --font-main: 'PT Sans', Helvetica, Arial, sans-serif;
     /*--font-secondary: */
     /*** box-shadows ***/
+    --shadow-light: 0 0 3px 1px rgba(0,0,0,0.5);
 }
 
 /*** general ***/
 
 body {
-    margin: 0;
+    color: var(--col-main);
     font-family: var(--font-main);
+    line-height: 1.5;
+    margin: 0;
     min-height: 100vh;
     position: relative;
+}
+
+p {
+    color: var(--col-secondary);
 }
 
 img {
