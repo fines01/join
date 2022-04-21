@@ -39,13 +39,17 @@ p {
 }
 
 img {
-    /* ensures that the image is never larger that its container */
+    /* ensures that the image is never larger than its container */
     max-width: 100%;
     /* ensures that the image keeps its aspect ratio */
     height: auto;
 }
 
 /*** generic classes ***/
+
+.d-none {
+    display: none;
+}
 
 /*** footer ***/
 
