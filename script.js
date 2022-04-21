@@ -4,7 +4,7 @@ function getId(el) {
     return document.getElementById(el);
 }
 
-function hide(...elements) { // spread-operator
+function hide(...elements) { // rest-operator
     for (let i = 0; i < elements.length; i++) {
         getId(elements[i]).classList.add('d-none');
     }
