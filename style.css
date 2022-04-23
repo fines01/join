@@ -1,5 +1,7 @@
 /* global css variables
  Here we can define the basic color scheme (and other repeatet stuff) of our page */
+
+
 /* color scheme example: https://colorhunt.co/palette/533e85488fb14fd3c4c1f8cf (if 19.04) */
 
 :root {
@@ -20,8 +22,9 @@
     --font-main: 'PT Sans', Helvetica, Arial, sans-serif;
     /*--font-secondary: */
     /*** box-shadows ***/
-    --shadow-light: 0 0 3px 1px rgba(0,0,0,0.5);
+    --shadow-light: 0 0 3px 1px rgba(0, 0, 0, 0.5);
 }
+
 
 /*** general ***/
 
@@ -45,25 +48,60 @@ img {
     height: auto;
 }
 
+
 /*** generic classes ***/
 
 .d-none {
     display: none;
 }
 
+
 /*** footer ***/
+
 
 /* this container ensures that the footer always stays in place 
 see: https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+
 .content-wrap {
-    padding-bottom: 3rem; /* should match footer height */
+    padding-bottom: 3rem;
+    /* should match footer height */
 }
 
 footer {
     position: absolute;
     bottom: 0;
-    left:0; right:0;
+    left: 0;
+    right: 0;
     height: 3rem;
     box-sizing: border-box;
 }
 
+
+/* Board mainpage */
+
+.navbar-container {
+    height: 100vh;
+    width: 8vw;
+    background-color: rgb(30, 30, 171);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-header {
+    width: 50px;
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
+.navbar-menu-text {
+    font-size: 20px;
+    color: white;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+.navbar-menu-text:hover {
+    transform: scale(1.1);
+    transition: 225ms ease-in-out;
+}
