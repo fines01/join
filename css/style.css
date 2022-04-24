@@ -51,13 +51,18 @@ img {
 
 /*** impressum ***/
 
+.impressum-sub-menu {
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
 .impressum {
     height: 100vh;
     display: flex;
     flex-direction: column;
     font-size: 20px;
     padding-top: 50px;
-    padding-left: 30px;
+    padding-left: 50px;
 }
 
 
@@ -74,6 +79,7 @@ img {
     font-size: 20px;
     padding-top: 50px;
     padding-left: 50px;
+    padding-bottom: 30px;
 }
 
 
