@@ -23,6 +23,18 @@ function toggle(...elements) {
 }
 
 
+/* vergebene ID 
+id="title"
+id="category"
+id="urgency"
+id="discirption"
+id="assignment"
+id="date"
+
+*/
+
+
+
 /* addToTaskJS */
 
 
