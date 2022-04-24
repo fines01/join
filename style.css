@@ -100,29 +100,44 @@ a {
 
 .navbar-menu-text {
     font-size: 20px;
+    font-weight: bold;
     color: white;
     margin-top: 2em;
     cursor: pointer;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(153, 153, 153) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 350ms ease;
+    text-decoration: none;
 }
 
 .navbar-menu-text:hover {
     transform: scale(1.1);
     transition: 225ms ease-in-out;
+    background-position: 0 100%;
+    cursor: pointer;
 }
+
 
 /*AddToTask these are the styles for the add To Task Sub Page of the canban-board*/
 
 .menu {
-display: flex;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
-
 
 .form-field {
     display: flex;
     flex-direction: row;
 }
 
-.mgn-t {margin-top: 20px;}
+.mgn-t {
+    margin-top: 20px;
+}
 
-.mgn-l {margin-left: 20px;}
+.mgn-l {
+    margin-left: 20px;
+}
