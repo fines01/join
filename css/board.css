@@ -10,7 +10,7 @@
 .board-content {
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 45px;
 }
 
 .board-content h2 {
@@ -23,7 +23,7 @@
     margin-left: 10px;
     margin-right: 10px;
     min-width: 200px;
-    min-height: 500px;
+    min-height: 550px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;

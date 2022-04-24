@@ -83,7 +83,24 @@ footer {
 
 .footer-content a {
     text-decoration: none;
+    font-weight: bold;
     color: white;
+    cursor: pointer;
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(153, 153, 153) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 350ms ease;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    transform: scale(1.1);
+    transition: 225ms ease-in-out;
+    background-position: 0 100%;
     cursor: pointer;
 }
 
