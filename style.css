@@ -94,6 +94,10 @@ footer {
     margin-bottom: 5em;
 }
 
+a {
+    text-decoration: none;
+}
+
 .navbar-menu-text {
     font-size: 20px;
     color: white;
