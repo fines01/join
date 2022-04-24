@@ -31,22 +31,38 @@
 <body onload="includeHTML()">
     <div class="menu">
         <div w3-include-html="index.html"></div>
-        <div class="add-to-task-sub-menu">
-            <h1>Add Task</h1>
-            <form class="form-field">
-                <div>
-                    <h2 id="title">Title</h2>
-                    <input placeholder="Enter a title">
-                    <h2 id="category">Category</h2>
-                    <h2 id="descirption">Descirption</h2>
-                </div>
-                <div>
-                    <h2 id="date">Date</h2>
-                    <h2 id="urgency">Urgency</h2>
-                    <textarea placeholder="Enter a descirption"></textarea>
-                    <h2 id="assignment"></h2>
-                </div>
-            </form>
+        <div class="add-task-container">
+            <div class="add-to-task-sub-menu">
+                <h1>Add Task</h1>
+            </div>
+            <div class="task-input-container">
+                <form class="form-field">
+                    <div>
+                        <h2 id="title">TITLE</h2>
+                        <input placeholder="Enter a title">
+                        <h2 id="category">CATEGORY</h2>
+                        <select placeholder="Management">
+                            <option value="Management"> Management</option>
+                            <option value="Software Developement">Software Developement</option>
+                            <option value="UX/UI Design">UX/UI Design</option>
+                            <option value="Human Resources">Human Resources</option>
+                            </select>
+                        <h2 id="descirption">DESCRIPTION</h2>
+                        <textarea placeholder="Enter a descirption"></textarea>
+                    </div>
+                    <div>
+                        <h2 id="date">DUE DATE</h2>
+                        <input type="date">
+                        <h2 id="urgency">URCENCY</h2>
+                        <select>
+                            <option value="High">High</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Low">Low</option>
+                            </select>
+                        <h2 id="assignment"></h2>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
