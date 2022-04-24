@@ -7,6 +7,11 @@
     padding-left: 50px;
 }
 
+.board-sub-menu p {
+    font-size: 14px;
+    color: rgb(14, 11, 167);
+}
+
 .board-content {
     display: flex;
     justify-content: center;

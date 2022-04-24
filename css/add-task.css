@@ -9,6 +9,11 @@
     padding-left: 50px;
 }
 
+.add-to-task-sub-menu p {
+    font-size: 14px;
+    color: rgb(14, 11, 167);
+}
+
 .task-input-container {
     background-color: rgb(233, 233, 241);
     margin-left: 20px;

@@ -2,3 +2,8 @@
     padding-top: 80px;
     padding-left: 50px;
 }
+
+.backlog-sub-menu p {
+    font-size: 14px;
+    color: rgb(14, 11, 167);
+}

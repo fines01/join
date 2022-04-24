@@ -56,6 +56,11 @@ img {
     padding-left: 50px;
 }
 
+.impressum-sub-menu p {
+    font-size: 14px;
+    color: rgb(14, 11, 167);
+}
+
 .impressum {
     height: 100vh;
     display: flex;
@@ -71,6 +76,11 @@ img {
 .datenschutz-sub-menu {
     padding-top: 80px;
     padding-left: 50px;
+}
+
+.datenschutz-sub-menu p {
+    font-size: 14px;
+    color: rgb(14, 11, 167);
 }
 
 .datenschutz {
