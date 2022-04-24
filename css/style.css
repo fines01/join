@@ -49,6 +49,34 @@ img {
 }
 
 
+/*** impressum ***/
+
+.impressum {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+
+/*** dataprotection ***/
+
+.datenschutz-sub-menu {
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
+.datenschutz {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+
 /*** generic classes ***/
 
 .d-none {
@@ -112,6 +140,11 @@ footer {
 
 
 /* Board mainpage */
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+}
 
 .navbar-container {
     height: 100vh;
