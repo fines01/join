@@ -138,23 +138,7 @@ a {
     cursor: pointer;
 }
 
-
-/*AddToTask these are the styles for the add To Task Sub Page of the canban-board*/
-
 .menu {
     display: flex;
     flex-direction: row;
-}
-
-.form-field {
-    display: flex;
-    flex-direction: row;
-}
-
-.mgn-t {
-    margin-top: 20px;
-}
-
-.mgn-l {
-    margin-left: 20px;
 }
