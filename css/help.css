@@ -1,4 +1,22 @@
 .help-container {
-    margin-left: 3em;
+    margin-left: 5em;
     margin-top: 4em;
+}
+
+.help-list-container {
+    margin-left: 5em;
+    margin-top: 3em;
+}
+
+.help-list {
+    margin-top: 2em;
+}
+
+.help-sublist {
+    margin-left: 3em;
+}
+
+.help-subheadlines {
+    margin-left: 2.5em;
+    margin-top: 1em;
 }
