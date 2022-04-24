@@ -35,12 +35,12 @@ id="date"
 
 
 
-/* addToTaskJS */
+/* addToTaskJS the function is meant to enable the add of task to a json array*/
 
 
 function addToTask() {
     let title = getId('title');
-    let discription = getId('discription');
+    let discription = getId('description');
     let category = ['management', 'production'];
     let urgency = ['low', 'middle', 'high'];
 
@@ -49,7 +49,7 @@ function addToTask() {
         'dueDate': dueDate,
         'category': category,
         'urgency': urgency,
-        'discription': discription.value
+        'description': description.value
     };
 
     title.value = '';
@@ -58,10 +58,7 @@ function addToTask() {
 
 
 function renderAddToTask() {
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-
-    }
+  
 }
 
 /* JSON for addToTask Page  */

@@ -109,3 +109,21 @@ a {
     transform: scale(1.1);
     transition: 225ms ease-in-out;
 }
+
+/*AddToTask these are the styles for the add To Task Sub Page of the canban-board*/
+
+.menu {
+display: flex;
+flex-direction: row;
+}
+
+.add-to-task-sub-menu {
+    margin-left: 40px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+}
+
+.mgn-t {margin-top: 20px;}
