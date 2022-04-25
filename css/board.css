@@ -46,6 +46,7 @@
     overflow-y: auto;
     /* TEST: */
     text-align: center;
+    text-transform: capitalize;
 }
 
 .task p {
