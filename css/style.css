@@ -215,18 +215,3 @@ a {
     display: flex;
     flex-direction: row;
 }
-
-
-/*Backrounds for the different urgency of the tasks */
-
-.backround-urgency-high {
-    background-color: rgb(228, 87, 87);
-}
-
-.backround-urgency-intermediate {
-    background-color: yellow;
-}
-
-.backround-urgency-low {
-    background-color: green;
-}
