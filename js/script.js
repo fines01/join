@@ -54,10 +54,14 @@ function addToTask() {
     description.value = '';
 }
 
-function deleteTask(task) {
-    tasks.splice(task);
-    saveTasks()
-    renderTasks()
+function deleteTask() {
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
+        tasks.splice(task, 1);
+        saveTasks()
+        renderTasks() 
+    }
+    
 }
 
 /**
