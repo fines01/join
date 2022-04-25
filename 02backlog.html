@@ -23,13 +23,14 @@
         } */
     </style>
     <!-- Scripts -->
-    <script src="js/templates.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
     <title>Join Help</title>
 </head>
 
-<body onload="includeHTML()">
+<body onload="init();renderLogs();">
     <div class="menu">
         <div w3-include-html="index.html"></div>
         <div class="backlog-sub-menu">
@@ -47,20 +48,7 @@
                     <h2>Details</h2>
                 </div>
             </div>
-            <div id="logs" class="backlog-tasks-container">
-                <div class="log">
-                    <div class="">
-                        <h3 class="log-name">Name name</h3>
-                    </div>
-                    <div class="">
-                        <h3>Management</h3>
-                    </div>
-                    <div class="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate repellat saepe officia dolorem accusantium veniam, cupiditate voluptates repellendus error?...</p>
-                    </div>
-                </div>
-                
-            </div>
+            <div id="logs" class="backlog-tasks-container"></div>
         </div>
 
 

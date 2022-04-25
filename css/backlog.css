@@ -33,11 +33,18 @@
     display: flex;
     padding: 8px;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 
 .log div {
     width: 33%;
     align-self: center;
+    max-height: 100%;
     overflow: auto;
+}
+
+.log p {
+    overflow: auto;
+    color: inherit;
 }
 
