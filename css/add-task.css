@@ -122,8 +122,25 @@ input {
     border-radius: 10px;
 }
 
-select { border-radius: 10px;
+select {
+    border-radius: 10px;
 }
 
-textarea { border-radius: 10px;
+textarea {
+    border-radius: 10px;
+}
+
+
+/*Backrounds for the different urgency of the tasks */
+
+.backround-urgency-high {
+    background-color: red;
+}
+
+.backround-urgency-intermediate {
+    background-color: yellow;
+}
+
+.backround-urgency-low {
+    background-color: green;
 }
