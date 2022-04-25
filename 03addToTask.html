@@ -23,7 +23,7 @@
     </style>
     <!-- Scripts -->
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <script src="js/includeHTML.js"></script>
     <title>Join Help</title>
 </head>
@@ -38,10 +38,10 @@
 
             </div>
             <div class="task-input-container">
-                <form class="form-field">
+                <form class="form-field" onsubmit="addToTask()">
                     <div>
                         <h2>TITLE</h2>
-                        <input id="title" placeholder="Enter a title">
+                        <input required id="title" placeholder="Enter a title">
                         <h2>CATEGORY</h2>
                         <select id="category" placeholder="Management">
                             <option value="Management"> Management</option>
@@ -50,7 +50,7 @@
                             <option value="Human Resources">Human Resources</option>
                             </select>
                         <h2>DESCRIPTION</h2>
-                        <textarea id="descirption" placeholder="Enter a description"></textarea>
+                        <textarea required id="description" placeholder="Enter a description"></textarea>
                     </div>
                     <div>
                         <h2>DUE DATE</h2>
@@ -62,8 +62,8 @@
                             <option value="Low">Low</option>
                         </select>
                         <div class="assignment-container">
-                            <h2 id="assignment">ASSIGNED TO</h2>
-                            <div class="assignment-button-container">
+                            <h2 >ASSIGNED TO</h2>
+                            <div id="assignment" class="assignment-button-container">
                                 <img src="img/icon-plus.png" alt="">
                                 <button class="cancel-button">CANCEL</button>
                                 <button class="assign-button">CREATE TASK</button>
