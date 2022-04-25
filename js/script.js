@@ -63,14 +63,14 @@ function addToTask() {
     description.value = '';
 }
 
-/* The function is used to save the tasks in a JSON Array from the addTask function in a string */
+/* The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string */
 
 function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
     localStorage.setItem('tasks', tasksAsText);
 }
 
-/* The function is used to laod the tasks from text-format to a JSON-array */
+/* The function is used to laod and convert the tasks from text-format to a JSON-array*/
 
 function loadTasks() {
     let tasksAsText = localStorage.getItem('tasks');

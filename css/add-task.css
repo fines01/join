@@ -117,3 +117,13 @@
 .cancel-button:hover {
     color: rgb(59, 84, 228);
 }
+
+input {
+    border-radius: 10px;
+}
+
+select { border-radius: 10px;
+}
+
+textarea { border-radius: 10px;
+}
