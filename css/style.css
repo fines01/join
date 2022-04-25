@@ -45,7 +45,7 @@ body {
 }
 
 p {
-    color: var(--col-secondary);
+    /* color: var(--col-secondary); */
 }
 
 img {

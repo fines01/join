@@ -1,28 +1,3 @@
-// generic functions
-// 
-function getId(el) {
-    return document.getElementById(el);
-}
-
-function hide(...elements) { // rest-operator
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.add('d-none');
-    }
-}
-
-function show(...elements) {
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.remove('d-none');
-    }
-}
-
-function toggle(...elements) {
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.toggle('d-none');
-    }
-}
-
-
 /* vergebene ID 
 id="title"
 id="category"
@@ -31,13 +6,18 @@ id="discirption"
 id="assignment"
 id="date"
 id="logs"
-
+id="todoBoard"
 */
 
 /* global scope - here we define global variables and constants  */
 
 let tasks = [];
-// let members = [];
+
+// let members = [{
+//     name: 'Jo',
+//     // department: 'Marketing',
+//     email: 'jo@test.at'
+// }];
 
 /**
  * function init() executes on load of html body
@@ -90,8 +70,11 @@ function loadTasks() {
     }
 }
 
-/* Backlog */
+/* ********* Backlog ********* */
 
+/**
+ * This function renders all logs from the tasks array
+ */
 function renderLogs(){
     let logs = getId('logs');
     logs.innerHTML='';
@@ -104,10 +87,52 @@ function renderLogs(){
         // 
         logs.innerHTML += logsHTML(tasks[i]);
     }
+}
+
+/* ********* Board ********* */
+
+/**
+ * This function renders all tasks from the tasks array into the to-do board
+ */
+function renderTasks(){
+    let board = getId('todoBoard');
+    board.innerHTML = '';
+
+    for (let i = 0; i < tasks.length; i++) {
+        board.innerHTML += boardTaskHTML(tasks[i]);
+    }
 
 }
 
 
+/* ********* generic functions ********* */
 
+function getId(el) {
+    return document.getElementById(el);
+}
 
+function getIds(...el) {
+    arr = [];
+    for (let i = 0; i < el.length; i++) {
+        arr.push(document.getElementById(el[i]));
+    }
+    return arr;
+}
 
+function hide(...elements) { // rest-operator
+    for (let i = 0; i < elements.length; i++) {
+        getId(elements[i]).classList.add('d-none');
+    }
+}
+
+function show(...elements) {
+    for (let i = 0; i < elements.length; i++) {
+        getId(elements[i]).classList.remove('d-none');
+    }
+}
+
+function toggle(...elements) {
+    for (let i = 0; i < elements.length; i++) {
+        getId(elements[i]).classList.toggle('d-none');
+    }
+}

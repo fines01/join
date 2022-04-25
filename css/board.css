@@ -34,3 +34,36 @@
     flex-direction: column;
     background-color: rgb(233, 233, 241);
 }
+
+.task {
+    background-color: rgba(233,233,241,0.99);
+    /* border: 1px solid gray; */
+    box-shadow: 0 0 2px 1px rgba(139, 139, 139,0.5);
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+    max-height: 100%;
+    overflow-y: auto;
+    /* TEST: */
+    text-align: center;
+}
+
+.task p {
+    cursor: pointer;
+}
+
+.light-text {
+    color: var(--col-secondary);
+    text-align: left;
+}
+
+.task-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-links a {
+    color: gray;
+    font-weight: bold;
+    padding: 4px 8px;
+}

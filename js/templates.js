@@ -12,3 +12,20 @@ function logsHTML(task) {
             </div>
         </div>`;
 }
+
+function boardTaskHTML(task) {
+    return /*html*/`
+        <div class="task">
+            <h3>${task.title}</h3>
+            <span class="light-text">
+                Priority: <b>${task.priority}</b><br>
+                Due date: <span>${task.date}</span>
+            </span>
+            <p>Description...</p>
+            <div class="task-links">
+                <a href="#">edit</a>
+                <a href="#">delete</a>
+            </div>
+        </div>
+    `;
+}
