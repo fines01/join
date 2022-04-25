@@ -18,7 +18,7 @@ function boardTaskHTML(task) {
         <div class="task">
             <h4>${task.title}</h4>
             <span class="light-text">
-                Priority: <b>${task.priority}</b><br>
+                Priority: <b>${task.urgency}</b><br>
                 Due date: <span>${task.date}</span>
             </span>
             <p>Description...</p>
