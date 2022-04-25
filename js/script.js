@@ -54,15 +54,17 @@ function addToTask() {
     description.value = '';
 }
 
-/* The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string */
-
+/**
+ *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
+*/
 function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
     localStorage.setItem('tasks', tasksAsText);
 }
 
-/* The function is used to laod and convert the tasks from text-format to a JSON-array*/
-
+/**
+ *  The function is used to laod and convert the tasks from text-format to a JSON-array
+ */
 function loadTasks() {
     let tasksAsText = localStorage.getItem('tasks');
     if (tasksAsText) {
@@ -73,7 +75,7 @@ function loadTasks() {
 /* ********* Backlog ********* */
 
 /**
- * This function renders all logs from the tasks array
+ * Renders all logs from the tasks array
  */
 function renderLogs(){
     let logs = getId('logs');
@@ -92,7 +94,7 @@ function renderLogs(){
 /* ********* Board ********* */
 
 /**
- * This function renders all tasks from the tasks array into the to-do board
+ * Renders all tasks from the tasks array into the to-do board
  */
 function renderTasks(){
     let board = getId('todoBoard');
@@ -107,32 +109,63 @@ function renderTasks(){
 
 /* ********* generic functions ********* */
 
-function getId(el) {
-    return document.getElementById(el);
+/**
+ * Returns an HTML element
+ * @param {string} id - The id of an HTML element
+ * @returns {object} - The corresponding HTML element
+ */
+function getId(id) {
+    return document.getElementById(id);
 }
 
-function getIds(...el) {
-    arr = [];
-    for (let i = 0; i < el.length; i++) {
-        arr.push(document.getElementById(el[i]));
+/**
+ * Returns an array with one or several HTML elements
+ * @param {...string} idsArr - The id of one or several HTML elements
+ * @returns {object} elementArr - All corresponding HTML elements in an array
+ */
+function getIds(...idsArr) { // rest-operator
+    elementArr = [];
+    for (let i = 0; i < idsArr.length; i++) {
+        elementArr.push(document.getElementById(idsArr[i]));
     }
-    return arr;
+    return elementArr;
 }
 
-function hide(...elements) { // rest-operator
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.add('d-none');
+/**
+ * Hides all passed HTML elements
+ * @param  {...string} ids - The id of one or several HTML elements
+ */
+function hide(...ids) {
+    for (let i = 0; i < ids.length; i++) {
+        getId(ids[i]).classList.add('d-none');
     }
 }
 
-function show(...elements) {
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.remove('d-none');
+/**
+ * Displays all passed HTML elements
+ * @param  {...string} ids - The id of one or several HTML elements
+ */
+function show(...ids) {
+    for (let i = 0; i < ids.length; i++) {
+        getId(ids[i]).classList.remove('d-none');
     }
 }
 
-function toggle(...elements) {
-    for (let i = 0; i < elements.length; i++) {
-        getId(elements[i]).classList.toggle('d-none');
+/**
+ * Toggles the view of all passed HTML elements
+ * @param  {...string} ids - The id of one or several HTML elements
+ */
+function toggle(...ids) {
+    for (let i = 0; i < ids.length; i++) {
+        getId(ids[i]).classList.toggle('d-none');
     }
+}
+
+/**
+ * Capitalizes the first letter of a string and returns the capitalized string
+ * @param {string} str
+ * @returns {string}
+ */
+function capitalizeFirst(str) {
+    return str[0].toUpperCase() + str.slice(1);
 }

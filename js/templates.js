@@ -2,13 +2,13 @@ function logsHTML(task) {
     return /*html*/ `
         <div class="log">
             <div class="">
-                 <h3 class="log-name">${task.assignedTo}</h3>
+                 <h4 class="log-name">${task.assignedTo}</h4>
             </div>
             <div class="">
-                <h3>${task.category}</h3>
+                <h4>${task.category}</h4>
             </div>
             <div class="">
-                <p>${task.description}</p>
+                <p>${capitalizeFirst(task.description)}</p>
             </div>
         </div>`;
 }
@@ -16,7 +16,7 @@ function logsHTML(task) {
 function boardTaskHTML(task) {
     return /*html*/`
         <div class="task">
-            <h3>${task.title}</h3>
+            <h4>${task.title}</h4>
             <span class="light-text">
                 Priority: <b>${task.priority}</b><br>
                 Due date: <span>${task.date}</span>
