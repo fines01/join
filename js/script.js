@@ -22,13 +22,13 @@ let tasks = [];
 /**
  * function init() executes on load of html body
  */
-function init(){
+function init() {
     loadTasks(); // get tasks from local strage
     includeHTML();
 }
 
 /** addToTaskJS the function is meant to enable the add of task to a json array
-*/
+ */
 function addToTask() {
 
     let title = document.getElementById('title');
@@ -54,9 +54,15 @@ function addToTask() {
     description.value = '';
 }
 
+function deleteTask(task) {
+    tasks.splice(task);
+    saveTasks()
+    renderTasks()
+}
+
 /**
  *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
-*/
+ */
 function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
     localStorage.setItem('tasks', tasksAsText);
@@ -77,13 +83,13 @@ function loadTasks() {
 /**
  * Renders all logs from the tasks array
  */
-function renderLogs(){
+function renderLogs() {
     let logs = getId('logs');
-    logs.innerHTML='';
+    logs.innerHTML = '';
 
-    for( let i = 0; i < tasks.length; i++ ){
+    for (let i = 0; i < tasks.length; i++) {
         // for testing purposes:
-        if(!tasks[i].assignedTo){
+        if (!tasks[i].assignedTo) {
             tasks[i].assignedTo = "Unassigned";
         }
         // 
@@ -96,7 +102,7 @@ function renderLogs(){
 /**
  * Renders all tasks from the tasks array into the to-do board
  */
-function renderTasks(){
+function renderTasks() {
     let board = getId('todoBoard');
     board.innerHTML = '';
 
