@@ -28,12 +28,12 @@
 
 /*** general ***/
 
- * {
-     margin: 0;
-     padding: 0;
-     margin-block-start: 0;
-     margin-block-end: 0;
- }
+* {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
 
 body {
     color: var(--col-main);
@@ -214,4 +214,19 @@ a {
 .menu {
     display: flex;
     flex-direction: row;
+}
+
+
+/*Backrounds for the different urgency of the tasks */
+
+.backround-urgency-high {
+    background-color: rgb(228, 87, 87);
+}
+
+.backround-urgency-intermediate {
+    background-color: yellow;
+}
+
+.backround-urgency-low {
+    background-color: green;
 }
