@@ -30,7 +30,7 @@ id="urgency"
 id="discirption"
 id="assignment"
 id="date"
-id="log"
+id="logs"
 
 */
 
@@ -80,6 +80,18 @@ function loadTasks() {
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);
     }
+}
+
+/* Backlog */
+
+function renderLogs(){
+    let logs = getId('logs');
+    logs.innerHTML='';
+
+    for( let i = 0; i < tasks.length; i++ ){
+        logs.innerHTML += logsHTML(tasks[i]);
+    }
+
 }
 
 
