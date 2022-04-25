@@ -34,12 +34,14 @@
     height: 50px;
     width: 400px;
     outline: none;
+    padding-left: 10px;
 }
 
 .form-field select {
     height: 50px;
     width: 405px;
     outline: none;
+    padding-left: 10px;
 }
 
 .form-field textarea {
@@ -47,6 +49,8 @@
     outline: none;
     width: 405px;
     height: 180px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .form-field h2 {

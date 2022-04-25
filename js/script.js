@@ -59,9 +59,9 @@ function deleteTask() {
         const task = tasks[i];
         tasks.splice(task, 1);
         saveTasks()
-        renderTasks() 
+        renderTasks()
     }
-    
+
 }
 
 /**
