@@ -30,14 +30,17 @@ id="urgency"
 id="discirption"
 id="assignment"
 id="date"
+id="log"
 
 */
 
+/* global scope - here we define global variables and constants  */
 
-
-/* addToTaskJS the function is meant to enable the add of task to a json array
-*/
 let tasks = [];
+
+
+/** addToTaskJS the function is meant to enable the add of task to a json array
+*/
 function addToTask() {
 
     let title = document.getElementById('title');
