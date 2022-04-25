@@ -56,7 +56,8 @@ function addToTask() {
     description.value = '';
 }
 
-function deleteTask() {
+function deleteTask(task) {
+    console.log(task); // checken ob task übergeben wird
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
         tasks.splice(task, 1);
@@ -64,6 +65,10 @@ function deleteTask() {
         renderTasks()
     }
 
+}
+
+function editTask(task){
+    console.log(task); // check: übergabe task --> nur undefined object. äbergabe task.title ok
 }
 
 /**

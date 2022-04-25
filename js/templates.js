@@ -24,8 +24,8 @@ function boardTaskHTML(task) {
             </span>
             <p>Description...</p>
             <div class="task-links">
-                <a href="#">edit</a>
-                <a onclick="deleteTask()" href="#">delete</a>
+                <a onclick="editTask('${task}')" href="#">edit</a>
+                <a onclick="deleteTask('${task.title}')" href="#">delete</a>
             </div>
         </div>
     `;
