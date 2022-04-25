@@ -37,14 +37,15 @@ id="logs"
 /* global scope - here we define global variables and constants  */
 
 let tasks = [];
-let members = [
-    {
-        name: 'Jo',
-        // department: 'Marketing',
-        email: 'jo@test.at'
-    }
-];
+// let members = [];
 
+/**
+ * function init() executes on load of html body
+ */
+function init(){
+    loadTasks(); // get tasks from local strage
+    includeHTML();
+}
 
 /** addToTaskJS the function is meant to enable the add of task to a json array
 */
@@ -96,9 +97,11 @@ function renderLogs(){
     logs.innerHTML='';
 
     for( let i = 0; i < tasks.length; i++ ){
+        // for testing purposes:
         if(!tasks[i].assignedTo){
-            tasks[i].assignedTo = "unassigned";
+            tasks[i].assignedTo = "Unassigned";
         }
+        // 
         logs.innerHTML += logsHTML(tasks[i]);
     }
 
