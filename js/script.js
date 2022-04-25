@@ -37,6 +37,13 @@ id="logs"
 /* global scope - here we define global variables and constants  */
 
 let tasks = [];
+let members = [
+    {
+        name: 'Jo',
+        // department: 'Marketing',
+        email: 'jo@test.at'
+    }
+];
 
 
 /** addToTaskJS the function is meant to enable the add of task to a json array
