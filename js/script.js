@@ -9,7 +9,7 @@ id="logs"
 id="todoBoard"
 */
 
-/* global scope - here we define global variables and constants  */
+/* ********* global scope - here we define global variables and constants *********  */
 
 let tasks = [];
 
@@ -27,6 +27,8 @@ function init(){
     includeHTML();
 }
 
+/* ********* addToTasks ********** */
+
 /** addToTaskJS the function is meant to enable the add of task to a json array
 */
 function addToTask() {
@@ -42,7 +44,7 @@ function addToTask() {
         'description': description.value,
         'category': category.value,
         'urgency': urgency.value,
-        'date': date.value
+        'date': date.value,
     };
 
     tasks.push(task);
@@ -112,7 +114,7 @@ function renderTasks(){
 /**
  * Returns an HTML element
  * @param {string} id - The id of an HTML element
- * @returns {object} - The corresponding HTML element
+ * @returns {Object} - The corresponding HTML element
  */
 function getId(id) {
     return document.getElementById(id);
@@ -121,7 +123,7 @@ function getId(id) {
 /**
  * Returns an array with one or several HTML elements
  * @param {...string} idsArr - The id of one or several HTML elements
- * @returns {object} elementArr - All corresponding HTML elements in an array
+ * @returns {Object[]} elementArr - All corresponding HTML elements in an array
  */
 function getIds(...idsArr) { // rest-operator
     elementArr = [];
