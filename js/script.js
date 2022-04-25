@@ -96,6 +96,9 @@ function renderLogs(){
     logs.innerHTML='';
 
     for( let i = 0; i < tasks.length; i++ ){
+        if(!tasks[i].assignedTo){
+            tasks[i].assignedTo = "unassigned";
+        }
         logs.innerHTML += logsHTML(tasks[i]);
     }
 
