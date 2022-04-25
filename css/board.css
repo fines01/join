@@ -27,6 +27,7 @@
 .board-task-container {
     margin-left: 10px;
     margin-right: 10px;
+    padding: 5px;
     min-width: 200px;
     min-height: 550px;
     border-radius: 8px;
@@ -36,9 +37,9 @@
 }
 
 .task {
-    background-color: rgba(233,233,241,0.99);
+    background-color: rgba(233, 233, 241, 0.99);
     /* border: 1px solid gray; */
-    box-shadow: 0 0 2px 1px rgba(139, 139, 139,0.5);
+    box-shadow: 0 0 2px 1px rgba(139, 139, 139, 0.5);
     border-radius: 8px;
     width: 100%;
     margin-bottom: 8px;
