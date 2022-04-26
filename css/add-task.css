@@ -7,6 +7,7 @@
 .add-to-task-sub-menu {
     padding-top: 80px;
     padding-left: 50px;
+    max-width: 1000px;
 }
 
 .add-to-task-sub-menu p {
@@ -14,11 +15,18 @@
     color: rgb(14, 11, 167);
 }
 
+.task-input-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
 .task-input-container {
     background-color: rgb(233, 233, 241);
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 12px;
+    max-width: 1000px;
 }
 
 .form-field {
@@ -39,7 +47,7 @@
 
 .form-field select {
     height: 50px;
-    width: 405px;
+    width: 415px;
     outline: none;
     padding-left: 10px;
 }
@@ -61,7 +69,7 @@
 }
 
 .form-field div {
-    padding-right: 150px;
+    padding-right: 50px;
 }
 
 .mgn-t {

@@ -36,45 +36,49 @@
     <div class="menu">
         <div w3-include-html="index.html"></div>
         <div class="add-task-container">
-            <div class="add-to-task-sub-menu">
-                <h1>Add Task</h1>
-                <p>Learning Management System Project</p>
-
+            <div class="add-to-task-sub-wrap">
+                <div class="add-to-task-sub-menu">
+                    <h1>Add Task</h1>
+                    <p>Learning Management System Project</p>
+                </div>
             </div>
-            <div class="task-input-container">
-                <form class="form-field" onsubmit="addToTask()">
-                    <div>
-                        <h2>TITLE</h2>
-                        <input required id="title" placeholder="Enter a title">
-                        <h2>CATEGORY</h2>
-                        <select id="category" placeholder="Management">
+
+            <div class="task-input-wrap">
+                <div class="task-input-container">
+                    <form class="form-field" onsubmit="addToTask()">
+                        <div>
+                            <h2>TITLE</h2>
+                            <input required id="title" placeholder="Enter a title">
+                            <h2>CATEGORY</h2>
+                            <select id="category" placeholder="Management">
                             <option value="Management"> Management</option>
                             <option value="Software Developement">Software Developement</option>
                             <option value="UX/UI Design">UX/UI Design</option>
                             <option value="Human Resources">Human Resources</option>
                             </select>
-                        <h2>DESCRIPTION</h2>
-                        <textarea required id="description" placeholder="Enter a description"></textarea>
-                    </div>
-                    <div>
-                        <h2>DUE DATE</h2>
-                        <input id="date" type="date">
-                        <h2>URCENCY</h2>
-                        <select id="urgency">
+                            <h2>DESCRIPTION</h2>
+                            <textarea required id="description" placeholder="Enter a description"></textarea>
+                        </div>
+                        <div>
+                            <h2>DUE DATE</h2>
+                            <input id="date" type="date">
+                            <h2>URCENCY</h2>
+                            <select id="urgency">
                             <option value="High">High</option>
                             <option value="Intermediate">Intermediate</option>
                             <option value="Low">Low</option>
                         </select>
-                        <div class="assignment-container">
-                            <h2>ASSIGNED TO</h2>
-                            <div id="assignment" class="assignment-button-container">
-                                <img src="img/icon-plus.png" alt="">
-                                <button class="cancel-button">CANCEL</button>
-                                <button class="assign-button">CREATE TASK</button>
+                            <div class="assignment-container">
+                                <h2>ASSIGNED TO</h2>
+                                <div id="assignment" class="assignment-button-container">
+                                    <img src="img/icon-plus.png" alt="">
+                                    <button class="cancel-button">CANCEL</button>
+                                    <button class="assign-button">CREATE TASK</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
