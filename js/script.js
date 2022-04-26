@@ -11,12 +11,14 @@ id="todoBoard"
 
 /* ********* global scope - here we define global variables and constants *********  */
 
-let tasks = [{ title: 'a', description: 'a', category: 'Management', urgency: 'High', date: '2022-04-20' }
-,{ title: 'b', description: 'b', category: 'Management', urgency: 'High', date: '2022-04-27' }
-,{ title: 'c', description: 'c', category: 'Management', urgency: 'High', date: '2022-04-27' }
-,{ title: 'd', description: 'd', category: 'Management', urgency: 'High', date: '2022-04-27' }
-,{ title: 'e', description: 'e', category: 'Management', urgency: 'High', date: '2022-04-27' }
-,{ title: 'f', description: 'f', category: 'Management', urgency: 'High', date: '2022-04-27' }];
+let tasks = [
+    { title: 'a', description: 'a', category: 'Management', urgency: 'High', date: '2022-04-20' },
+    { title: 'b', description: 'b', category: 'Management', urgency: 'High', date: '2022-04-27' },
+    { title: 'c', description: 'c', category: 'Management', urgency: 'High', date: '2022-04-27' },
+    { title: 'd', description: 'd', category: 'Management', urgency: 'High', date: '2022-04-27' },
+    { title: 'e', description: 'e', category: 'Management', urgency: 'High', date: '2022-04-27' },
+    { title: 'f', description: 'f', category: 'Management', urgency: 'High', date: '2022-04-27' }
+];
 
 // let members = [{
 //     name: 'Jo',
@@ -62,11 +64,11 @@ function addToTask() {
 }
 
 function deleteTask(i) {
-   
-        tasks.splice(i, 1);
-        renderTasks();
-        saveTasks();
-    }
+
+    tasks.splice(i, 1);
+    renderTasks();
+    saveTasks();
+}
 
 function editTask(task) {
     console.log(task); // check: übergabe task --> nur undefined object. äbergabe task.title ok
