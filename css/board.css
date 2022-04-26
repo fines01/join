@@ -63,9 +63,8 @@
 
 .task-links {
     position: absolute;
-    top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    top: 5px;
+    left: 5px;
 }
 
 .task-links a {
