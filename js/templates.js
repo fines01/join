@@ -14,9 +14,9 @@ function logsHTML(task) {
         </div>`;
 }
 
-function boardTaskHTML(task) {
+function boardTaskHTML(task, i) {
     return /*html*/ `
-        <div id="task" class="task">
+        <div id="task-${i}" class="task">
             <h4>${task.title}</h4>
             <span class="light-text">
                 Priority: <b>${task.urgency}</b><br>
@@ -24,9 +24,13 @@ function boardTaskHTML(task) {
             </span>
             <p>Description...</p>
             <div class="task-links">
-                <a onclick="editTask('${task}')" href="#">edit</a>
-                <a onclick="deleteTask('${task}')" href="#">delete</a>
+                <button onclick="deleteTask(${i})">delete</button>
             </div>
         </div>
     `;
 }
+
+
+/*edit function needs to be implemented
+
+<a onclick="editTask('${task}')" href="#">edit</a> */

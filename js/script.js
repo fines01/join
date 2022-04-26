@@ -11,7 +11,12 @@ id="todoBoard"
 
 /* ********* global scope - here we define global variables and constants *********  */
 
-let tasks = [];
+let tasks = [{ title: 'a', description: 'a', category: 'Management', urgency: 'High', date: '2022-04-20' }
+,{ title: 'b', description: 'b', category: 'Management', urgency: 'High', date: '2022-04-27' }
+,{ title: 'c', description: 'c', category: 'Management', urgency: 'High', date: '2022-04-27' }
+,{ title: 'd', description: 'd', category: 'Management', urgency: 'High', date: '2022-04-27' }
+,{ title: 'e', description: 'e', category: 'Management', urgency: 'High', date: '2022-04-27' }
+,{ title: 'f', description: 'f', category: 'Management', urgency: 'High', date: '2022-04-27' }];
 
 // let members = [{
 //     name: 'Jo',
@@ -114,7 +119,7 @@ function renderTasks() {
     board.innerHTML = '';
 
     for (let i = 0; i < tasks.length; i++) {
-        board.innerHTML += boardTaskHTML(tasks[i]);
+        board.innerHTML += boardTaskHTML(tasks[i], i);
     }
 
 }
