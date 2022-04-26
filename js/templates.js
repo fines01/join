@@ -16,7 +16,7 @@ function logsHTML(task) {
 
 function boardTaskHTML(task, i) {
     return /*html*/ `
-        <div id="task-${i}" class="task">
+        <div draggable="true" ondragstart="startDragging(${i})" id="task-${i}" class="task">
             <h4>${task.title}</h4>
             <span class="light-text">
                 Priority: <b>${task.urgency}</b><br>

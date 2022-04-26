@@ -50,6 +50,7 @@
     text-align: center;
     text-transform: capitalize;
     position: relative;
+    cursor: pointer;
 }
 
 .task p {

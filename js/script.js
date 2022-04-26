@@ -20,6 +20,8 @@ let tasks = [
     { title: 'f', description: 'f', category: 'Management', urgency: 'High', date: '2022-04-27' }
 ];
 
+let currentDraggedElement;
+
 // let members = [{
 //     name: 'Jo',
 //     // department: 'Marketing',
@@ -73,6 +75,20 @@ function deleteTask(i) {
 function editTask(task) {
     console.log(task); // check: übergabe task --> nur undefined object. äbergabe task.title ok
 }
+
+function startDragging(i) {
+    currentDraggedElement = i;
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function moveTo() {
+    tasks[currentDraggedElement];
+}
+
+
 
 /**
  *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 

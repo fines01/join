@@ -43,19 +43,19 @@
             <div class="board-content">
                 <div>
                     <h2>TO DO</h2>
-                    <div class="board-task-container" id="todoBoard"></div>
+                    <div id="todoBoard" class="board-task-container" ondrop="moveTo()" ondragover="allowDrop(event)"></div>
                 </div>
                 <div>
                     <h2>IN PROGRESS</h2>
-                    <div class="board-task-container"></div>
+                    <div id="inProgress" class="board-task-container" ondrop="moveTo()" ondragover="allowDrop(event)"></div>
                 </div>
                 <div>
                     <h2>TESTING</h2>
-                    <div class="board-task-container"></div>
+                    <div id="testing" class="board-task-container" ondrop="moveTo()" ondragover="allowDrop(event)"></div>
                 </div>
                 <div>
                     <h2>DONE</h2>
-                    <div class="board-task-container"></div>
+                    <div id="done" class="board-task-container" ondrop="moveTo()" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
         </div>
