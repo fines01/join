@@ -215,3 +215,83 @@ a {
     display: flex;
     flex-direction: row;
 }
+
+
+/* mainpage-style */
+
+.mainpage-start {
+    display: flex;
+}
+
+.main-wrap {
+    width: 100vw;
+    height: 100vh;
+}
+
+.welcome-text {
+    text-align: center;
+    height: 20vh;
+}
+
+.welcome {
+    padding-top: 4vh;
+}
+
+.links-wrap {
+    overflow: hidden;
+}
+
+.links-wrap a {
+    color: white;
+}
+
+.link-general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.main-link-1 {
+    background-image: url(/img/Board.jpg);
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.75;
+    transition: all 225ms ease-in-out;
+}
+
+.main-link-2 {
+    background-image: url(/img/Backlog.jpg);
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.75;
+    transition: all 225ms ease-in-out;
+}
+
+.main-link-3 {
+    background-image: url(/img/create.jpg);
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.75;
+    transition: all 225ms ease-in-out;
+}
+
+.main-link-4 {
+    background-image: url(/img/help.jpg);
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.75;
+    transition: all 225ms ease-in-out;
+}
+
+.main-link-1:hover,
+.main-link-2:hover,
+.main-link-3:hover,
+.main-link-4:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}

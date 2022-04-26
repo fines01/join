@@ -38,24 +38,47 @@
 
     <!-- <div class="content-wrap"> -->
 
-    <!-- navbar (sidenav, includes footer) -->
-    <nav class="nav-bar">
-        <div class="navbar-container">
-            <a href="index.html"><img class="navbar-header" src="img/logo.png" alt=""></a>
-            <a class="navbar-menu-text" href="01board.html"> Board</a>
-            <a class="navbar-menu-text" href="02backlog.html">Backlog</a>
-            <a class="navbar-menu-text" href="03addToTask.html">Add Task</a>
-            <a class="navbar-menu-text" href="04help.html">Help</a>
-            <div class="footer">
-                <div class="footer-content">
-                    <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
+    <!-- site-content -->
+    <main>
+        <div class="mainpage-start">
+            <div w3-include-html="navbar.html"></div>
+            <div class="main-wrap">
+                <div class="welcome-text">
+
+                    <h2 class="welcome">Wilkommen</h2>
+                    <span>Dieses Kanban-Projekt ist in Teamarbeit entstanden.</span> <br>
+                    <span>Hier können Sie Aufgaben Anlegen, diese nach Dringlichkeit Sortieren und bestimmten Mitarbeitern zuteilen. </span> <br>
+                    <span> Unter dem Reiter <b>Help</b> finden Sie alle wichtigen Informationen um die Seite optimal nutzen zu können.</span>
+                </div>
+
+                <div class="links-wrap">
+
+                    <a href="./01board.html">
+
+                        <div class="link-general main-link-1">Board</div>
+                    </a>
+
+
+                    <a href="./02backlog.html">
+
+                        <div class="link-general main-link-2">Backlog</div>
+                    </a>
+
+
+                    <a href="./03addToTask.html">
+
+                        <div class="link-general main-link-3">Add Task</div>
+                    </a>
+
+
+                    <a href="./04help.html">
+
+                        <div class="link-general main-link-4">Help </div>
+                    </a>
                 </div>
             </div>
         </div>
-    </nav>
-    <!-- site-content -->
-    <main></main>
+    </main>
 
     <!-- </div> -->
     <!-- end: content-wrap -->
