@@ -7,6 +7,7 @@ id="assignment"
 id="date"
 id="logs"
 id="todoBoard"
+id="boardContainer"
 id="inProgress"
 id="testing"
 id="done"
@@ -44,16 +45,14 @@ function init() {
 
 /* ********* addToTasks ********** */
 
-/** addToTaskJS the function is meant to enable the add of task to a json array
+/**
+ * This function saves input values and returns them as a task object
+ * @returns {Object} - task object
  */
-function addToTask() {
+function saveTaskInputs() {
 
-    let title = document.getElementById('title');
-    let description = document.getElementById('description');
-    let category = document.getElementById('category');
-    let urgency = document.getElementById('urgency');
-    let date = document.getElementById('date');
-
+    let [title,description,category,urgency,date] = getIds('title','description','category','urgency','date');
+    
     let task = {
         'title': title.value,
         'description': description.value,
@@ -62,6 +61,14 @@ function addToTask() {
         'date': date.value,
         'category': 'todo'
     };
+
+    return task;
+}
+/** addToTaskJS the function is meant to enable the add of task to a json array
+ */
+function addToTasks() {
+
+    let task = saveTaskInputs();
 
     tasks.push(task);
     saveTasks();
@@ -73,7 +80,6 @@ function addToTask() {
 }
 
 function deleteTask(i) {
-
     tasks.splice(i, 1);
     renderTasks();
     saveTasks();
@@ -83,12 +89,16 @@ function deleteTask(i) {
 //     window.location.href = '03addToTask.html';
 // }
 
-function editTask(i) {
-    // 1.: redirect to add task form
-    window.location.href = '03addToTask.html';
-    // 2.: add task values in input fields
-    // ...
-    // 3.: store task
+function renderEditForm(i) {
+    let form = getId('boardContainer');
+    form.innerHTML = editFormHTML(i);
+}
+
+function saveEdit(i){
+    let task = saveTaskInputs();
+    //console.log(task);
+    tasks[i] = task;
+    saveTasks();
 }
 
 function startDragging(i) {
