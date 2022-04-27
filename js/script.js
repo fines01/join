@@ -8,6 +8,10 @@ id="date"
 id="logs"
 id="todoBoard"
 id="boardContainer"
+id="inProgress"
+id="testing"
+id="done"
+
 */
 
 /* ********* global scope - here we define global variables and constants *********  */
@@ -23,10 +27,10 @@ let tasks = [
 ];
 // example data for testing purposes
 let members = [
-    { name: 'Jolene Bauer', email: 'jo@test.at', color: '', img:''},
-    { name: 'Jimmmy Dude', email: 'dude@company.com', color:'', img: '' },
+    { name: 'Jolene Bauer', email: 'jo@test.at', color: '', img: '' },
+    { name: 'Jimmmy Dude', email: 'dude@company.com', color: '', img: '' },
     { name: 'Max Mo', email: 'donot@email.me', color: '', img: '' },
-    { name: 'Maja', email:'maja@muster.mix', color: '', img:''},
+    { name: 'Maja', email: 'maja@muster.mix', color: '', img: '' },
 ]
 
 let currentDraggedElement;
@@ -55,6 +59,7 @@ function saveTaskInputs() {
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
+        'category': 'todo'
     };
 
     return task;
@@ -104,8 +109,9 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo() {
-    tasks[currentDraggedElement];
+function moveTo(category) {
+    tasks[currentDraggedElement]['category'] = category;
+    renderBoards()
 }
 
 /**
@@ -175,6 +181,50 @@ function renderTasks() {
 //     }
 
 // }
+
+// Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
+// Funktion noch nicht (fertig) implementiert !
+function renderBoards() {
+    let todoBoard = tasks.filter(t => t['category'] == 'todo');
+
+    getId('todoBoard').innerHTML = '';
+
+    for (let i = 0; i < tasks.length; i++) {
+        const element = todoBoard[i];
+        getId('todoBoard').innerHTML += boardTaskHTML(element);
+        //priorityColor(i);
+    }
+
+    let inProgressBoard = tasks.filter(t => t['category'] == 'inProgress');
+
+    getId('inProgressBoard').innerHTML = '';
+
+    for (let i = 0; i < tasks.length; i++) {
+        const element = inProgressBoard[i];
+        getId('inProgressBoard').innerHTML += boardTaskHTML(element);
+        //priorityColor(i);
+    }
+
+    let testingBoard = tasks.filter(t => t['category'] == 'testing');
+
+    getId('testingBoard').innerHTML = '';
+
+    for (let i = 0; i < tasks.length; i++) {
+        const element = testingBoard[i];
+        getId('testingBoard').innerHTML += boardTaskHTML(element);
+        //priorityColor(i);
+    }
+
+    let doneBoard = tasks.filter(t => t['category'] == 'done');
+
+    getId('doneBoard').innerHTML = '';
+
+    for (let i = 0; i < tasks.length; i++) {
+        const element = doneBoard[i];
+        getId('doneBaord').innerHTML += boardTaskHTML(element);
+        //priorityColor(i);
+    }
+}
 
 /* ********* generic functions ********* */
 
