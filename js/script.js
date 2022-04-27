@@ -11,6 +11,8 @@ id="todoBoard"
 
 /* ********* global scope - here we define global variables and constants *********  */
 
+let editMode = false;
+
 // example data for testing purposes
 let tasks = [
     { title: 'a', description: 'a', category: 'Management', urgency: 'high', date: '2022-04-20' },
@@ -74,16 +76,35 @@ function deleteTask(i) {
     saveTasks();
 }
 
-// function redirect(){
-//     window.location.href = '03addToTask.html';
-// }
+function redirect(){
+    window.location.href = '03addToTask.html';
+    // fkt n. BESSER: taskForm in templates.js & dann rendern mit i (i = null)
+}
 
 function editTask(i) {
+    //editMode = true;
+    loadValues(i);
+    // redirect()
+    renderTaskForm(i);
     // 1.: redirect to add task form
-    window.location.href = '03addToTask.html';
     // 2.: add task values in input fields
-    // ...
     // 3.: store task
+}
+
+function loadValues(i){
+    let title = document.getElementById('title');
+    let description = document.getElementById('description');
+    let category = document.getElementById('category');
+    let urgency = document.getElementById('urgency');
+    let date = document.getElementById('date');
+
+    if (editMode == true){
+        console.log('edit: ',i, tasks[i]);
+        title.value = tasks[i].title;
+    }
+    else {
+        console.log('load default ',i);
+    }
 }
 
 function startDragging(i) {
