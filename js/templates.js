@@ -16,7 +16,7 @@ function logsHTML(task) {
 
 function boardTaskHTML(task, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging(${i})" id="task-${i}" class="task">
+        <div draggable="true" ondragstart="startDragging(${i})" id="task-${i}" class="backround-urgency-${(task.urgency).toLowerCase()} task">
             <h4>${task.title}</h4>
             <span class="light-text">
                 Priority: <b>${task.urgency}</b><br>
@@ -24,7 +24,8 @@ function boardTaskHTML(task, i) {
             </span>
             <p>Description...</p>
             <div class="task-links">
-                <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(${i})">
+                <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(${i})" alt="delete icon">
+                <img class="edit-task" src="img/edit-24.png" onclick="editTask(${i})" alt="edit icon">
             </div>
         </div>
     `;

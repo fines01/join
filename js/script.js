@@ -11,22 +11,24 @@ id="todoBoard"
 
 /* ********* global scope - here we define global variables and constants *********  */
 
+// example data for testing purposes
 let tasks = [
-    { title: 'a', description: 'a', category: 'Management', urgency: 'High', date: '2022-04-20' },
-    { title: 'b', description: 'b', category: 'Management', urgency: 'High', date: '2022-04-27' },
-    { title: 'c', description: 'c', category: 'Management', urgency: 'High', date: '2022-04-27' },
+    { title: 'a', description: 'a', category: 'Management', urgency: 'high', date: '2022-04-20' },
+    { title: 'b', description: 'b', category: 'Management', urgency: 'intermediate', date: '2022-04-27' },
+    { title: 'c', description: 'c', category: 'Management', urgency: 'low', date: '2022-04-27' },
     { title: 'd', description: 'd', category: 'Management', urgency: 'High', date: '2022-04-27' },
     { title: 'e', description: 'e', category: 'Management', urgency: 'High', date: '2022-04-27' },
     { title: 'f', description: 'f', category: 'Management', urgency: 'High', date: '2022-04-27' }
 ];
+// example data for testing purposes
+let members = [
+    { name: 'Jolene Bauer', email: 'jo@test.at', color: '', img:''},
+    { name: 'Jimmmy Dude', email: 'dude@company.com', color:'', img: '' },
+    { name: 'Max Mo', email: 'donot@email.me', color: '', img: '' },
+    { name: 'Maja', email:'maja@muster.mix', color: '', img:''},
+]
 
 let currentDraggedElement;
-
-// let members = [{
-//     name: 'Jo',
-//     // department: 'Marketing',
-//     email: 'jo@test.at'
-// }];
 
 /**
  * function init() executes on load of html body
@@ -72,8 +74,16 @@ function deleteTask(i) {
     saveTasks();
 }
 
-function editTask(task) {
-    console.log(task); // check: übergabe task --> nur undefined object. äbergabe task.title ok
+// function redirect(){
+//     window.location.href = '03addToTask.html';
+// }
+
+function editTask(i) {
+    // 1.: redirect to add task form
+    window.location.href = '03addToTask.html';
+    // 2.: add task values in input fields
+    // ...
+    // 3.: store task
 }
 
 function startDragging(i) {
@@ -87,12 +97,6 @@ function allowDrop(ev) {
 function moveTo() {
     tasks[currentDraggedElement];
 }
-
-
-
-
-
-
 
 /**
  *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
@@ -142,25 +146,25 @@ function renderTasks() {
 
     for (let i = 0; i < tasks.length; i++) {
         board.innerHTML += boardTaskHTML(tasks[i], i);
-        priorityColor(i);
+        //priorityColor(i);
     }
 
 }
 
 /* this function is used to change the color of a task depending on the the urgency */
 
-function priorityColor(i) {
-    let urgency = tasks[i]['urgency'];
-    switch (urgency) {
-        case "High" : document.getElementById('task-' + i).classList.add('backround-urgency-high');
-        break;
-        case "Intermediate" : document.getElementById('task-' + i).classList.add('backround-urgency-intermediate');
-        break;
-        case "Low" : document.getElementById('task-' + i).classList.add('backround-urgency-low');
-        break;
-    }
+// function priorityColor(i) {
+//     let urgency = tasks[i]['urgency'];
+//     switch (urgency) {
+//         case "High" : document.getElementById('task-' + i).classList.add('backround-urgency-high');
+//         break;
+//         case "Intermediate" : document.getElementById('task-' + i).classList.add('backround-urgency-intermediate');
+//         break;
+//         case "Low" : document.getElementById('task-' + i).classList.add('backround-urgency-low');
+//         break;
+//     }
 
-}
+// }
 
 /* ********* generic functions ********* */
 

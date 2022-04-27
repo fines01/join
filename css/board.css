@@ -74,11 +74,11 @@
     padding: 4px 8px;
 }
 
-.delete-task {
+.delete-task, .edit-task {
     width: 18px;
 }
 
-.delete-task:hover {
+.delete-task:hover, .edit-task:hover {
     cursor: pointer;
     transform: scale(1.08);
 }
