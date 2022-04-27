@@ -87,13 +87,16 @@
 /*Backrounds for the different urgency of the tasks */
 
 .backround-urgency-high {
-    background-color: rgb(228, 87, 87);
+    background-color: rgba(228, 87, 87, 0.6);
+  
 }
 
 .backround-urgency-intermediate {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.6);
+  
 }
 
 .backround-urgency-low {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.6);
+    
 }
