@@ -147,6 +147,7 @@ function renderTasks() {
 
 }
 
+/* this function is used to change the color of a task depending on the the urgency */
 
 function priorityColor(i) {
     let urgency = tasks[i]['urgency'];
