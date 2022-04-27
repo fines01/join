@@ -90,6 +90,10 @@ function moveTo() {
 
 
 
+
+
+
+
 /**
  *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
  */
@@ -138,10 +142,24 @@ function renderTasks() {
 
     for (let i = 0; i < tasks.length; i++) {
         board.innerHTML += boardTaskHTML(tasks[i], i);
+        priorityColor(i);
     }
 
 }
 
+
+function priorityColor(i) {
+    let urgency = tasks[i]['urgency'];
+    switch (urgency) {
+        case "High" : document.getElementById('task-' + i).classList.add('backround-urgency-high');
+        break;
+        case "Intermediate" : document.getElementById('task-' + i).classList.add('backround-urgency-intermediate');
+        break;
+        case "Low" : document.getElementById('task-' + i).classList.add('backround-urgency-low');
+        break;
+    }
+
+}
 
 /* ********* generic functions ********* */
 
