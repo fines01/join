@@ -33,7 +33,7 @@
     <script src="./backend.js"></script>
     <script>setURL('http://f014c204@gruppe-228.developerakademie.net/smallest_backend_ever');</script>
     <script>
-        async function init() {
+        async function initBackend() {
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
         }</script>
@@ -42,7 +42,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="init(); renderTasks()">
+<body onload="init(); initBackend(); renderTasks()">
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="board-container" id="boardContainer">
