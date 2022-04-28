@@ -158,5 +158,6 @@ select {
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: calc(100% - 0.75rem) center !important;
-    
+    cursor: pointer;
+   
 }

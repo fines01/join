@@ -1,5 +1,6 @@
 .board-container {
     width: 100%;
+  
 }
 
 .board-sub-menu {
@@ -37,6 +38,8 @@
     flex-direction: column;
     background-color: rgb(233, 233, 241);
     box-shadow: 0.5px 0.5px 4px 0.5px #b9b9b9;
+   
+    
 }
 
 .task {
@@ -99,4 +102,9 @@
 
 .backround-urgency-low {
     background-color: rgba(0, 128, 0, 0.6);
+}
+
+.scroll-bar {
+    overflow-y: scroll;
+    height: 90%;
 }
