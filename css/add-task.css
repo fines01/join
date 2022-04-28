@@ -141,3 +141,22 @@ select {
 textarea {
     border-radius: 10px;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url("icons8-calendar-150.png");
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+select {
+    background: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("chevron\.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    
+}
