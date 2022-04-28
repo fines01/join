@@ -98,7 +98,7 @@ function renderEditForm(i) {
 function saveEdit(dataArrays, i) {
     let task = saveTaskInputs();
     //console.log(task);
-    dataArrays[i] = dataArray;
+    dataArrays[i] = task;
     saveTasks();
 }
 
