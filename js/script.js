@@ -100,24 +100,6 @@ function moveTo(category) {
     renderBoards()
 }
 
-/**
- *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
- */
-function saveTasks() {
-    let tasksAsText = JSON.stringify(tasks);
-    localStorage.setItem('tasks', tasksAsText);
-}
-
-/**
- *  The function is used to laod and convert the tasks from text-format to a JSON-array
- */
-function loadTasks() {
-    let tasksAsText = localStorage.getItem('tasks');
-    if (tasksAsText) {
-        tasks = JSON.parse(tasksAsText);
-    }
-}
-
 /* ********* Backlog ********* */
 
 /**
