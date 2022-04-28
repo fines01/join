@@ -18,6 +18,7 @@
     .nav-bar-mobile {
         background-color: rgb(30, 30, 171);
         position: fixed;
+        z-index: 100;
     }
     .nav-bar-mobile-content {
         height: 6vh;
@@ -32,8 +33,17 @@
         top: 15px;
         left: 15px;
     }
+    .mobile-x {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
     .mobile-logo {
         height: 40px;
+    }
+    .navbar-container {
+        height: 90vh;
+        padding-top: 10vh;
     }
     /* start-page */
     .welcome-text {

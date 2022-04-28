@@ -51,8 +51,8 @@ function init() {
  */
 function saveTaskInputs() {
 
-    let [title,description,category,urgency,date] = getIds('title','description','category','urgency','date');
-    
+    let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
+
     let task = {
         'title': title.value,
         'description': description.value,
@@ -80,7 +80,7 @@ function addToTasks() {
 }
 
 function deleteTask(dataArrays, i) {
-   
+
     dataArrays.splice(i, 1);
     renderTasks();
     saveTasks();
@@ -95,7 +95,7 @@ function renderEditForm(i) {
     form.innerHTML = editFormHTML(i);
 }
 
-function saveEdit(dataArrays, i){
+function saveEdit(dataArrays, i) {
     let task = saveTaskInputs();
     //console.log(task);
     dataArrays[i] = dataArray;
@@ -288,4 +288,16 @@ function toggle(...ids) {
  */
 function capitalizeFirst(str) {
     return str[0].toUpperCase() + str.slice(1);
+}
+
+function showNavbar() {
+    getId('nav-bar').classList.remove('hide-mobile');
+    getId('mobile-x').classList.remove('d-none');
+    getId('mobile-menu').classList.add('d-none')
+}
+
+function closeNavbar() {
+    getId('nav-bar').classList.add('hide-mobile');
+    getId('mobile-x').classList.add('d-none');
+    getId('mobile-menu').classList.remove('d-none')
 }
