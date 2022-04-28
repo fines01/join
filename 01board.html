@@ -29,9 +29,14 @@
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
-      <!-- serverBackend for saving and loading tasks on the server -->
-      <script src="js/backend.js"></script>
-      <script>setURL('http://f014c204@gruppe-228.developerakademie.net/smallest_backend_ever');</script>
+    <!-- serverBackend for saving and loading tasks on the server -->
+    <script src="./backend.js"></script>
+    <script>setURL('http://f014c204@gruppe-228.developerakademie.net/smallest_backend_ever');</script>
+    <script>
+        async function init() {
+            await downloadFromServer();
+            users = JSON.parse(backend.getItem('users')) || [];
+        }</script>
     <title>Join Help</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
