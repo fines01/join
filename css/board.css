@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     padding-top: 45px;
+    flex-wrap: wrap;
 }
 
 .board-content h2 {
@@ -74,11 +75,13 @@
     padding: 4px 8px;
 }
 
-.delete-task, .edit-task {
+.delete-task,
+.edit-task {
     width: 18px;
 }
 
-.delete-task:hover, .edit-task:hover {
+.delete-task:hover,
+.edit-task:hover {
     cursor: pointer;
     transform: scale(1.08);
 }
@@ -88,15 +91,12 @@
 
 .backround-urgency-high {
     background-color: rgba(228, 87, 87, 0.6);
-  
 }
 
 .backround-urgency-intermediate {
     background-color: rgba(255, 255, 0, 0.6);
-  
 }
 
 .backround-urgency-low {
     background-color: rgba(0, 128, 0, 0.6);
-    
 }

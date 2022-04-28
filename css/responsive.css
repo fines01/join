@@ -1,0 +1,31 @@
+@media (min-width: 970px) {
+    .hide-mainpage {
+        display: none;
+    }
+}
+
+@media (max-width: 970px) {
+    .hide-mobile {
+        display: none;
+    }
+    .nav-bar-mobile {
+        background-color: rgb(30, 30, 171);
+        position: fixed;
+    }
+    .nav-bar-mobile-content {
+        height: 6vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-menu {
+        height: 25px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    .mobile-logo {
+        height: 40px;
+    }
+}
