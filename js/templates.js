@@ -24,7 +24,7 @@ function boardTaskHTML(task, i) {
             </span>
             <p>Description...</p>
             <div class="task-links">
-                <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(${i})" alt="delete icon">
+                <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
         </div>

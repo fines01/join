@@ -79,8 +79,9 @@ function addToTasks() {
     description.value = '';
 }
 
-function deleteTask(i) {
-    tasks.splice(i, 1);
+function deleteTask(dataArrays, i) {
+   
+    dataArrays.splice(i, 1);
     renderTasks();
     saveTasks();
 }
@@ -94,10 +95,10 @@ function renderEditForm(i) {
     form.innerHTML = editFormHTML(i);
 }
 
-function saveEdit(i){
+function saveEdit(dataArrays, i){
     let task = saveTaskInputs();
     //console.log(task);
-    tasks[i] = task;
+    dataArrays[i] = dataArray;
     saveTasks();
 }
 
