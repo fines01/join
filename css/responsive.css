@@ -11,6 +11,7 @@
 }
 
 @media (max-width: 970px) {
+    /* mobile-changes */
     .hide-mobile {
         display: none;
     }
@@ -33,5 +34,12 @@
     }
     .mobile-logo {
         height: 40px;
+    }
+    /* start-page */
+    .welcome-text {
+        padding-top: 4vh;
+    }
+    .link-general {
+        height: 19vh;
     }
 }
