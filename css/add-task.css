@@ -145,8 +145,9 @@ textarea {
 input[type="date"]::-webkit-calendar-picker-indicator {
     background-image: url("/img/icons8-calendar-150.png");
     display: block;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
+    margin-right: 4.5px;
 }
 
 
