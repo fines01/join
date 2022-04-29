@@ -31,10 +31,11 @@ function boardTaskHTML(task, i) {
     `;
 }
 
+// TODO: fix form view and style !!
 function editFormHTML(i) {
     return /*html*/ `
-    <div class="add-task-container">
-        <div class="add-to-task-sub-wrap">
+    <div class="overlay">
+        <div class="">
             <div class="add-to-task-sub-menu">
                 <h1>Update Task</h1>
                 <p>Learning Management System Project</p>
@@ -49,10 +50,11 @@ function editFormHTML(i) {
                         <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
                         <h2>CATEGORY</h2>
                         <select id="category" placeholder="Management">
-                            <option value="Management"> Management</option>
+                            ${renderCategoryOptions(tasks[i].category)}
+                            <!-- <option value="Management"> Management</option>
                             <option value="Software Developement">Software Developement</option>
                             <option value="UX/UI Design">UX/UI Design</option>
-                            <option value="Human Resources">Human Resources</option>
+                            <option value="Human Resources">Human Resources</option> -->
                         </select>
                         <h2>DESCRIPTION</h2>
                         <textarea required id="description" placeholder="Enter a description" >${tasks[i].description}</textarea>
@@ -62,16 +64,17 @@ function editFormHTML(i) {
                         <input id="date" type="date" value="${tasks[i].date}">
                         <h2>URCENCY</h2>
                         <select id="urgency">
-                            <option value="High">High</option>
-                            <option value="Intermediate">Intermediate</option>
-                            <option value="Low">Low</option>
+                            <!-- <option value="High" >High</option>
+                            <option value="Intermediate" >Intermediate</option>
+                            <option value="Low" >Low</option> -->
+                            ${renderUrgencyOptions(tasks[i].urgency)}
                         </select>
                         <div class="assignment-container">
                             <h2>ASSIGNED TO</h2>
                             <div id="assignment" class="assignment-button-container">
                                 <img src="img/icon-plus.png" alt="">
                                 <button class="cancel-button" >CANCEL</button>
-                                <button class="assign-button" onclick="saveEdit(${i})">UPDATE TASK</button>
+                                <button class="assign-button" onclick="saveEdit(tasks, ${i})">UPDATE TASK</button>
                             </div>
                         </div>
                     </div>
@@ -80,4 +83,37 @@ function editFormHTML(i) {
         </div>
     </div>
     `;
+}
+
+function renderCategoryOptions(category) {
+    str='';
+    for (let i = 0; i  < categories.length; i++) {
+        let el = categories[i];
+        str += /*html*/ `<option value="${el}" ${renderSelected(category, el)}>${el}</option>`;
+    }
+    return str;
+}
+
+function renderUrgencyOptions(urgency){
+    let urgencies = ['High', 'Intermediate','Low'];
+    str = '';
+    for (let i = 0; i < urgencies.length; i++) {
+        let el = urgencies[i];
+        str += /*html*/`<option value="${el}" ${renderSelected(urgency,el)}>${el}</option>`;
+    }
+    return str;
+}
+
+/**
+ * This function compares a set value of a given element against the current value of a select field and returns the attribut 'selected' if they match (comparison is case-insensitive)
+ * @param {string} option 
+ * @param {string} value 
+ * @returns {(string | undefined)} - returns 'selected' if true
+ */
+function renderSelected(option, value){
+    console.log(option,value);
+    if (option.toLowerCase() == value.toLowerCase()){
+        console.log('selected:',value);
+        return 'selected';
+    }
 }

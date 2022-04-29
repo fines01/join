@@ -44,7 +44,7 @@ function saveTaskInputs() {
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
-        'category': 'todo'
+        'board' : 'todo' // default board on task-creation
     };
 
     return task;
