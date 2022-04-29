@@ -35,8 +35,10 @@ function boardTaskHTML(task, i) {
 function editFormHTML(i) {
     return /*html*/ `
         <div class="task-input container" onclick="event.stopPropagation()">
+            <div class="edit-task-headline">
+                <h2 class="">UPDATE TASK</h2>
+            </div>
             <form class="form-field edit-form">
-                <h2 class="edit-task-headline">UPDATE TASK</h2>
                 <div class="form-section">
                     <h2>TITLE</h2>
                     <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
