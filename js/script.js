@@ -57,11 +57,9 @@ function addToTasks() {
 
     tasks.push(task);
     saveTasks();
-    title.value = '';
-    date.value = '';
-    category.value = '';
-    urgency.value = '';
-    description.value = '';
+
+    clearInputValues(title,date,category,urgency,description);
+
 }
 
 function deleteTask(dataArrays, i) {
@@ -255,6 +253,16 @@ function toggle(...ids) {
  */
 function capitalizeFirst(str) {
     return str[0].toUpperCase() + str.slice(1);
+}
+
+/**
+ * This function takes html input elements and empties their value.
+ * @param  {...Object} elements - HTML elements
+ */
+function clearInputValues(...elements) {
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].value = '';
+    }
 }
 
 function showNavbar() {
