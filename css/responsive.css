@@ -53,3 +53,42 @@
         height: 19vh;
     }
 }
+
+@media (max-width: 600px) {
+    .form-field div {
+        padding-right: 0;
+    }
+    .form-field input {
+        width: 75vw;
+    }
+    .form-field select {
+        width: 78vw;
+    }
+    .form-field textarea {
+        width: 76vw;
+    }
+    .board-container {
+        overflow: hidden;
+    }
+    .backlog-sub-menu {
+        overflow: hidden;
+    }
+    .add-task-container {
+        overflow: hidden;
+    }
+    .help-container {
+        overflow: hidden;
+        margin-left: 1em;
+        margin-top: 4em;
+    }
+    .help-list-container {
+        margin-left: 2em;
+        margin-top: 3em;
+    }
+    .help-subheadlines {
+        margin-left: 1.5em;
+    }
+    .help-sublist {
+        margin-left: 4em;
+    }
+}
