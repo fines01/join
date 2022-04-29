@@ -5,12 +5,17 @@
 /* color scheme example: https://colorhunt.co/palette/533e85488fb14fd3c4c1f8cf (if 19.04) */
 
 :root {
+    /*** opacities ***/
+    --opacity0: 1;
+    /* --opacity: 1; */
     /*** font-colors ***/
     --col-main: #141E27;
     --col-secondary: #515151;
     --col-tertiary: #9a9a9a;
     /*** colors ***/
     --col-blue1: #533E85;
+    /* TEST: can vars in vars be adapted as needed in classes? nope */
+    /* --col-blue1: rgba(75, 62, 133, var(opacity)); */
     --col-blue2: #488FB1;
     --col-blue3: #C1F8CF;
     --col-teal: #4FD3C4;
@@ -301,7 +306,10 @@ a {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    /* background-color: rgba(75, 62, 133, 0.75); */
     background-color: rgba(14, 11, 167, 0.5);
+    /* --opacity: 0.5;
+    background-color: var(--col-blue1); */
 }
 
 /* edit form in overlay field */
@@ -312,7 +320,7 @@ a {
 }
 
 .form-section {
-    align-self: center;
+    /* align-self: center; */
     padding: 0 8px !important;
 }
 
