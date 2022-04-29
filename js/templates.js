@@ -36,10 +36,8 @@ function boardTaskHTML(element, i) {
 function editFormHTML(i) {
     return /*html*/ `
         <div class="task-input container" onclick="event.stopPropagation()">
-            <div class="edit-task-headline">
-                <h2 class="">UPDATE TASK</h2>
-            </div>
             <form class="form-field edit-form">
+                <h2 class="edit-task-headline">UPDATE TASK</h2>
                 <div class="form-section">
                     <h2>TITLE</h2>
                     <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
@@ -102,15 +100,8 @@ function renderUrgencyOptions(urgency) {
  * @param {string} value 
  * @returns {(string | undefined)} - returns 'selected' if true
  */
-<<<<<<< HEAD
 function renderSelected(option, value) {
-    console.log(option, value);
     if (option.toLowerCase() == value.toLowerCase()) {
-        console.log('selected:', value);
-=======
-function renderSelected(option, value){
-    if (option.toLowerCase() == value.toLowerCase()){
->>>>>>> a5e923679274a44c71d355670e4d87d361e213ad
         return 'selected';
     }
 }

@@ -38,24 +38,15 @@
         async function initBackend() {
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
-<<<<<<< HEAD
         }
     </script>
-    <title>Join Help</title>
-=======
-        }</script>
     <title>Join</title>
->>>>>>> a5e923679274a44c71d355670e4d87d361e213ad
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<<<<<<< HEAD
 <body onload="init(); initBackend(); renderBoards()">
-=======
-<body onload="init(); initBackend(); renderTasks()">
     <div id="overlay" class="d-none" onclick="hide('overlay')"></div>
->>>>>>> a5e923679274a44c71d355670e4d87d361e213ad
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="board-container" id="boardContainer">

@@ -90,17 +90,12 @@ function saveEdit(dataArrays, i) {
     saveTasks();
 }
 
-<<<<<<< HEAD
-function startDragging(id) {
-    currentDraggedElement = id;
-=======
-function closeOvelay(){
+function closeOvelay() {
     hide(getId('overlay'));
 }
 
 function startDragging(i) {
     currentDraggedElement = i;
->>>>>>> a5e923679274a44c71d355670e4d87d361e213ad
 }
 
 function allowDrop(ev) {
