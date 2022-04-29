@@ -14,13 +14,14 @@ function logsHTML(task) {
         </div>`;
 }
 
-function boardTaskHTML(task, i) {
+//class="backround-urgency-${(task.urgency).toLowerCase()} task"
+function boardTaskHTML(element, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging(${i})" id="task-${i}" class="backround-urgency-${(task.urgency).toLowerCase()} task">
-            <h4>${task.title}</h4>
+        <div draggable="true" ondragstart="startDragging(${element['id']})"  id="task-${i}" class="backround-urgency-${(element['urgency']).toLowerCase()} task">
+            <h4>${element['title']}</h4>
             <span class="light-text">
-                Priority: <b>${task.urgency}</b><br>
-                Due date: <span>${task.date}</span>
+                Priority: <b>${element['urgency']}</b><br>
+                Due date: <span>${element['date']}</span>
             </span>
             <p>Description...</p>
             <div class="task-links">
@@ -86,20 +87,20 @@ function editFormHTML(i) {
 }
 
 function renderCategoryOptions(category) {
-    str='';
-    for (let i = 0; i  < categories.length; i++) {
+    str = '';
+    for (let i = 0; i < categories.length; i++) {
         let el = categories[i];
         str += /*html*/ `<option value="${el}" ${renderSelected(category, el)}>${el}</option>`;
     }
     return str;
 }
 
-function renderUrgencyOptions(urgency){
-    let urgencies = ['High', 'Intermediate','Low'];
+function renderUrgencyOptions(urgency) {
+    let urgencies = ['High', 'Intermediate', 'Low'];
     str = '';
     for (let i = 0; i < urgencies.length; i++) {
         let el = urgencies[i];
-        str += /*html*/`<option value="${el}" ${renderSelected(urgency,el)}>${el}</option>`;
+        str += /*html*/ `<option value="${el}" ${renderSelected(urgency,el)}>${el}</option>`;
     }
     return str;
 }
@@ -110,10 +111,10 @@ function renderUrgencyOptions(urgency){
  * @param {string} value 
  * @returns {(string | undefined)} - returns 'selected' if true
  */
-function renderSelected(option, value){
-    console.log(option,value);
-    if (option.toLowerCase() == value.toLowerCase()){
-        console.log('selected:',value);
+function renderSelected(option, value) {
+    console.log(option, value);
+    if (option.toLowerCase() == value.toLowerCase()) {
+        console.log('selected:', value);
         return 'selected';
     }
 }

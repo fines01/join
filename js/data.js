@@ -49,31 +49,31 @@ let tasks = [{
 ];
 // example data for testing purposes
 let members = [{
-        name: 'Jolene Bauer',
-        email: 'jo@test.at',
-        color: '',
-        img: ''
-    },
-    {
-        name: 'Jimmmy Dude',
-        email: 'dude@company.com',
-        color: '',
-        img: ''
-    },
-    {
-        name: 'Max Mo',
-        email: 'donot@email.me',
-        color: '',
-        img: ''
-    },
-    {
-        name: 'Maja',
-        email: 'maja@muster.mix',
-        color: '',
-        img: ''
-    },
-]
-// example or default categories, can be modified by the user
+            name: 'Jolene Bauer',
+            email: 'jo@test.at',
+            color: '',
+            img: ''
+        },
+        {
+            name: 'Jimmmy Dude',
+            email: 'dude@company.com',
+            color: '',
+            img: ''
+        },
+        {
+            name: 'Max Mo',
+            email: 'donot@email.me',
+            color: '',
+            img: ''
+        },
+        {
+            name: 'Maja',
+            email: 'maja@muster.mix',
+            color: '',
+            img: ''
+        },
+    ]
+    // example or default categories, can be modified by the user
 let categories = ['Management', 'Software Developement', 'UX/UI Design', 'Human Resources'];
 //
 let urgencies = [];

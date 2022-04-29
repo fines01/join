@@ -31,18 +31,21 @@
     <script src="js/includeHTML.js"></script>
     <!-- serverBackend for saving and loading tasks on the server -->
     <script src="./backend.js"></script>
-    <script>setURL('http://f014c204@gruppe-228.developerakademie.net/smallest_backend_ever');</script>
+    <script>
+        setURL('http://f014c204@gruppe-228.developerakademie.net/smallest_backend_ever');
+    </script>
     <script>
         async function initBackend() {
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
-        }</script>
+        }
+    </script>
     <title>Join Help</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="init(); initBackend(); renderTasks()">
+<body onload="init(); initBackend(); renderBoards()">
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="board-container" id="boardContainer">
@@ -54,29 +57,25 @@
                 <div>
                     <h2>TO DO</h2>
                     <div class="scroll-bar">
-                        <div id="todoBoard" class="board-task-container" ondrop="moveTo('todo')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="todoBoard" class="board-task-container" ondrop="moveTo('todo')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>IN PROGRESS</h2>
                     <div class="scroll-bar">
-                        <div id="inProgressBoard" class="board-task-container" ondrop="moveTo('inProgress')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="inProgressBoard" class="board-task-container" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>TESTING</h2>
                     <div class="scroll-bar">
-                        <div id="testingBoard" class="board-task-container" ondrop="moveTo('testing')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="testingBoard" class="board-task-container" ondrop="moveTo('testing')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>DONE</h2>
                     <div class="scroll-bar">
-                        <div id="doneBoard" class="board-task-container" ondrop="moveTo('done')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="doneBoard" class="board-task-container" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
             </div>

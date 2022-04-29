@@ -39,12 +39,13 @@ function saveTaskInputs() {
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
     let task = {
+        'id': 0,
         'title': title.value,
         'description': description.value,
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
-        'board' : 'todo' // default board on task-creation
+        'board': 'todo' // default board on task-creation
     };
 
     return task;
@@ -58,14 +59,14 @@ function addToTasks() {
     tasks.push(task);
     saveTasks();
 
-    clearInputValues(title,date,category,urgency,description);
+    clearInputValues(title, date, category, urgency, description);
 
 }
 
 function deleteTask(dataArrays, i) {
 
     dataArrays.splice(i, 1);
-    renderTasks();
+    renderBoards()
     saveTasks();
 }
 
@@ -85,16 +86,16 @@ function saveEdit(dataArrays, i) {
     saveTasks();
 }
 
-function startDragging(i) {
-    currentDraggedElement = i;
+function startDragging(id) {
+    currentDraggedElement = id;
 }
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo(category) {
-    tasks[currentDraggedElement]['category'] = category;
+function moveTo(board) {
+    tasks[currentDraggedElement]['board'] = board;
     renderBoards()
 }
 
@@ -119,20 +120,6 @@ function renderLogs() {
 
 /* ********* Board ********* */
 
-/**
- * Renders all tasks from the tasks array into the to-do board
- */
-function renderTasks() {
-    let board = getId('todoBoard');
-    board.innerHTML = '';
-
-    for (let i = 0; i < tasks.length; i++) {
-        board.innerHTML += boardTaskHTML(tasks[i], i);
-        //priorityColor(i);
-    }
-
-}
-
 /* this function is used to change the color of a task depending on the the urgency */
 
 // function priorityColor(i) {
@@ -148,46 +135,48 @@ function renderTasks() {
 
 // }
 
-// Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
-// Funktion noch nicht (fertig) implementiert !
+/**
+ * Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
+ */
 function renderBoards() {
-    let todoBoard = tasks.filter(t => t['category'] == 'todo');
+
+    let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
     getId('todoBoard').innerHTML = '';
 
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < todoBoard.length; i++) {
         const element = todoBoard[i];
         getId('todoBoard').innerHTML += boardTaskHTML(element);
         //priorityColor(i);
     }
 
-    let inProgressBoard = tasks.filter(t => t['category'] == 'inProgress');
+    let inProgressBoard = tasks.filter(t => t['board'] == 'inProgress');
 
     getId('inProgressBoard').innerHTML = '';
 
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < inProgressBoard.length; i++) {
         const element = inProgressBoard[i];
         getId('inProgressBoard').innerHTML += boardTaskHTML(element);
         //priorityColor(i);
     }
 
-    let testingBoard = tasks.filter(t => t['category'] == 'testing');
+    let testingBoard = tasks.filter(t => t['board'] == 'testing');
 
     getId('testingBoard').innerHTML = '';
 
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < testingBoard.length; i++) {
         const element = testingBoard[i];
         getId('testingBoard').innerHTML += boardTaskHTML(element);
         //priorityColor(i);
     }
 
-    let doneBoard = tasks.filter(t => t['category'] == 'done');
+    let doneBoard = tasks.filter(t => t['board'] == 'done');
 
     getId('doneBoard').innerHTML = '';
 
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < doneBoard.length; i++) {
         const element = doneBoard[i];
-        getId('doneBaord').innerHTML += boardTaskHTML(element);
+        getId('doneBoard').innerHTML += boardTaskHTML(element);
         //priorityColor(i);
     }
 }
