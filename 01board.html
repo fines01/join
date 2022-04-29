@@ -37,12 +37,13 @@
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
         }</script>
-    <title>Join Help</title>
+    <title>Join</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
 <body onload="init(); initBackend(); renderTasks()">
+    <div id="overlay" class="d-none" onclick="hide('overlay')"></div>
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="board-container" id="boardContainer">

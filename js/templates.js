@@ -34,54 +34,43 @@ function boardTaskHTML(task, i) {
 // TODO: fix form view and style !!
 function editFormHTML(i) {
     return /*html*/ `
-    <div class="overlay">
-        <div class="">
-            <div class="add-to-task-sub-menu">
-                <h1>Update Task</h1>
-                <p>Learning Management System Project</p>
-            </div>
-        </div>
-
-        <div class="task-input-wrap">
-            <div class="task-input-container">
-                <form class="form-field">
-                    <div>
-                        <h2>TITLE</h2>
-                        <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
-                        <h2>CATEGORY</h2>
-                        <select id="category" placeholder="Management">
-                            ${renderCategoryOptions(tasks[i].category)}
-                            <!-- <option value="Management"> Management</option>
-                            <option value="Software Developement">Software Developement</option>
-                            <option value="UX/UI Design">UX/UI Design</option>
-                            <option value="Human Resources">Human Resources</option> -->
-                        </select>
-                        <h2>DESCRIPTION</h2>
-                        <textarea required id="description" placeholder="Enter a description" >${tasks[i].description}</textarea>
-                    </div>
-                    <div>
-                        <h2>DUE DATE</h2>
-                        <input id="date" type="date" value="${tasks[i].date}">
-                        <h2>URCENCY</h2>
-                        <select id="urgency">
-                            <!-- <option value="High" >High</option>
-                            <option value="Intermediate" >Intermediate</option>
-                            <option value="Low" >Low</option> -->
-                            ${renderUrgencyOptions(tasks[i].urgency)}
-                        </select>
-                        <div class="assignment-container">
-                            <h2>ASSIGNED TO</h2>
-                            <div id="assignment" class="assignment-button-container">
-                                <img src="img/icon-plus.png" alt="">
-                                <button class="cancel-button" >CANCEL</button>
-                                <button class="assign-button" onclick="saveEdit(tasks, ${i})">UPDATE TASK</button>
-                            </div>
+        <div class="task-input container" onclick="event.stopPropagation()">
+            <form class="form-field edit-form">
+                <h2 class="edit-task-headline">UPDATE TASK</h2>
+                <div class="form-section">
+                    <h2>TITLE</h2>
+                    <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
+                    <h2>CATEGORY</h2>
+                    <select id="category" placeholder="Management">
+                        ${renderCategoryOptions(tasks[i].category)}
+                    </select>
+                    <h2>DESCRIPTION</h2>
+                    <textarea required id="description" placeholder="Enter a description" >
+                        ${tasks[i].description}
+                    </textarea>
+                </div>
+                <div class="form-section">
+                    <h2>DUE DATE</h2>
+                    <input id="date" type="date" value="${tasks[i].date}">
+                    <h2>URCENCY</h2>
+                    <select id="urgency">
+                        ${renderUrgencyOptions(tasks[i].urgency)}
+                    </select>
+                    <div class="">
+                        <h2>ASSIGNED TO</h2>
+                        <div id="assignment" class="assignment-button-container">
+                            <img src="img/icon-plus.png" alt="">
+                            <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
+                                CANCEL
+                            </button>
+                            <button class="assign-button" onclick="saveEdit(tasks, ${i})">
+                                UPDATE TASK
+                            <button>
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-    </div>
     `;
 }
 
@@ -111,9 +100,7 @@ function renderUrgencyOptions(urgency){
  * @returns {(string | undefined)} - returns 'selected' if true
  */
 function renderSelected(option, value){
-    console.log(option,value);
     if (option.toLowerCase() == value.toLowerCase()){
-        console.log('selected:',value);
         return 'selected';
     }
 }
