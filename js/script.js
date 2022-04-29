@@ -63,9 +63,9 @@ function addToTasks() {
 
 }
 
-function deleteTask(dataArrays, i) {
+function deleteTask(dataArray, i) {
 
-    dataArrays.splice(i, 1);
+    dataArray.splice(i, 1);
     renderBoards()
     saveTasks();
 }
@@ -75,23 +75,16 @@ function deleteTask(dataArrays, i) {
 // }
 
 function renderEditForm(i) {
-    // let form = getId('boardContainer');
-    // let body = document.getElementsByTagName('body')[0];
-    // let overlay = document.getElementsByClassName('overlay')[0];
     let overlay = getId('overlay');
     show('overlay');
     overlay.innerHTML = editFormHTML(i);
 }
 
-function saveEdit(dataArrays, i) {
+function saveEdit(dataArray, i) {
     let task = saveTaskInputs();
     //console.log(task);
-    dataArrays[i] = task;
+    dataArray[i] = task;
     saveTasks();
-}
-
-function closeOvelay() {
-    hide(getId('overlay'));
 }
 
 function startDragging(i) {
@@ -154,7 +147,7 @@ function renderBoards() {
 
     for (let i = 0; i < todoBoard.length; i++) {
         const element = todoBoard[i];
-        getId('todoBoard').innerHTML += boardTaskHTML(element);
+        getId('todoBoard').innerHTML += boardTaskHTML(element,i);
         //priorityColor(i);
     }
 
@@ -164,7 +157,7 @@ function renderBoards() {
 
     for (let i = 0; i < inProgressBoard.length; i++) {
         const element = inProgressBoard[i];
-        getId('inProgressBoard').innerHTML += boardTaskHTML(element);
+        getId('inProgressBoard').innerHTML += boardTaskHTML(element,i);
         //priorityColor(i);
     }
 
@@ -174,7 +167,7 @@ function renderBoards() {
 
     for (let i = 0; i < testingBoard.length; i++) {
         const element = testingBoard[i];
-        getId('testingBoard').innerHTML += boardTaskHTML(element);
+        getId('testingBoard').innerHTML += boardTaskHTML(element,i);
         //priorityColor(i);
     }
 
@@ -184,7 +177,7 @@ function renderBoards() {
 
     for (let i = 0; i < doneBoard.length; i++) {
         const element = doneBoard[i];
-        getId('doneBoard').innerHTML += boardTaskHTML(element);
+        getId('doneBoard').innerHTML += boardTaskHTML(element,i);
         //priorityColor(i);
     }
 }
