@@ -75,8 +75,12 @@ function deleteTask(dataArrays, i) {
 // }
 
 function renderEditForm(i) {
-    let form = getId('boardContainer');
-    form.innerHTML = editFormHTML(i);
+    // let form = getId('boardContainer');
+    // let body = document.getElementsByTagName('body')[0];
+    // let overlay = document.getElementsByClassName('overlay')[0];
+    let overlay = getId('overlay');
+    show('overlay');
+    overlay.innerHTML = editFormHTML(i);
 }
 
 function saveEdit(dataArrays, i) {
@@ -86,8 +90,17 @@ function saveEdit(dataArrays, i) {
     saveTasks();
 }
 
+<<<<<<< HEAD
 function startDragging(id) {
     currentDraggedElement = id;
+=======
+function closeOvelay(){
+    hide(getId('overlay'));
+}
+
+function startDragging(i) {
+    currentDraggedElement = i;
+>>>>>>> a5e923679274a44c71d355670e4d87d361e213ad
 }
 
 function allowDrop(ev) {

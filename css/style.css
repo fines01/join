@@ -104,7 +104,7 @@ img {
 /*** generic classes ***/
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 
@@ -216,6 +216,7 @@ a {
 .menu {
     display: flex;
     flex-direction: row;
+    /* position:relative; */
 }
 
 
@@ -290,12 +291,34 @@ a {
 
 /* modal-overlay */
 
-.overlay {
+#overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
-    background-color: rgba(14, 11, 167, 0.8);
+    background-color: rgba(14, 11, 167, 0.5);
 }
+
+/* edit form in overlay field */
+
+.edit-task-headline{
+    text-align: center;
+    /* padding-top: 80px; */
+}
+
+.form-section {
+    align-self: center;
+    padding: 0 8px !important;
+}
+
+.edit-form {
+    margin: 20px;
+    /* padding-bottom: 40px; */
+    background-color: rgb(233, 233, 241);
+    border-radius: 12px;
+} 
