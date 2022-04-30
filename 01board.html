@@ -39,7 +39,7 @@
             users = JSON.parse(backend.getItem('tasks')) || [];
         }
     </script>
-<!-- <script>
+    <!-- <script>
 fetch('http://228.developerakademie.net/smallest_backend_ever').then(response => {
     return response.json();
 }).then(tasks => {
@@ -67,29 +67,25 @@ fetch('http://228.developerakademie.net/smallest_backend_ever').then(response =>
                 <div>
                     <h2>TO DO</h2>
                     <div class="scroll-bar">
-                        <div id="todoBoard" class="board-task-container" ondrop="moveTo('todo')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="todoBoard" class="board-task-container" ondrop="moveTo('todo')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>IN PROGRESS</h2>
                     <div class="scroll-bar">
-                        <div id="inProgressBoard" class="board-task-container" ondrop="moveTo('inProgress')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="inProgressBoard" class="board-task-container" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>TESTING</h2>
                     <div class="scroll-bar">
-                        <div id="testingBoard" class="board-task-container" ondrop="moveTo('testing')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="testingBoard" class="board-task-container" ondrop="moveTo('testing')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
                 <div>
                     <h2>DONE</h2>
                     <div class="scroll-bar">
-                        <div id="doneBoard" class="board-task-container" ondrop="moveTo('done')"
-                            ondragover="allowDrop(event)"></div>
+                        <div id="doneBoard" class="board-task-container" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
                     </div>
                 </div>
             </div>
