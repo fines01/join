@@ -23,7 +23,7 @@ function boardTaskHTML(element, i) {
                 Priority: <b>${element['urgency']}</b><br>
                 Due date: <span>${element['date']}</span>
             </span>
-            <p>Description...</p>
+            <p>${element['description']}</p>
             <div class="task-links">
                 <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
