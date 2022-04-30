@@ -34,14 +34,14 @@ function initScirpt() {
  * This function saves input values and returns them as a task object
  * @returns {Object} - task object
  */
-function saveTaskInputs(number) {
+function saveTaskInputs() {
 
     let [title, description, category, urgency, date, board] = getIds('title', 'description', 'category', 'urgency', 'date', 'todo');
 
-    let number = 0;
+
 
     let task = {
-        'id' : number,
+     
         'title': title.value,
         'description': description.value,
         'category': category.value,
@@ -64,6 +64,21 @@ function addToTasks() {
     clearInputValues(title, date, category, urgency, description);
 
 }
+
+function startDragging(id) {
+    currentDraggedElement = id;
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function moveTo(board) {
+    tasks[currentDraggedElement]['board'] = board;
+    saveTasks();
+    renderBoards()
+}
+
 
 function deleteTask(dataArray, i) {
 
@@ -147,11 +162,7 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
   }
   
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
+
 
 /* ********* Backlog ********* */
 
@@ -172,6 +183,18 @@ function renderLogs() {
     }
 }
 
+/* native Drag Funktionen */
+
+/* function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+ */
 /* ********* Board ********* */
 
 /* this function is used to change the color of a task depending on the the urgency */
