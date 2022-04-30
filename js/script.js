@@ -87,8 +87,8 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function startDragging(id) {
-    currentDraggedElement = id;
+function startDragging(i) {
+    currentDraggedElement = i;
 }
 
 function allowDrop(ev) {
