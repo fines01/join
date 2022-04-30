@@ -17,7 +17,6 @@ id="done"
 /* ********* global scope - here we define global variables and constants *********  */
 
 // example data for testing purposes
-
 let currentDraggedElement;
 
 /**
@@ -39,7 +38,6 @@ function saveTaskInputs() {
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
     let task = {
-        'id': 0,
         'title': title.value,
         'description': description.value,
         'category': category.value,
@@ -87,8 +85,8 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function startDragging(i) {
-    currentDraggedElement = i;
+function startDragging(id) {
+    currentDraggedElement = id;
 }
 
 function allowDrop(ev) {
@@ -97,6 +95,7 @@ function allowDrop(ev) {
 
 function moveTo(board) {
     tasks[currentDraggedElement]['board'] = board;
+    saveTasks();
     renderBoards()
 }
 
@@ -140,6 +139,7 @@ function renderLogs() {
  * Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
  */
 function renderBoards() {
+
 
     let todoBoard = tasks.filter(t => t['board'] == 'todo');
 

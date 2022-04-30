@@ -53,6 +53,10 @@
     cursor: pointer;
 }
 
+.task:hover {
+    cursor: pointer;
+}
+
 .task p {
     cursor: pointer;
 }
