@@ -24,6 +24,7 @@ let currentDraggedElement;
  * function init() executes on load of html body
  */
 function initScirpt() {
+   
     loadTasks(); // get tasks from local strage
     includeHTML();
 }
@@ -36,34 +37,68 @@ function initScirpt() {
  */
 function saveTaskInputs() {
 
-    let [title, description, category, urgency, date, board] = getIds('title', 'description', 'category', 'urgency', 'date', 'todo');
+    let id = tasks.length; 
 
-
-
+    let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
     let task = {
-
+        'id' : id,
         'title': title.value,
         'description': description.value,
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
-        'board': board.value // default board on task-creation
+        'board': 'todo' // default board on task-creation
     };
-
     return task;
 }
 /** addToTaskJS the function is meant to enable the add of task to a json array
  */
 function addToTasks() {
-
+    
     let task = saveTaskInputs();
-    number++;
-    console.log(number);
     tasks.push(task);
+    console.log(tasks);
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
 
 }
+
+
+
+
+/* working addToTask()
+
+function saveTaskInputs() {
+
+    let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
+
+        let task = {
+        'title': title.value,
+        'description': description.value,
+        'category': category.value,
+        'urgency': urgency.value,
+        'date': date.value,
+        'board': 'todo' // default board on task-creation
+    };
+
+    return task;
+}
+/** addToTaskJS the function is meant to enable the add of task to a json array
+
+ function addToTasks() {
+    
+    let task = saveTaskInputs();
+ 
+    tasks.push(task);
+    console.log(tasks);
+    console.log(task);
+    saveTasks();
+    clearInputValues(title, date, category, urgency, description);
+
+}
+*/
+
+
 
 function startDragging(id) {
     currentDraggedElement = id;

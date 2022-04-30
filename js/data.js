@@ -1,78 +1,84 @@
 let tasks = [{
-        title: 'a',
-        description: 'a',
-        category: 'Management',
-        urgency: 'high',
-        date: '2022-04-20',
-        board: 'todo'
-    },
-    {
-        title: 'b',
-        description: 'b',
-        category: 'Management',
-        urgency: 'intermediate',
-        date: '2022-04-27',
-        board: 'todo'
-    },
-    {
-        title: 'c',
-        description: 'c',
-        category: 'Management',
-        urgency: 'low',
-        date: '2022-04-27',
-        board: 'todo'
-    },
-    {
-        title: 'd',
-        description: 'd',
-        category: 'Management',
-        urgency: 'High',
-        date: '2022-04-27',
-        board: 'todo'
-    },
-    {
-        title: 'e',
-        description: 'e',
-        category: 'Management',
-        urgency: 'High',
-        date: '2022-04-27',
-        board: 'todo'
-    },
-    {
-        title: 'f',
-        description: 'f',
-        category: 'Management',
-        urgency: 'High',
-        date: '2022-04-27',
-        board: 'todo'
-    }
+    id : 0, 
+    title: 'a',
+    description: 'a',
+    category: 'Management',
+    urgency: 'high',
+    date: '2022-04-20',
+    board: 'todo'
+},
+{
+    id : 1, 
+    title: 'b',
+    description: 'b',
+    category: 'Management',
+    urgency: 'intermediate',
+    date: '2022-04-27',
+    board: 'todo'
+},
+{   
+    id : 2, 
+    title: 'c',
+    description: 'c',
+    category: 'Management',
+    urgency: 'low',
+    date: '2022-04-27',
+    board: 'todo'
+},
+{
+    id : 3, 
+    title: 'd',
+    description: 'd',
+    category: 'Management',
+    urgency: 'High',
+    date: '2022-04-27',
+    board: 'todo'
+},
+{
+    id : 4, 
+    title: 'e',
+    description: 'e',
+    category: 'Management',
+    urgency: 'High',
+    date: '2022-04-27',
+    board: 'todo'
+},
+{
+    id : 5, 
+    title: 'f',
+    description: 'f',
+    category: 'Management',
+    urgency: 'High',
+    date: '2022-04-27',
+    board: 'todo'
+}
 ];
 // example data for testing purposes
 let members = [{
-            name: 'Jolene Bauer',
-            email: 'jo@test.at',
-            color: '',
-            img: ''
-        },
-        {
-            name: 'Jimmmy Dude',
-            email: 'dude@company.com',
-            color: '',
-            img: ''
-        },
-        {
-            name: 'Max Mo',
-            email: 'donot@email.me',
-            color: '',
-            img: ''
-        },
-        {
-            name: 'Maja',
-            email: 'maja@muster.mix',
-            color: '',
-            img: ''
-        },
-    ]
+    name: 'Jolene Bauer',
+    email: 'jo@test.at',
+    color: '',
+    img: ''
+},
+{
+    name: 'Jimmmy Dude',
+    email: 'dude@company.com',
+    color: '',
+    img: ''
+},
+{
+    name: 'Max Mo',
+    email: 'donot@email.me',
+    color: '',
+    img: ''
+},
+{
+    name: 'Maja',
+    email: 'maja@muster.mix',
+    color: '',
+    img: ''
+},
+]
 // example or default categories, can be modified by the user
 let categories = ['Management', 'Software Developement', 'UX/UI Design', 'Human Resources'];
 //
@@ -95,3 +101,18 @@ function loadTasks() {
         tasks = JSON.parse(tasksAsText);
     }
 }
+
+/*TEST:::: These functions save and load Array in form of strings and JSONs */
+
+function saveEverything(items) {
+
+    localStorage.setItem(`${items}`, JSON.stringify(items));
+}
+
+function loadEverything(items) {
+    localStorage.getItem(`${items}`)
+    if (localStorage.getItem(`${items}`)) {
+        items = JSON.parse(localStorage.getItem(`${items}`));
+    }
+}
+
