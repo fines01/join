@@ -23,7 +23,7 @@ let currentDraggedElement;
 /**
  * function init() executes on load of html body
  */
-function init() {
+function initScirpt() {
     loadTasks(); // get tasks from local strage
     includeHTML();
 }
