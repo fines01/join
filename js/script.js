@@ -41,7 +41,7 @@ function saveTaskInputs() {
 
 
     let task = {
-     
+
         'title': title.value,
         'description': description.value,
         'category': category.value,
@@ -79,6 +79,11 @@ function moveTo(board) {
     renderBoards()
 }
 
+
+function splitID(id, separator) {
+    let arrayOfStrings = id.split(separator);
+    return arrayOfStrings;
+}
 
 function deleteTask(dataArray, i) {
 
@@ -160,8 +165,8 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
+}
+
 
 
 /* ********* Backlog ********* */
