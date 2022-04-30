@@ -30,12 +30,11 @@
     <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
     <!-- serverBackend for saving and loading tasks on the server -->
+   
     <script src="./mini_backend.js"></script>
     <script>
-        setURL('http://228.developerakademie.net/smallest_backend_ever');
-    </script>
-    <script>
-        async function initBackend() {
+        async function init() {
+            setURL('http://228.developerakademie.net/smallest_backend_ever');
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
         }
@@ -45,7 +44,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="init(); initBackend(); renderBoards()">
+<body onload="init(); initScirpt(); renderBoards()">
     <div id="overlay" class="d-none" onclick="hide('overlay')"></div>
     <div class="menu">
         <div w3-include-html="navbar.html"></div>

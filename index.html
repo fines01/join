@@ -32,15 +32,13 @@
     <!-- serverBackend for saving and loading tasks on the server -->
     <script src="./mini_backend.js"></script>
     <script>
-        setURL('http://228.developerakademie.net/smallest_backend_ever');
-    </script>
-    <script>
-        async function initBackend() {
+        async function init() {
+            setURL('http://228.developerakademie.net/smallest_backend_ever');
             await downloadFromServer();
             users = JSON.parse(backend.getItem('users')) || [];
         }
     </script>
-    </script>
+
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
