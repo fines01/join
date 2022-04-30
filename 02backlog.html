@@ -35,7 +35,7 @@
         async function init() {
             setURL('http://228.developerakademie.net/smallest_backend_ever');
             await downloadFromServer();
-            users = JSON.parse(backend.getItem('users')) || [];
+            users = JSON.parse(backend.getItem('tasks')) || [];
         }
     </script>
     </script>
@@ -43,7 +43,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="initScirpt();renderLogs();">
+<body onload="init();initScirpt();renderLogs();">
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="backlog-sub-menu">
