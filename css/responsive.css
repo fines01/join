@@ -83,6 +83,12 @@
         margin-left: 1em;
         margin-top: 4em;
     }
+    .impressum-container {
+        overflow: hidden;
+    }
+    .datenschutz-container {
+        overflow: hidden;
+    }
     /* help-section respnsive */
     .help-list-container {
         margin-left: 2em;
@@ -106,5 +112,19 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden !important;
+    }
+    /* impressum */
+    .impressum-sub-menu {
+        padding-left: 25px;
+    }
+    .impressum {
+        padding-left: 25px;
+    }
+    /* datenschutz */
+    .datenschutz-sub-menu {
+        padding-left: 30px;
+    }
+    .datenschutz {
+        padding-left: 30px;
     }
 }

@@ -2,10 +2,10 @@ function logsHTML(task) {
     return /*html*/ `
         <div class="log">
             <div class="">
-                 <h4 class="log-name">${task.assignedTo}</h4>
+                 <h4 class="log-name hide-long-text">${task.assignedTo}</h4>
             </div>
             <div class="">
-                <h4>${task.category}</h4>
+                <h4 class="hide-long-text">${task.category}</h4>
             </div>
             <div class="">
                 <h5 class="hide-long-text">${capitalizeFirst(task.title)}</h5>
