@@ -1,6 +1,5 @@
 .board-container {
     width: 100%;
-  
 }
 
 .board-sub-menu {
@@ -38,8 +37,6 @@
     flex-direction: column;
     background-color: rgb(233, 233, 241);
     box-shadow: 0.5px 0.5px 4px 0.5px #b9b9b9;
-   
-    
 }
 
 .task {
@@ -54,6 +51,10 @@
     text-align: center;
     text-transform: capitalize;
     position: relative;
+    cursor: pointer;
+}
+
+.task:hover {
     cursor: pointer;
 }
 
