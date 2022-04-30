@@ -17,7 +17,7 @@ id="done"
 /* ********* global scope - here we define global variables and constants *********  */
 
 // example data for testing purposes
-
+let id = 0
 let currentDraggedElement;
 
 /**
@@ -39,7 +39,7 @@ function saveTaskInputs() {
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
     let task = {
-        'id': 0,
+        'id': id,
         'title': title.value,
         'description': description.value,
         'category': category.value,
@@ -53,10 +53,11 @@ function saveTaskInputs() {
 /** addToTaskJS the function is meant to enable the add of task to a json array
  */
 function addToTasks() {
-
+    let taskId = tasks[id];
     let task = saveTaskInputs();
 
     tasks.push(task);
+    taskId++;
     saveTasks();
 
     clearInputValues(title, date, category, urgency, description);
@@ -87,8 +88,8 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function startDragging(i) {
-    currentDraggedElement = i;
+function startDragging(id) {
+    currentDraggedElement = id;
 }
 
 function allowDrop(ev) {
@@ -97,6 +98,7 @@ function allowDrop(ev) {
 
 function moveTo(board) {
     tasks[currentDraggedElement]['board'] = board;
+    saveTasks();
     renderBoards()
 }
 
@@ -141,13 +143,14 @@ function renderLogs() {
  */
 function renderBoards() {
 
+
     let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
     getId('todoBoard').innerHTML = '';
 
     for (let i = 0; i < todoBoard.length; i++) {
         const element = todoBoard[i];
-        getId('todoBoard').innerHTML += boardTaskHTML(element,i);
+        getId('todoBoard').innerHTML += boardTaskHTML(element, i);
         //priorityColor(i);
     }
 
@@ -157,7 +160,7 @@ function renderBoards() {
 
     for (let i = 0; i < inProgressBoard.length; i++) {
         const element = inProgressBoard[i];
-        getId('inProgressBoard').innerHTML += boardTaskHTML(element,i);
+        getId('inProgressBoard').innerHTML += boardTaskHTML(element, i);
         //priorityColor(i);
     }
 
@@ -167,7 +170,7 @@ function renderBoards() {
 
     for (let i = 0; i < testingBoard.length; i++) {
         const element = testingBoard[i];
-        getId('testingBoard').innerHTML += boardTaskHTML(element,i);
+        getId('testingBoard').innerHTML += boardTaskHTML(element, i);
         //priorityColor(i);
     }
 
@@ -177,7 +180,7 @@ function renderBoards() {
 
     for (let i = 0; i < doneBoard.length; i++) {
         const element = doneBoard[i];
-        getId('doneBoard').innerHTML += boardTaskHTML(element,i);
+        getId('doneBoard').innerHTML += boardTaskHTML(element, i);
         //priorityColor(i);
     }
 }

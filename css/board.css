@@ -1,6 +1,5 @@
 .board-container {
     width: 100%;
-  
 }
 
 .board-sub-menu {
@@ -28,25 +27,23 @@
 
 .board-task-container {
     position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
     padding: 5px;
     min-width: 250px;
     min-height: 550px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: rgb(233, 233, 241);
     box-shadow: 0.5px 0.5px 4px 0.5px #b9b9b9;
-   
-    
 }
 
 .task {
     /* border: 1px solid gray; */
     box-shadow: 0 0 2px 1px rgba(139, 139, 139, 0.5);
     border-radius: 8px;
-    width: 100%;
+    width: 95%;
     margin-bottom: 8px;
     max-height: 100%;
     overflow-y: auto;
@@ -57,8 +54,21 @@
     cursor: pointer;
 }
 
+.task:hover {
+    cursor: pointer;
+}
+
 .task p {
     cursor: pointer;
+}
+
+.task-headline-text {
+    padding-left: 47px;
+    padding-right: 47px;
+}
+
+.task-description-text {
+    max-width: 260px;
 }
 
 .light-text {
@@ -107,4 +117,27 @@
 .scroll-bar {
     overflow-y: auto;
     height: 90%;
+}
+
+
+/* Scrollbar */
+
+.scroll-bar::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 15px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background: rgb(14, 11, 167);
+    border-radius: 15px;
+    transition: ease-in-out 200ms;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+    background: #fb6100;
 }

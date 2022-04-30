@@ -2,14 +2,14 @@ function logsHTML(task) {
     return /*html*/ `
         <div class="log">
             <div class="">
-                 <h4 class="log-name">${task.assignedTo}</h4>
+                 <h4 class="log-name hide-long-text">${task.assignedTo}</h4>
             </div>
             <div class="">
-                <h4>${task.category}</h4>
+                <h4 class="hide-long-text">${task.category}</h4>
             </div>
             <div class="">
-                <h5>${capitalizeFirst(task.title)}</h5>
-                <p>${capitalizeFirst(task.description)}</p>
+                <h5 class="hide-long-text">${capitalizeFirst(task.title)}</h5>
+                <p class="hide-long-text">${capitalizeFirst(task.description)}</p>
             </div>
         </div>`;
 }
@@ -17,13 +17,13 @@ function logsHTML(task) {
 //class="backround-urgency-${(task.urgency).toLowerCase()} task"
 function boardTaskHTML(element, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging(${element['id']})"  id="task-${i}" class="backround-urgency-${(element['urgency']).toLowerCase()} task">
-            <h4>${element['title']}</h4>
+        <div draggable="true" ondragstart="startDragging(${i})"  id="task-${i}" class="backround-urgency-${(element['urgency']).toLowerCase()} task">
+            <h4 class="task-headline-text">${element['title']}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>
                 Due date: <span>${element['date']}</span>
             </span>
-            <p>Description...</p>
+            <p class="task-description-text">${element['description']}</p>
             <div class="task-links">
                 <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
