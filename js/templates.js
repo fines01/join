@@ -8,8 +8,8 @@ function logsHTML(task) {
                 <h4>${task.category}</h4>
             </div>
             <div class="">
-                <h5>${capitalizeFirst(task.title)}</h5>
-                <p>${capitalizeFirst(task.description)}</p>
+                <h5 class="hide-long-text">${capitalizeFirst(task.title)}</h5>
+                <p class="hide-long-text">${capitalizeFirst(task.description)}</p>
             </div>
         </div>`;
 }

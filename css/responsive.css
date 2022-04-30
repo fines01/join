@@ -55,6 +55,7 @@
 }
 
 @media (max-width: 600px) {
+    /* Add Task mobile view */
     .form-field div {
         padding-right: 0;
     }
@@ -67,6 +68,7 @@
     .form-field textarea {
         width: 76vw;
     }
+    /* overflow hidden while opening mobile-menu */
     .board-container {
         overflow: hidden;
     }
@@ -81,6 +83,7 @@
         margin-left: 1em;
         margin-top: 4em;
     }
+    /* help-section respnsive */
     .help-list-container {
         margin-left: 2em;
         margin-top: 3em;
@@ -90,5 +93,18 @@
     }
     .help-sublist {
         margin-left: 4em;
+    }
+    /* Backlog responsive */
+    h2 {
+        font-size: 1em;
+    }
+    .backlog-sub-menu {
+        padding-left: 15px;
+        padding-right: 40px;
+    }
+    .hide-long-text {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden !important;
     }
 }
