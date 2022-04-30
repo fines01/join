@@ -57,10 +57,10 @@ function editFormHTML(i) {
                     <select id="urgency">
                         ${renderUrgencyOptions(tasks[i].urgency)}
                     </select>
-                    <div class="">
+                    <div class="assignment-container">
                         <h2>ASSIGNED TO</h2>
+                        <img src="img/icon-plus.png" alt="">
                         <div id="assignment" class="assignment-button-container">
-                            <img src="img/icon-plus.png" alt="">
                             <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
                                 CANCEL
                             </button>
@@ -75,6 +75,7 @@ function editFormHTML(i) {
     `;
 }
 
+// TODO renderXyzOptions(option) as one function renderOptions(optionsArray, option)
 function renderCategoryOptions(category) {
     str = '';
     for (let i = 0; i < categories.length; i++) {

@@ -105,6 +105,6 @@
 }
 
 .scroll-bar {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 90%;
 }

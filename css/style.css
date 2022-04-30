@@ -329,4 +329,8 @@ a {
     /* padding-bottom: 40px; */
     background-color: rgb(233, 233, 241);
     border-radius: 12px;
-} 
+}
+
+.edit-form .assignment-container{
+    padding-top: 0;
+}

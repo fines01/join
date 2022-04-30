@@ -246,7 +246,7 @@ function capitalizeFirst(str) {
 }
 
 /**
- * This function takes html input elements and empties their value.
+ * This function takes html form and input elements and empties their value.
  * @param  {...Object} elements - HTML elements
  */
 function clearInputValues(...elements) {
