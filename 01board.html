@@ -26,6 +26,9 @@
     </style> -->
     <!-- Scripts -->
     <script src="js/data.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/backlog.js"></script>
+    <script src="js/task.js"></script>
     <script src="js/templates.js"></script>
     <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
@@ -54,7 +57,7 @@ fetch('http://228.developerakademie.net/smallest_backend_ever').then(response =>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="init(); initScirpt(); renderBoards()">
+<body onload="init(); initScript(); renderBoards()">
     <div id="overlay" class="d-none" onclick="hide('overlay')"></div>
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
