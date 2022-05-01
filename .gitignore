@@ -1,11 +1,12 @@
 # files
+
+# personal notes
+#notes/
+errors.txt
+notes.txt
 todo.txt
-tictactoe.txt
 
-#
-notes/
-
-### gitignore template from: https://github.com/github/gitignore/blob/main/Node.gitignore (09.03.22)
+### gitignore template from: https://github.com/github/gitignore/blob/main/Node.gitignore 
 # Logs
 logs
 *.log

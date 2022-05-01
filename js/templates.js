@@ -14,10 +14,9 @@ function logsHTML(task) {
         </div>`;
 }
 
-//class="backround-urgency-${(task.urgency).toLowerCase()} task"
 function boardTaskHTML(element, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging('${element['id']}')"  id="${element['id']}" class="backround-urgency-${(element['urgency']).toLowerCase()} task">
+        <div draggable="true" ondragstart="startDragging(${i})" class="backround-urgency-${(element['urgency']).toLowerCase()} task">
             <h4 class="task-headline-text">${element['title']}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>
@@ -25,7 +24,8 @@ function boardTaskHTML(element, i) {
             </span>
             <p class="task-description-text">${element['description']}</p>
             <div class="task-links">
-                <img class="delete-task" src="img/delete-24.png" onclick="deleteTask(tasks, ${i})" alt="delete icon">
+                <img class="delete-task" src="img/delete-24.png" 
+                onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
         </div>
