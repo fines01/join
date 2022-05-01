@@ -68,3 +68,15 @@ function moveTo(board) {
     saveTasks();
     renderBoards()
 }
+/**
+ * shows move buttons on responsive view when arrow img is clicked 
+ */
+function showMoveButtons() {
+    let moveButtonBox = document.getElementById('moveButtonBox')
+
+    if (moveButtonBox.classList.contains('d-none')) {
+        document.getElementById('moveButtonBox').classList.remove('d-none')
+    } else {
+        document.getElementById('moveButtonBox').classList.add('d-none')
+    }
+}

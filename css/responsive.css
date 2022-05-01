@@ -127,4 +127,29 @@
     .datenschutz {
         padding-left: 30px;
     }
+    .task-description-text {
+        padding-bottom: 10px;
+    }
+    .move-to {
+        display: unset;
+        padding-top: 50px;
+    }
+    .move-to img {
+        width: 24px;
+    }
+    .move-button-box {
+        padding-bottom: 5px;
+    }
+    .move-button {
+        font-weight: bold;
+        height: 20px;
+        width: 70%;
+        border-radius: 12px;
+        background-color: rgb(208, 233, 255);
+        border: none;
+    }
+    .move-button:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
 }

@@ -29,7 +29,7 @@
     position: relative;
     margin-left: 20px;
     padding: 5px;
-    min-width: 250px;
+    min-width: 300px;
     min-height: 550px;
     border-radius: 8px;
     display: flex;
@@ -140,4 +140,8 @@
 
 .scroll-bar::-webkit-scrollbar-thumb:hover {
     background: #fb6100;
+}
+
+.move-to {
+    display: none;
 }

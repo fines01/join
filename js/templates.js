@@ -28,6 +28,15 @@ function boardTaskHTML(element, i) {
                 onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
+            <div class="move-to">
+                <img onclick="showMoveButtons()" src="img/arrow-204-48.png" alt="">
+                <div id="moveButtonBox" class="move-button-box d-none">
+                    <div><button class="move-button">Todo</button></div>
+                    <div><button class="move-button">In Progress</button></div>
+                    <div><button class="move-button">Testing</button></div>
+                    <div><button class="move-button">Done</button></div>
+                </div>
+            </div>
         </div>
     `;
 }
@@ -81,7 +90,7 @@ function editFormHTML(i) {
  * @param {string[]} dataArray - array with string values of all options
  * @returns {string} - html that creates option fields
  */
-function renderOptionFields(selected, dataArray){
+function renderOptionFields(selected, dataArray) {
     str = '';
     for (let i = 0; i < dataArray.length; i++) {
         let el = dataArray[i];
