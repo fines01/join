@@ -24,7 +24,7 @@ let currentDraggedElement;
  * function init() executes on load of html body
  */
 function initScirpt() {
-   
+
     loadTasks(); // get tasks from local strage
     includeHTML();
 }
@@ -37,11 +37,11 @@ function initScirpt() {
  */
 function saveTaskInputs() {
 
-    let id = tasks.length; 
+    let id = tasks.length;
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
     let task = {
-        'id' : id,
+        'id': id,
         'title': title.value,
         'description': description.value,
         'category': category.value,
@@ -54,7 +54,7 @@ function saveTaskInputs() {
 /** addToTaskJS the function is meant to enable the add of task to a json array
  */
 function addToTasks() {
-    
+
     let task = saveTaskInputs();
     tasks.push(task);
     console.log(tasks);

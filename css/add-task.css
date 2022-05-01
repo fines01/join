@@ -89,6 +89,10 @@
     width: 45px;
 }
 
+.assignment-container h2 {
+    padding-bottom: 12px;
+}
+
 .assignment-container img:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -150,7 +154,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 4.5px;
 }
 
-
 select {
     background: white;
     -webkit-appearance: none;
@@ -160,5 +163,4 @@ select {
     background-repeat: no-repeat;
     background-position: calc(100% - 0.75rem) center !important;
     cursor: pointer;
-   
 }
