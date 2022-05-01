@@ -43,7 +43,7 @@ function editFormHTML(i) {
                     <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
                     <h2>CATEGORY</h2>
                     <select id="category" placeholder="Management">
-                        ${renderCategoryOptions(tasks[i].category)}
+                        ${renderOptionFields(tasks[i].category, categories)}
                     </select>
                     <h2>DESCRIPTION</h2>
                     <textarea required id="description" placeholder="Enter a description" >
@@ -55,7 +55,7 @@ function editFormHTML(i) {
                     <input id="date" type="date" value="${tasks[i].date}">
                     <h2>URCENCY</h2>
                     <select id="urgency">
-                        ${renderUrgencyOptions(tasks[i].urgency)}
+                        ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
                     <div class="assignment-container">
                         <h2>ASSIGNED TO</h2>
@@ -75,22 +75,17 @@ function editFormHTML(i) {
     `;
 }
 
-// TODO renderXyzOptions(option) as one function renderOptions(optionsArray, option)
-function renderCategoryOptions(category) {
+/**
+ * This function renders all options from a given array of values in an html select field
+ * @param {string} selected - the pre-selected element/option
+ * @param {string[]} dataArray - array with string values of all options
+ * @returns {string} - html that creates option fields
+ */
+function renderOptionFields(selected, dataArray){
     str = '';
-    for (let i = 0; i < categories.length; i++) {
-        let el = categories[i];
-        str += /*html*/ `<option value="${el}" ${renderSelected(category, el)}>${el}</option>`;
-    }
-    return str;
-}
-
-function renderUrgencyOptions(urgency) {
-    let urgencies = ['High', 'Intermediate', 'Low'];
-    str = '';
-    for (let i = 0; i < urgencies.length; i++) {
-        let el = urgencies[i];
-        str += /*html*/ `<option value="${el}" ${renderSelected(urgency,el)}>${el}</option>`;
+    for (let i = 0; i < dataArray.length; i++) {
+        let el = dataArray[i];
+        str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
     }
     return str;
 }

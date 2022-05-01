@@ -82,7 +82,8 @@ let members = [{
 // example or default categories, can be modified by the user
 let categories = ['Management', 'Software Developement', 'UX/UI Design', 'Human Resources'];
 //
-let urgencies = [];
+// let urgencies = ['High','Middle','Low'];
+let urgencies = ['High', 'Intermediate', 'Low'];
 
 /**
  *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
