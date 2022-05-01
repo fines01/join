@@ -41,13 +41,13 @@ function saveTaskInputs() {
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
     let task = {
-        'id' : id,
+        //'id' : id,
         'title': title.value,
         'description': description.value,
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
-        'board': 'todo' // default board on task-creation
+        'board': '' 
     };
     return task;
 }
@@ -57,7 +57,8 @@ function addToTasks() {
     
     let task = saveTaskInputs();
     tasks.push(task);
-    console.log(tasks);
+    task.id = tasks.length; // set id when creating the task
+    task.board = 'todo'; // default-board on task creation
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
 
@@ -98,9 +99,7 @@ function saveTaskInputs() {
 }
 */
 
-
-
-function startDragging(id) {
+function startDragging(id) { // i only for testing purposes
     currentDraggedElement = id;
 }
 
@@ -113,7 +112,6 @@ function moveTo(board) {
     saveTasks();
     renderBoards()
 }
-
 
 function splitID(id, separator) {
     let arrayOfStrings = id.split(separator);
@@ -139,7 +137,7 @@ function renderEditForm(i) {
 
 function saveEdit(dataArray, i) {
     let task = saveTaskInputs();
-    //console.log(task);
+    task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
     saveTasks();
 }
@@ -147,15 +145,15 @@ function saveEdit(dataArray, i) {
 
 function renderBoards() {
 
-
     let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
     getId('todoBoard').innerHTML = '';
 
     for (let i = 0; i < todoBoard.length; i++) {
         const element = todoBoard[i];
-        getId('todoBoard').innerHTML += boardTaskHTML(element, i);
-
+        const taskIndex = tasks.indexOf(element);
+        getId('todoBoard').innerHTML += boardTaskHTML(element, taskIndex);
+        
     }
 
     let inProgressBoard = tasks.filter(t => t['board'] == 'inProgress');
@@ -164,7 +162,8 @@ function renderBoards() {
 
     for (let i = 0; i < inProgressBoard.length; i++) {
         const element = inProgressBoard[i];
-        getId('inProgressBoard').innerHTML += boardTaskHTML(element, i);
+        const taskIndex = tasks.indexOf(element);
+        getId('inProgressBoard').innerHTML += boardTaskHTML(element, taskIndex);
 
     }
 
@@ -174,7 +173,8 @@ function renderBoards() {
 
     for (let i = 0; i < testingBoard.length; i++) {
         const element = testingBoard[i];
-        getId('testingBoard').innerHTML += boardTaskHTML(element, i);
+        const taskIndex = tasks.indexOf(element);
+        getId('testingBoard').innerHTML += boardTaskHTML(element, taskIndex);
 
     }
 
@@ -184,7 +184,8 @@ function renderBoards() {
 
     for (let i = 0; i < doneBoard.length; i++) {
         const element = doneBoard[i];
-        getId('doneBoard').innerHTML += boardTaskHTML(element, i);
+        const taskIndex = tasks.indexOf(element);
+        getId('doneBoard').innerHTML += boardTaskHTML(element, taskIndex);
 
     }
 }
