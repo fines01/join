@@ -76,6 +76,7 @@ function showMoveButtons(i) {
 
     if (moveButtonBox.classList.contains('d-none')) {
         moveButtonBox.classList.remove('d-none')
+        moveButtonBox.classList.add('move-button-box-transition-in')
     } else {
         moveButtonBox.classList.add('d-none')
     }

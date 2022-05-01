@@ -152,4 +152,31 @@
         cursor: pointer;
         transform: scale(1.02);
     }
+    .move-button-box-transition-in {
+        animation: trans-in 600ms;
+    }
+    @keyframes trans-in {
+        0% {
+            transform: translateY(150px)
+        }
+        70% {
+            transform: translateY(0px);
+        }
+    }
+    .move-button-box-transition-out {
+        animation: trans-out 600ms;
+    }
+    @keyframes trans-out {
+        0% {
+            transform: translateY(0px)
+        }
+        70% {
+            transform: translateY(-150px);
+        }
+    }
+    /* Scrollbar */
+    .scroll-bar::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
 }
