@@ -71,12 +71,49 @@ function moveTo(board) {
 /**
  * shows move buttons on responsive view when arrow img is clicked 
  */
-function showMoveButtons() {
-    let moveButtonBox = document.getElementById('moveButtonBox')
+function showMoveButtons(i) {
+    let moveButtonBox = document.getElementById('moveButtonBox' + i)
 
     if (moveButtonBox.classList.contains('d-none')) {
-        document.getElementById('moveButtonBox').classList.remove('d-none')
+        moveButtonBox.classList.remove('d-none')
     } else {
-        document.getElementById('moveButtonBox').classList.add('d-none')
+        moveButtonBox.classList.add('d-none')
     }
+}
+
+/**
+ * generated task will be moved to the todo board
+ */
+function moveToTodo(i) {
+    const targetBoard = 'todo'
+    tasks[i]['board'] = targetBoard;
+    saveTasks();
+    renderBoards()
+}
+/**
+ * generated task will be moved to the in progress board
+ */
+function moveToInProgress(i) {
+    const targetBoard = 'inProgress'
+    tasks[i]['board'] = targetBoard;
+    saveTasks();
+    renderBoards()
+}
+/**
+ * generated task will be moved to the testing board
+ */
+function moveToTesting(i) {
+    const targetBoard = 'testing'
+    tasks[i]['board'] = targetBoard;
+    saveTasks();
+    renderBoards()
+}
+/**
+ * generated task will be moved to the done board
+ */
+function moveToDone(i) {
+    const targetBoard = 'done'
+    tasks[i]['board'] = targetBoard;
+    saveTasks();
+    renderBoards()
 }

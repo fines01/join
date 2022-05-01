@@ -29,12 +29,12 @@ function boardTaskHTML(element, i) {
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
             <div class="move-to">
-                <img onclick="showMoveButtons()" src="img/arrow-204-48.png" alt="">
-                <div id="moveButtonBox" class="move-button-box d-none">
-                    <div><button class="move-button">Todo</button></div>
-                    <div><button class="move-button">In Progress</button></div>
-                    <div><button class="move-button">Testing</button></div>
-                    <div><button class="move-button">Done</button></div>
+                <img onclick="showMoveButtons(${i})" src="img/arrow-204-48.png" alt="">
+                <div id="moveButtonBox${i}" class="move-button-box d-none">
+                    <div><button onclick="moveToTodo(${i})" class="move-button">Todo</button></div>
+                    <div><button onclick="moveToInProgress(${i})" class="move-button">In Progress</button></div>
+                    <div><button onclick="moveToTesting(${i})" class="move-button">Testing</button></div>
+                    <div><button onclick="moveToDone(${i})" class="move-button">Done</button></div>
                 </div>
             </div>
         </div>
