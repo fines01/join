@@ -87,8 +87,12 @@ function editFormHTML(i) {
 
 function showUsersHTML(showUser) {
     return /*html*/ `
-    <div>
-    ${showUser['name']}
+    <div class="user-box">
+    <span class="light-text">
+        Name: <b>${showUser['name']}</b><br>
+        E-Mail: <span>${showUser['email']}</span>
+        <span>${showUser['img']}</span>
+    </span>
     </div>
     `
 }

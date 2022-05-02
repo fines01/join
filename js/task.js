@@ -65,7 +65,6 @@ function showAssignBox() {
 }
 
 function renderUsers() {
-    document.getElementById('assignmentBox').innerHTML = ''
     for (let j = 0; j < users.length; j++) {
         const showUser = users[j];
         document.getElementById('assignmentBox').innerHTML += showUsersHTML(showUser);
