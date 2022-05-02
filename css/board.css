@@ -69,6 +69,7 @@
 
 .task-description-text {
     max-width: 260px;
+    overflow-wrap: break-word;
 }
 
 .light-text {
@@ -116,7 +117,11 @@
 
 .scroll-bar {
     overflow-y: auto;
-    height: 90%;
+    max-height: 560px;
+}
+
+.scroll-bar-small {
+    overflow-y: auto;
 }
 
 

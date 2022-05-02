@@ -16,7 +16,7 @@ function logsHTML(task) {
 
 function boardTaskHTML(element, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging(${i})" class="scroll-bar backround-urgency-${(element['urgency']).toLowerCase()} task">
+        <div draggable="true" ondragstart="startDragging(${i})" class="scroll-bar-small backround-urgency-${(element['urgency']).toLowerCase()} task">
             <h4 class="task-headline-text">${element['title']}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>

@@ -193,4 +193,11 @@
     .welcome {
         padding-top: 3vh;
     }
+    .scroll-bar {
+        overflow-y: auto;
+        max-height: 500px;
+    }
+    .board-task-container {
+        min-height: 200px;
+    }
 }
