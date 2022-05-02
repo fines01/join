@@ -136,14 +136,17 @@
 
 input {
     border-radius: 10px;
+    border-width: 1px;
 }
 
 select {
     border-radius: 10px;
+    border-width: 1px;
 }
 
 textarea {
     border-radius: 10px;
+    border-width: 1px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
