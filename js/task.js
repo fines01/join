@@ -58,7 +58,6 @@ function showAssignBox() {
 
     if (assignBox.classList.contains('d-none')) {
         assignBox.classList.remove('d-none')
-        renderUsers()
     } else {
         assignBox.classList.add('d-none')
     }

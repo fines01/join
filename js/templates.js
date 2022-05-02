@@ -89,9 +89,9 @@ function showUsersHTML(showUser) {
     return /*html*/ `
     <div class="user-box">
     <span class="light-text">
+        <span>${showUser['img']}</span>
         Name: <b>${showUser['name']}</b><br>
         E-Mail: <span>${showUser['email']}</span>
-        <span>${showUser['img']}</span>
     </span>
     </div>
     `

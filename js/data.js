@@ -58,7 +58,7 @@ let users = [{
         name: 'Jolene Bauer',
         email: 'jo@test.at',
         color: 'orange',
-        Image: 'user-female.png',
+        img: '',
         status: false
     },
     {
