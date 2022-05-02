@@ -54,29 +54,33 @@ let tasks = [{
 }
 ];
 // example data for testing purposes
-let members = [{
+let users = [{
     name: 'Jolene Bauer',
     email: 'jo@test.at',
-    color: '',
-    img: ''
+    color: 'orange',
+    img: '',
+    status: false
 },
 {
     name: 'Jimmmy Dude',
     email: 'dude@company.com',
-    color: '',
-    img: ''
+    color: 'green',
+    img: '',
+    status: false
 },
 {
     name: 'Max Mo',
     email: 'donot@email.me',
-    color: '',
-    img: ''
+    color: 'blue',
+    img: '',
+    status: false
 },
 {
     name: 'Maja',
     email: 'maja@muster.mix',
-    color: '',
-    img: ''
+    color: 'red',
+    img: '',
+    status: false
 },
 ]
 // example or default categories, can be modified by the user
