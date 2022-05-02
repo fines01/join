@@ -187,4 +187,10 @@
         width: 0px;
         height: 0px;
     }
+    .welcome-text {
+        font-size: 14px;
+    }
+    .welcome {
+        padding-top: 3vh;
+    }
 }
