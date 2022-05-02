@@ -58,7 +58,16 @@ function showAssignBox() {
 
     if (assignBox.classList.contains('d-none')) {
         assignBox.classList.remove('d-none')
+        renderUsers()
     } else {
         assignBox.classList.add('d-none')
+    }
+}
+
+function renderUsers() {
+    document.getElementById('assignmentBox').innerHTML = ''
+    for (let j = 0; j < users.length; j++) {
+        const showUser = users[j];
+        document.getElementById('assignmentBox').innerHTML += showUsersHTML(showUser);
     }
 }

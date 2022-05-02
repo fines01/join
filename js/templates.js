@@ -85,6 +85,14 @@ function editFormHTML(i) {
     `;
 }
 
+function showUsersHTML(showUser) {
+    return /*html*/ `
+    <div>
+    ${showUser['name']}
+    </div>
+    `
+}
+
 /**
  * This function renders all options from a given array of values in an html select field
  * @param {string} selected - the pre-selected element/option
