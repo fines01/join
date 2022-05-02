@@ -52,3 +52,13 @@ function saveEdit(dataArray, i) {
     dataArray[i] = task;
     saveTasks();
 }
+
+function showAssignBox() {
+    let assignBox = document.getElementById('assignmentBox')
+
+    if (assignBox.classList.contains('d-none')) {
+        assignBox.classList.remove('d-none')
+    } else {
+        assignBox.classList.add('d-none')
+    }
+}

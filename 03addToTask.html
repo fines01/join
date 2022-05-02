@@ -72,7 +72,7 @@ fetch('http://228.developerakademie.net/smallest_backend_ever').then(response =>
                 <div class="task-input-container">
                     <form class="form-field" onsubmit="addToTasks()">
                         <div>
-                            <div class="assignment-box"></div>
+                            <div id="assignmentBox" class="assignment-box d-none"></div>
                             <h2>TITLE</h2>
                             <input required id="title" placeholder="Enter a title">
                             <h2>CATEGORY</h2>
@@ -97,7 +97,7 @@ fetch('http://228.developerakademie.net/smallest_backend_ever').then(response =>
                             <div class="assignment-container">
                                 <h2>ASSIGNED TO</h2>
                                 <div id="assignment" class="assignment-button-container">
-                                    <img onclick="assignTask()" src="img/icon-plus.png" alt="">
+                                    <img onclick="showAssignBox()" src="img/icon-plus.png" alt="">
                                     <button class="cancel-button">CANCEL</button>
                                     <button class="assign-button">CREATE TASK</button>
                                 </div>
