@@ -28,6 +28,7 @@ function boardTaskHTML(element, i) {
                 onclick="deleteTask(tasks, ${i})" alt="delete icon">
                 <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
+            <div class="member"><img src="img/icon-plus.png" alt=""></div>
             <div class="move-to">
                 <img onclick="showMoveButtons(${i})" src="img/arrow-204-48.png" alt="">
                 <div id="moveButtonBox${i}" class="move-button-box d-none">
