@@ -90,8 +90,12 @@
         overflow: hidden;
     }
     /* help-section respnsive */
+    .help-header {
+        margin-right: 1em;
+    }
     .help-list-container {
         margin-left: 2em;
+        margin-right: 2em;
         margin-top: 3em;
     }
     .help-subheadlines {
@@ -116,16 +120,20 @@
     /* impressum */
     .impressum-sub-menu {
         padding-left: 25px;
+        padding-right: 25px;
     }
     .impressum {
         padding-left: 25px;
+        padding-right: 25px;
     }
     /* datenschutz */
     .datenschutz-sub-menu {
-        padding-left: 30px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
     .datenschutz {
         padding-left: 30px;
+        padding-right: 30px;
     }
     .task-description-text {
         padding-bottom: 10px;
