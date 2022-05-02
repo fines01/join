@@ -16,3 +16,9 @@ function renderLogs() {
         logs.innerHTML += logsHTML(tasks[i]);
     }
 }
+
+
+
+function assignTask () {
+    
+}
