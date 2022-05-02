@@ -90,34 +90,39 @@ let categories = ['Management', 'Software Developement', 'UX/UI Design', 'Human 
 let urgencies = ['High', 'Intermediate', 'Low'];
 
 /**
- *  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string 
- */
+  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string  */
 function saveTasks() {
+    let tasksAsText = JSON.stringify(tasks);
+    backend.setItem('tasks', tasksAsText);
+}
+
+/**
+ *  The function is used to laod and convert the tasks from text-format to a JSON-array
+ */
+ function loadTasks() {
+    let tasksAsText = backend.getItem('tasks');
+    if (tasksAsText) {
+        tasks = JSON.parse(tasksAsText);
+    }
+}
+
+
+
+/* old save and load */
+
+/* function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
     localStorage.setItem('tasks', tasksAsText);
 }
 
 /**
  *  The function is used to laod and convert the tasks from text-format to a JSON-array
- */
+ 
 function loadTasks() {
     let tasksAsText = localStorage.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);
     }
-}
+} */
 
-/*TEST:::: These functions save and load Array in form of strings and JSONs */
-
-function saveEverything(items) {
-
-    localStorage.setItem(`${items}`, JSON.stringify(items));
-}
-
-function loadEverything(items) {
-    localStorage.getItem(`${items}`)
-    if (localStorage.getItem(`${items}`)) {
-        items = JSON.parse(localStorage.getItem(`${items}`));
-    }
-}
 
