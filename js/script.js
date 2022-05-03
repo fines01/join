@@ -21,10 +21,22 @@ id="done"
 let currentDraggedElement;
 
 /**
- * function init() executes on load of html body
+ * function init() gets data stored at the ftp server
+ */
+async function loadServerData() {
+    setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks')) || [];
+    //users = JSON.parse(backend.getItem('users')) || [];
+}
+
+/**
+ * function initScript() executes on load of html body
  */
 function initScript() {
-    loadTasks(); // get tasks from local strage
+    loadServerData(); // get data from ftp server
+    loadTasks(); // get tasks from local strage 
+    // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
 }
 
