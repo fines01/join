@@ -29,7 +29,8 @@ function saveTaskInputs() {
         'category': category.value,
         'urgency': urgency.value,
         'date': date.value,
-        'board': ''
+        'board': '',
+        'assignedTo' : []
     };
     return task;
 }
@@ -53,9 +54,9 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function showAssignBox() {
+function showAssignBox() { 
     toggle('assignmentBox');
-    renderUsers();
+    renderUsers(); //passing task-index through to renderUsers() --> to showUsersHTML() --> to addUser() --> umständlich??? better solution???
 }
 
 function renderUsers() {
@@ -66,4 +67,15 @@ function renderUsers() {
         const showUser = users[j];
         assignmentBox.innerHTML += showUsersHTML(showUser);
     }
+}
+
+function addUser(userIndex, taskIndex = tasks.length) { //default-value in case of adding a new task
+    console.log('user-index: ',userIndex);
+    console.log('assign to user: ', users[userIndex]);
+    console.log('task-index: ',taskIndex);
+
+    tasks[taskIndex].assignedTo.push(users[userIndex]);
+    //task.assignedTo.push(users[userIndex]);
+
+    //return users[userIndex]; //return full user object?
 }

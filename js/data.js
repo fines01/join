@@ -5,7 +5,7 @@ let tasks = [{
         category: 'Management',
         urgency: 'high',
         date: '2022-04-20',
-        board: 'todo'
+        board: 'todo',
     },
     {
         id: 1,

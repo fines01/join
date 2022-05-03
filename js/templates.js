@@ -88,9 +88,28 @@ function editFormHTML(i) {
     `;
 }
 
+// render users in select field, st that value can be passed?
 function showUsersHTML(showUser) {
     return /*html*/ `
-    <div class="user-box">
+    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
+    <span class="light-text">
+        <span>${showUser['img']}</span>
+        Name: <b>${showUser['name']}</b><br>
+        E-Mail: <span>${showUser['email']}</span>
+    </span>
+    </div>
+    `
+}
+
+function renderAssignedUser(){
+    //for each user in assignedTo (if several users can be assigned? [] )
+    return /*html*/``;
+}
+
+//show user box when clicking on user-icon
+function userBoxHTML(user){
+    return /*html*/ `
+    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
     <span class="light-text">
         <span>${showUser['img']}</span>
         Name: <b>${showUser['name']}</b><br>

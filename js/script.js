@@ -16,9 +16,8 @@ id="done"
 
 /* ********* global scope - here we define global variables and constants *********  */
 
-// example data for testing purposes
-
 let currentDraggedElement;
+//let currentTask = tasks[tasks.length -1 ]; // default value last element
 
 /**
  * function init() gets data stored at the ftp server
@@ -34,7 +33,7 @@ async function loadServerData() {
  * function initScript() executes on load of html body
  */
 function initScript() {
-    loadServerData(); // get data from ftp server
+    //loadServerData(); // get data from ftp server
     loadTasks(); // get tasks from local strage 
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
