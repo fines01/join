@@ -20,8 +20,14 @@ id="done"
 
 let currentDraggedElement;
 
+// async function init() {
+//      setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
+//      await downloadFromServer();
+//      tasks = JSON.parse(backend.getItem('tasks')) || [];
+// }
+
 /**
- * function init() executes on load of html body
+ * function executes on load of the html body
  */
 function initScript() {
     loadTasks(); // get tasks from local strage

@@ -35,13 +35,7 @@
     <!-- serverBackend for saving and loading tasks on the server -->
 
     <script src="./mini_backend.js"></script>
-    <script>
-        async function init() {
-            setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
-            await downloadFromServer();
-            tasks = JSON.parse(backend.getItem('tasks')) || [];
-        }
-    </script>
+    
     <!-- <script>
 fetch('http://228.developerakademie.net/smallest_backend_ever').then(response => {
     return response.json();
@@ -57,7 +51,7 @@ fetch('http://228.developerakademie.net/smallest_backend_ever').then(response =>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="init(); initScript(); renderLogs()">
+<body onload="initScript(); renderLogs()">
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="backlog-sub-menu">
