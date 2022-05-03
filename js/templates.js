@@ -48,7 +48,9 @@ function editFormHTML(i) {
         <div class="task-input container" onclick="event.stopPropagation()">
             <form class="form-field edit-form">
                 <h2 class="edit-task-headline">UPDATE TASK</h2>
+                <br>
                 <div class="form-section">
+                    <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
                     <h2>TITLE</h2>
                     <input required id="title" placeholder="Enter a title" value="${tasks[i].title}">
                     <h2>CATEGORY</h2>
@@ -68,8 +70,9 @@ function editFormHTML(i) {
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
                     <div class="assignment-container">
+                        <div id="assignmentBox" class="assignment-box d-none"></div>
                         <h2>ASSIGNED TO</h2>
-                        <img src="img/icon-plus.png" alt="">
+                        <img onclick="showAssignBox()" src="img/icon-plus.png" alt="">
                         <div id="assignment" class="assignment-button-container">
                             <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
                                 CANCEL

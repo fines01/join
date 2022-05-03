@@ -54,18 +54,16 @@ function saveEdit(dataArray, i) {
 }
 
 function showAssignBox() {
-    let assignBox = document.getElementById('assignmentBox')
-
-    if (assignBox.classList.contains('d-none')) {
-        assignBox.classList.remove('d-none')
-    } else {
-        assignBox.classList.add('d-none')
-    }
+    toggle('assignmentBox');
+    renderUsers();
 }
 
 function renderUsers() {
+    let assignmentBox = getId('assignmentBox');
+    assignmentBox.innerHTML = '';
+
     for (let j = 0; j < users.length; j++) {
         const showUser = users[j];
-        document.getElementById('assignmentBox').innerHTML += showUsersHTML(showUser);
+        assignmentBox.innerHTML += showUsersHTML(showUser);
     }
 }

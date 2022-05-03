@@ -73,7 +73,10 @@ function hide(...ids) {
  */
 function show(...ids) {
     for (let i = 0; i < ids.length; i++) {
-        getId(ids[i]).classList.remove('d-none');
+        let element = getId(ids[i]);
+        //if (element.classList.contains('d-none')){
+            element.classList.remove('d-none');
+        //}
     }
 }
 
