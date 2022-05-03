@@ -45,6 +45,21 @@ function splitID(id, separator) {
     return arrayOfStrings;
 }
 
+/**
+ * This function generates a random hex color code.
+ * @returns {string} - the string value for a random hex color code
+ */
+function randomHexColor(){
+    let hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+    let hexColorStr = '#';
+    for (let i = 0; i < 6; i++) {
+        let randNr = Math.floor( Math.random() * hex.length );    //random number between [0, hex.length[
+        hexColorStr += hex[randNr];
+    }
+    console.log(hexColorStr);
+    return hexColorStr;
+}
+
 /* ********* generic functions ********* */
 
 /**
@@ -120,6 +135,8 @@ function clearInputValues(...elements) {
         elements[i].value = '';
     }
 }
+
+/* ****** Navbar ****** */
 
 function showNavbar() {
     getId('nav-bar').classList.remove('hide-mobile');
