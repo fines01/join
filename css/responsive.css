@@ -74,25 +74,25 @@
     }
     .backlog-sub-menu {
         overflow: hidden;
-        position: absolute;
+        position: relative;
     }
     .add-task-container {
         overflow: hidden;
-        position: absolute;
+        position: relative;
     }
     .help-container {
         overflow: hidden;
         margin-left: 1em;
         margin-top: 4em;
-        position: absolute;
+        position: relative;
     }
     .impressum-container {
         overflow: hidden;
-        position: absolute;
+        position: relative;
     }
     .datenschutz-container {
         overflow: hidden;
-        position: absolute;
+        position: relative;
     }
     /* help-section respnsive */
     .help-header {
@@ -206,10 +206,10 @@
         min-height: 200px;
     }
     .board-container {
-        position: absolute;
+        position: relative;
     }
     .navbar-container {
         z-index: 99;
-        position: relative;
+        position: absolute;
     }
 }

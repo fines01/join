@@ -117,6 +117,7 @@
 .scroll-bar {
     overflow-y: auto;
     max-height: 560px;
+    margin-right: 1em;
 }
 
 .scroll-bar-small {
