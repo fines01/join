@@ -17,11 +17,12 @@
     }
     .nav-bar-mobile {
         background-color: rgb(30, 30, 171);
+        background-color: var(--col-blue1);
         position: fixed;
         z-index: 100;
     }
     .nav-bar-mobile-content {
-        height: 6vh;
+        height: 55px;
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -32,11 +33,13 @@
         position: absolute;
         top: 15px;
         left: 15px;
+        cursor: pointer;
     }
     .mobile-x {
         position: absolute;
         top: 15px;
         left: 15px;
+        cursor: pointer;
     }
     .mobile-logo {
         height: 40px;

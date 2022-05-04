@@ -13,12 +13,15 @@
     --col-secondary: #515151;
     --col-tertiary: #9a9a9a;
     /*** colors ***/
-    --col-blue1: #533E85;
+    --col-blue1: #03045E;
     /* TEST: can vars in vars be adapted as needed in classes? nope */
     /* --col-blue1: rgba(75, 62, 133, var(opacity)); */
     --col-blue2: #488FB1;
     --col-blue3: #C1F8CF;
     --col-teal: #4FD3C4;
+    --col-green1: #57CC99;
+    --col-red1: #EB5353;
+    --col-yellow1: #FFE162;
     /*** border-radius ***/
     /* 1rem ^= 16px (if not defined otherwise) */
     --br-main: 0.25rem;
@@ -47,6 +50,7 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
+    background-color: rgb(211, 222, 220,0.9);
 }
 
 
@@ -180,6 +184,7 @@ footer {
     height: 100vh;
     width: 150px;
     background-color: rgb(30, 30, 171);
+    background-color: var(--col-blue1);
     display: flex;
     flex-direction: column;
     align-items: center;

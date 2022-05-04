@@ -16,7 +16,7 @@ function logsHTML(task) {
 
 function boardTaskHTML(element, i) {
     return /*html*/ `
-        <div draggable="true" ondragstart="startDragging(${i})" class="scroll-bar-small backround-urgency-${(element['urgency']).toLowerCase()} task">
+        <div draggable="true" ondragstart="startDragging(${i})" class="scroll-bar-small background-urgency-${(element['urgency']).toLowerCase()} task">
             <h4 class="task-headline-text">${element['title']}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>
@@ -58,9 +58,7 @@ function editFormHTML(i) {
                         ${renderOptionFields(tasks[i].category, categories)}
                     </select>
                     <h2>DESCRIPTION</h2>
-                    <textarea required id="description" placeholder="Enter a description" >
-                        ${tasks[i].description}
-                    </textarea>
+                    <textarea required id="description">${tasks[i].description}</textarea>
                 </div>
                 <div class="form-section">
                     <h2>DUE DATE</h2>

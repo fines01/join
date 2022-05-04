@@ -113,16 +113,19 @@
 
 /*Backrounds for the different urgency of the tasks */
 
-.backround-urgency-high {
-    background-color: rgba(228, 87, 87, 0.6);
+.background-urgency-high {
+    background-color: rgba(228, 87, 87, 0.2);
+    border: 3px solid var(--col-red1);
 }
 
-.backround-urgency-intermediate {
-    background-color: rgba(255, 255, 0, 0.6);
+.background-urgency-intermediate {
+    background-color: rgba(255, 255, 0, 0.2);
+    border: 3px solid var(--col-yellow1);
 }
 
-.backround-urgency-low {
-    background-color: rgba(0, 128, 0, 0.6);
+.background-urgency-low {
+    background-color: rgba(0, 128, 0, 0.2);
+    border: 3px solid var(--col-green1);
 }
 
 .scroll-bar {
