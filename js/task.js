@@ -56,7 +56,7 @@ function saveEdit(dataArray, i) {
 
 function showAssignBox() { 
     toggle('assignmentBox');
-    renderUsers(); //passing task-index through to renderUsers() --> to showUsersHTML() --> to addUser() --> umständlich??? better solution???
+    renderUsers();
 }
 
 function renderUsers() {
@@ -69,7 +69,7 @@ function renderUsers() {
     }
 }
 
-function addUser(userIndex, taskIndex = tasks.length) { //default-value in case of adding a new task
+function addUser(userIndex) { //default-value in case of adding a new task
     console.log('user-index: ',userIndex);
     console.log('assign to user: ', users[userIndex]);
     console.log('task-index: ',taskIndex);
@@ -78,4 +78,12 @@ function addUser(userIndex, taskIndex = tasks.length) { //default-value in case 
     //task.assignedTo.push(users[userIndex]);
 
     //return users[userIndex]; //return full user object?
+}
+
+/* ****** render add to task form fields ****** */
+
+function renderForm() {
+    let userSelect = getId('assignedUser');
+    userSelect.innerHTML = '';
+    userSelect.innerHTML = renderUserOptionFields();
 }

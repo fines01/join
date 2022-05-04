@@ -115,8 +115,9 @@
 }
 
 .assignment-container {
-    padding-top: 80px;
+    /* padding-top: 80px; */
     position: relative;
+    /* margin-top:24px; */
 }
 
 .assignment-container img {
@@ -136,6 +137,8 @@
 .assignment-button-container {
     display: flex;
     align-items: center;
+    gap: 16px;
+    margin-top: 24px;
 }
 
 .assign-button {
@@ -163,10 +166,20 @@
     background-color: rgba(34, 50, 139, 0);
     border-radius: 8px;
     border-style: none;
+    /* border-color: rgb(34, 49, 139); */
+    box-shadow: 0 0 2px 1px rgb(34, 49, 139, 0.5);
 }
 
 .cancel-button:hover {
     color: rgb(59, 84, 228);
+}
+
+.btn-box {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
 }
 
 input {

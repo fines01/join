@@ -11,6 +11,7 @@ id="boardContainer"
 id="inProgress"
 id="testing"
 id="done"
+id="assignedUser"
 
 */
 

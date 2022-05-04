@@ -66,18 +66,27 @@ function editFormHTML(i) {
                     <select id="urgency">
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
+                    <h2>ASSIGN TO</h2>
+                    <select multiple id="assignedUser">
+                        ${renderUserOptionFields()}
+                    </select>
                     <div class="assignment-container">
-                        <div id="assignmentBox" class="assignment-box d-none"></div>
-                        <h2>ASSIGNED TO</h2>
-                        <img onclick="showAssignBox()" src="img/icon-plus.png" alt="">
-                        <div id="assignment" class="assignment-button-container">
-                            <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
-                                CANCEL
-                            </button>
-                            <button class="assign-button" onclick="saveEdit(tasks, ${i})">
-                                UPDATE TASK
-                            <button>
+                        <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
+                        <!-- <h2>ASSIGNED</h2> -->
+                        <div id="assigned" class="assignment-button-container">
+                            <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->
+                            <img src="img/icon-plus.png" alt="">
+                            <img src="img/icon-plus.png" alt="">
+                            <img src="img/icon-plus.png" alt="">
                         </div>
+                    </div>
+                    <div class="btn-box">
+                        <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
+                            CANCEL
+                        </button>
+                        <button class="assign-button" onclick="saveEdit(tasks, ${i})">
+                            UPDATE TASK
+                        <button>
                     </div>
                 </div>
             </form>
@@ -85,7 +94,7 @@ function editFormHTML(i) {
     `;
 }
 
-// render users in select field, st that value can be passed?
+// render users Vers A.:
 function showUsersHTML(showUser) {
     return /*html*/ `
     <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
@@ -98,14 +107,10 @@ function showUsersHTML(showUser) {
     `
 }
 
-function renderAssignedUser(){
-    //for each user in assignedTo (if several users can be assigned? [] )
-    return /*html*/``;
-}
-
-//show user box when clicking on user-icon
-function userBoxHTML(user){
+// render users Vers. B.: in select field, st that value can be passed?
+function selectUsersHTML(user) {
     return /*html*/ `
+    <!--  -->
     <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
     <span class="light-text">
         <span>${showUser['img']}</span>
@@ -116,6 +121,12 @@ function userBoxHTML(user){
     `
 }
 
+function renderAssignedUser() {
+    //for each user in assignedTo (if several users can be assigned? [] )
+    return /*html*/ ``;
+}
+
+
 /**
  * This function renders all options from a given array of values in an html select field
  * @param {string} selected - the pre-selected element/option
@@ -125,8 +136,17 @@ function userBoxHTML(user){
 function renderOptionFields(selected, dataArray) {
     str = '';
     for (let i = 0; i < dataArray.length; i++) {
-        let el = dataArray[i];
+        let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
         str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
+    }
+    return str;
+}
+
+function renderUserOptionFields() {
+    str = '';
+    for (let i = 0; i < users.length; i++) {
+        let el = users[i].name;
+        str += /*html*/ `<option value="${el}">${el}</option>`;
     }
     return str;
 }
@@ -138,7 +158,9 @@ function renderOptionFields(selected, dataArray) {
  * @returns {(string | undefined)} - returns 'selected' if true
  */
 function renderSelected(option, value) {
-    if (option.toLowerCase() == value.toLowerCase()) {
-        return 'selected';
+    if (option != undefined) {
+        if (option.toLowerCase() == value.toLowerCase()) {
+            return 'selected';
+        }
     }
 }
