@@ -91,58 +91,38 @@ let urgencies = ['High', 'Intermediate', 'Low'];
 
 /**
   The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string  */
-// function saveTasks() {
-//     let tasksAsText = JSON.stringify(tasks);
-//     backend.setItem('tasks', tasksAsText);
-// }
+function saveTasks() {
+    let tasksAsText = JSON.stringify(tasks);
+    backend.setItem('tasks', tasksAsText);
+}
 
 /**
  *  The function is used to laod and convert the tasks from text-format to a JSON-array
  */
-// function loadTasks() {
-//     let tasksAsText = backend.getItem('tasks');
-//     if (tasksAsText) {
-//         tasks = JSON.parse(tasksAsText);
-//     }
-// }
+ function loadTasks() {
+    let tasksAsText = backend.getItem('tasks');
+    if (tasksAsText) {
+        tasks = JSON.parse(tasksAsText);
+    }
+}
 
 
 
 /* old save and load */
 
-function saveTasks() {
+/* function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
     localStorage.setItem('tasks', tasksAsText);
 }
 
 /**
  *  The function is used to laod and convert the tasks from text-format to a JSON-array
-*/
+ 
 function loadTasks() {
     let tasksAsText = localStorage.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);
     }
-}
+} */
 
 
-/* ****** LOCAL STORAGE: save data in local storage if needed ****** */
-
-/**
- *  The function is used to laod and convert the tasks from text-format to a JSON-array
- */
-function loadLocalData() {
-    let tasksAsText = localStorage.getItem('tasks');
-    // & users, categories, borads
-    if (tasksAsText) {
-        tasks = JSON.parse(tasksAsText);
-    }
-}
-
-/**
-  The function is used to save and convert tasks in form of a JSON-array from the addTask function to a string  
-*/
-function saveLocalData() {
-    let tasksAsText = JSON.stringify(tasks);
-    backend.setItem('tasks', tasksAsText);
-}
