@@ -46,9 +46,8 @@ function boardTaskHTML(element, i) {
 function editFormHTML(i) {
     return /*html*/ `
         <div class="task-input container" onclick="event.stopPropagation()">
+            <h2 class="edit-task-headline">UPDATE TASK</h2>
             <form class="form-field edit-form">
-                <h2 class="edit-task-headline">UPDATE TASK</h2>
-                <br>
                 <div class="form-section">
                     <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
                     <h2>TITLE</h2>

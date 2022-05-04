@@ -65,6 +65,11 @@ img {
     height: auto;
 }
 
+input, textarea, select {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px 1px rgb(128, 128, 128,0.5);
+}
 
 /*** impressum ***/
 
@@ -243,7 +248,9 @@ a {
 
 .welcome-text {
     text-align: center;
-    height: 20vh;
+    /* height: 20vh; */
+    color: darkslategray;
+    padding-bottom: 24px;
 }
 
 .welcome {
@@ -321,7 +328,9 @@ a {
 
 .edit-task-headline{
     text-align: center;
-    /* padding-top: 80px; */
+    /* width:100%;
+    line-break: after; */
+    color: white;
 }
 
 .form-section {
@@ -331,6 +340,7 @@ a {
 
 .edit-form {
     margin: 20px;
+    margin-top: 0 !important;
     /* padding-bottom: 40px; */
     background-color: rgb(233, 233, 241);
     border-radius: 12px;

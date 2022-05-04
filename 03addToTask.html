@@ -47,7 +47,7 @@
                 <div class="task-input-container">
                     <form class="form-field" onsubmit="addToTasks()">
                         <div>
-                            <div id="assignmentBox" class="assignment-box d-none"></div>
+                            <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
                             <h2>TITLE</h2>
                             <input required id="title" placeholder="Enter a title">
                             <h2>CATEGORY</h2>
@@ -70,6 +70,7 @@
                                 <option value="Low">Low</option>
                             </select>
                             <div class="assignment-container">
+                                <div id="assignmentBox" class="assignment-box d-none"></div>
                                 <h2>ASSIGNED TO</h2>
                                 <div id="assignment" class="assignment-button-container">
                                     <img onclick="showAssignBox()" src="img/icon-plus.png" alt="">
