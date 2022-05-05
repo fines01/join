@@ -10,7 +10,7 @@
 .board-sub-menu p {
     font-size: 14px;
     /* color: rgb(14, 11, 167); */
-    /* background-color: white; */
+    color: var(--col-blue1);
 }
 
 .board-content {

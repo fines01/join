@@ -12,7 +12,8 @@
 
 .add-to-task-sub-menu p {
     font-size: 14px;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    color: var(--col-blue1);
 }
 
 .task-input-wrap {
