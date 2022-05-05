@@ -32,7 +32,7 @@
 
 .board-task-container {
     position: relative;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     padding: 5px;
     min-width: 300px;
     min-height: 550px;
@@ -136,6 +136,7 @@
 .scroll-bar {
     overflow-y: auto;
     max-height: 560px;
+    margin-right:20px;
 }
 
 .scroll-bar-small {
@@ -145,23 +146,28 @@
 
 /* Scrollbar */
 
-.scroll-bar::-webkit-scrollbar {
-    width: 4px;
+.scroll-bar::-webkit-scrollbar,
+::-webkit-scrollbar {
+    width: 6px;
     height: 0px;
 }
 
-.scroll-bar::-webkit-scrollbar-track {
+.scroll-bar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 15px;
 }
 
-.scroll-bar::-webkit-scrollbar-thumb {
-    background: rgb(14, 11, 167);
+.scroll-bar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    /* background: rgb(14, 11, 167); */
+    background: var(--col-blue1);
     border-radius: 15px;
     transition: ease-in-out 200ms;
 }
 
-.scroll-bar::-webkit-scrollbar-thumb:hover {
+.scroll-bar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
     background: #fb6100;
 }
 

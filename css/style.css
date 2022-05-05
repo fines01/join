@@ -99,7 +99,8 @@ option {
 
 .impressum-sub-menu p {
     font-size: 14px;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    color: var(--col-blue1);
 }
 
 .impressum {
@@ -121,7 +122,8 @@ option {
 
 .datenschutz-sub-menu p {
     font-size: 14px;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    color: var(--col-blue1);
 }
 
 .datenschutz {

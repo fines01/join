@@ -8,14 +8,16 @@
 
 .backlog-sub-menu p {
     font-size: 14px;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    color: var(--col-blue1);
 }
 
 .backlog-titles{
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    color:var(--col-blue1);
     /* text-transform: uppercase; */
 }
 
