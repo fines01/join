@@ -83,7 +83,7 @@ function addUser(userIndex) { //default-value in case of adding a new task
 /* ****** render add to task form fields ****** */
 
 function renderForm() {
-    let userSelect = getId('assignedUser');
+    let userSelect = getId('assignUser');
     userSelect.innerHTML = '';
     userSelect.innerHTML = renderUserOptionFields();
 }

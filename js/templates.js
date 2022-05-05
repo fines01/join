@@ -66,8 +66,9 @@ function editFormHTML(i) {
                     <select id="urgency">
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
-                    <h2>ASSIGN TO</h2>
-                    <select multiple id="assignedUser">
+                    <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">(x)</span></h2>
+                    <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icon-plus.png" alt="">
+                    <select multiple id="assignUser" class="d-none">
                         ${renderUserOptionFields()}
                     </select>
                     <div class="assignment-container">

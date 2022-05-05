@@ -120,7 +120,7 @@
     /* margin-top:24px; */
 }
 
-.assignment-container img {
+.assignment-container img, .assignment-btn {
     height: 45px;
     width: 45px;
 }
@@ -129,7 +129,7 @@
     padding-bottom: 12px;
 }
 
-.assignment-container img:hover {
+.assignment-container img:hover, .assignment-btn:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -180,6 +180,10 @@
     display: flex;
     justify-content: flex-start;
     gap: 32px;
+}
+
+#closeBtn {
+    cursor: pointer;
 }
 
 input {
