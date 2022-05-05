@@ -16,8 +16,9 @@
 .board-content {
     display: flex;
     /* justify-content: center; */
-    padding-top: 45px;
-    padding-left: 50px; /*align boards with headline*/
+    padding: 45px 50px;
+    padding-right: 0;
+    /* padding-left: 50px; align boards with headline */
     flex-wrap: wrap;
     gap: 24px 0; /* 24px top and bottom, 0px left and right between elements*/
     color: var(--col-main);
