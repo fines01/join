@@ -26,13 +26,13 @@
     <script src="js/includeHTML.js"></script>
     <!-- serverBackend for saving and loading tasks on the server -->
     <script src="./mini_backend.js"></script>
-   
+
     <title>Join</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
-<body onload="initScript(); renderForm();">
+<body onload="initScript(); renderForm();clearInputs()">
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="add-task-container">
@@ -51,7 +51,7 @@
                             <h2>TITLE</h2>
                             <input required id="title" placeholder="Enter a title">
                             <h2>CATEGORY</h2>
-                            <select id="category" placeholder="Management">
+                            <select required id="category" placeholder="Management">
                                 <option value="Management"> Management</option>
                                 <option value="Software Developement">Software Developement</option>
                                 <option value="UX/UI Design">UX/UI Design</option>
@@ -62,9 +62,9 @@
                         </div>
                         <div>
                             <h2>DUE DATE</h2>
-                            <input id="date" type="date">
+                            <input required id="date" type="date">
                             <h2>URCENCY</h2>
-                            <select id="urgency">
+                            <select required id="urgency">
                                 <option value="High">High</option>
                                 <option value="Intermediate">Intermediate</option>
                                 <option value="Low">Low</option>

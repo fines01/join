@@ -13,6 +13,11 @@ function addToTasks() {
 
 }
 
+function clearInputs() {
+    clearInputValues(title, date, category, urgency, description);
+
+}
+
 /**
  * This function saves input values and returns them as a task object
  * @returns {Object} - task object
@@ -30,7 +35,7 @@ function saveTaskInputs() {
         'urgency': urgency.value,
         'date': date.value,
         'board': '',
-        'assignedTo' : []
+        'assignedTo': []
     };
     return task;
 }
@@ -54,7 +59,7 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function showAssignBox() { 
+function showAssignBox() {
     toggle('assignmentBox');
     renderUsers();
 }
@@ -70,9 +75,9 @@ function renderUsers() {
 }
 
 function addUser(userIndex) { //default-value in case of adding a new task
-    console.log('user-index: ',userIndex);
+    console.log('user-index: ', userIndex);
     console.log('assign to user: ', users[userIndex]);
-    console.log('task-index: ',taskIndex);
+    console.log('task-index: ', taskIndex);
 
     tasks[taskIndex].assignedTo.push(users[userIndex]);
     //task.assignedTo.push(users[userIndex]);
