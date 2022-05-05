@@ -9,7 +9,8 @@
 
 .board-sub-menu p {
     font-size: 14px;
-    color: rgb(14, 11, 167);
+    /* color: rgb(14, 11, 167); */
+    /* background-color: white; */
 }
 
 .board-content {
@@ -19,12 +20,14 @@
     padding-left: 50px; /*align boards with headline*/
     flex-wrap: wrap;
     gap: 24px 0; /* 24px top and bottom, 0px left and right between elements*/
+    color: var(--col-main);
 }
 
 .board-content h2 {
     padding-bottom: 8px;
     font-size: 17px;
     text-align: center;
+    color: white;
 }
 
 .board-task-container {
