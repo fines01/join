@@ -27,6 +27,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.9);
     }
     .mobile-menu {
         height: 25px;
@@ -54,6 +55,11 @@
     }
     .card {
         height: 19vh;
+    }
+    /* adjust headline */
+    .board-sub-menu {
+        padding-top: 80px;
+        padding-left: 50px;
     }
 }
 

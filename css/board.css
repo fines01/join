@@ -3,7 +3,7 @@
 }
 
 .board-sub-menu {
-    padding-top: 80px;
+    padding-top: 32px; /* aligned with Logo on Sidenav (approximately as much as possible)*/
     padding-left: 50px;
 }
 
@@ -14,9 +14,11 @@
 
 .board-content {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     padding-top: 45px;
+    padding-left: 50px; /*align boards with headline*/
     flex-wrap: wrap;
+    gap: 24px 0; /* 24px top and bottom, 0px left and right between elements*/
 }
 
 .board-content h2 {
@@ -27,7 +29,7 @@
 
 .board-task-container {
     position: relative;
-    margin-left: 20px;
+    margin-right: 20px;
     padding: 5px;
     min-width: 300px;
     min-height: 550px;
