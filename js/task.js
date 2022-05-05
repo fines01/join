@@ -7,7 +7,7 @@ function addToTasks() {
     let task = saveTaskInputs();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
-    task.board = 'todo'; // default-board on task creation
+    task.board = 'backlog'; // default-board on task creation
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
 
@@ -30,7 +30,7 @@ function saveTaskInputs() {
         'urgency': urgency.value,
         'date': date.value,
         'board': '',
-        'assignedTo' : []
+        'assignedTo': []
     };
     return task;
 }
@@ -54,7 +54,7 @@ function saveEdit(dataArray, i) {
     saveTasks();
 }
 
-function showAssignBox() { 
+function showAssignBox() {
     toggle('assignmentBox');
     renderUsers();
 }
@@ -70,9 +70,9 @@ function renderUsers() {
 }
 
 function addUser(userIndex) { //default-value in case of adding a new task
-    console.log('user-index: ',userIndex);
+    console.log('user-index: ', userIndex);
     console.log('assign to user: ', users[userIndex]);
-    console.log('task-index: ',taskIndex);
+    console.log('task-index: ', taskIndex);
 
     tasks[taskIndex].assignedTo.push(users[userIndex]);
     //task.assignedTo.push(users[userIndex]);

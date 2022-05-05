@@ -10,6 +10,7 @@ function logsHTML(task) {
             <div class="">
                 <h5 class="hide-long-text">${capitalizeFirst(task.title)}</h5>
                 <p class="hide-long-text">${capitalizeFirst(task.description)}</p>
+                <img onclick="backlogToBoard()" class="backlog-arrow" src="img/arrow-4-48.png">
             </div>
         </div>`;
 }

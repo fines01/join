@@ -19,6 +19,6 @@ function renderLogs() {
 
 
 
-function assignTask () {
-    
+function backlogToBoard(i) {
+    tasks[i]['board'] = 'todo'
 }
