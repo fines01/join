@@ -21,10 +21,12 @@ function renderLogss() {
 
 function backlogToBoard(i) {
     tasks[i]['board'] = 'todo'
+    renderLogs()
+    saveTasks();
 }
 
 
-function renderLogsTest() {
+function renderLogs() {
     let backlog = tasks.filter(t => t['board'] == 'backlog');
 
     getId('logs').innerHTML = '';
@@ -38,7 +40,7 @@ function renderLogsTest() {
 }
 
 function deleteBacklogTask(i) {
-    tasks.splice(i, 1)
-    renderLogsTest()
+    tasks.splice(i, 1);
+    renderLogs();
     saveTasks();
 }
