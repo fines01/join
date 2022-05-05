@@ -16,8 +16,10 @@
         display: none;
     }
     .nav-bar-mobile {
-        background-color: rgb(30, 30, 171);
-        background-color: var(--col-blue1);
+        /* background-color: rgb(30, 30, 171); */
+        /* background-color: var(--col-blue1); */
+        background-color: rgb(3, 4, 94, 0.8);
+        box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.7);
         position: fixed;
         z-index: 100;
     }
@@ -27,7 +29,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.9);
     }
     .mobile-menu {
         height: 25px;
@@ -48,6 +49,7 @@
     .navbar-container {
         height: 90vh;
         padding-top: 10vh;
+        /* background-color: rgb(3, 4, 94, 0.5); */
     }
     /* start-page */
     .welcome-text {
