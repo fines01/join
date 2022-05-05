@@ -3,6 +3,7 @@
  */
 function renderBoards() {
 
+
     let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
     getId('todoBoard').innerHTML = '';

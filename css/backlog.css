@@ -59,8 +59,28 @@
     color: inherit;
 }
 
-.backlog-arrow {
+.backlog-buttons {
+    width: unset !important;
     position: absolute;
-    right: 40px;
-    bottom: 22px;
+    float: right;
+    right: 50px;
+}
+
+.delete-backlog {
+    width: 35px;
+    margin-bottom: 2px;
+}
+
+.backlog-arrow {
+    cursor: pointer;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.delete-backlog:hover {
+    transform: scale(1.02);
+}
+
+.backlog-arrow:hover {
+    transform: scale(1.03);
 }

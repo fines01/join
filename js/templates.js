@@ -1,16 +1,20 @@
-function logsHTML(task) {
+function logsHTML(element, i) {
     return /*html*/ `
         <div class="log">
             <div class="">
-                 <h4 class="log-name hide-long-text">${task.assignedTo}</h4>
+                 <h4 class="log-name hide-long-text">${element['assignedTo']}</h4>
             </div>
             <div class="">
-                <h4 class="hide-long-text">${task.category}</h4>
+                <h4 class="hide-long-text">${element['category']}</h4>
             </div>
             <div class="">
-                <h5 class="hide-long-text">${capitalizeFirst(task.title)}</h5>
-                <p class="hide-long-text">${capitalizeFirst(task.description)}</p>
-                <img onclick="backlogToBoard()" class="backlog-arrow" src="img/arrow-4-48.png">
+                <h5 class="hide-long-text">${capitalizeFirst(element['title'])}</h5>
+                <p class="hide-long-text">${capitalizeFirst(element['description'])}</p>
+        
+            </div>
+            <div class="backlog-buttons">
+                    <img onclick="backlogToBoard(${i})" class="backlog-arrow" src="img/arrow-4-48.png">
+                    <img onclick="deleteBacklogTask(${i})" class="delete-backlog" src="img/delete-128.png">
             </div>
         </div>`;
 }
