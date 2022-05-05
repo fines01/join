@@ -33,7 +33,9 @@
 
 .board-task-container {
     position: relative;
+  
     /* margin-right: 20px; */
+
     padding: 5px;
     min-width: 300px;
     min-height: 550px;
@@ -161,6 +163,7 @@
     margin-right:20px;
     box-shadow: 0 0 4px 3px rgb(251, 97, 0, 0.5);
     border-radius:8px;
+
 }
 
 .scroll-bar-small {

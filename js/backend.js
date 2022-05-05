@@ -1,5 +1,5 @@
 function loadTasks() {
-    let tasksAsText = localStorage.getItem('tasks');
+    let tasksAsText = backend.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);
     }
@@ -8,5 +8,5 @@ function loadTasks() {
 
 function saveTasks() {
     let tasksAsText = JSON.stringify(tasks);
-    localStorage.setItem('tasks', tasksAsText);
+    backend.setItem('tasks', tasksAsText);
 }
