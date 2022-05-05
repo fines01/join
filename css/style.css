@@ -22,6 +22,10 @@
     --col-green1: #57CC99;
     --col-red1: #EB5353;
     --col-yellow1: #FFE162;
+    /* "led" background-lighting */
+    --led-priority0: 0 0 3px 1px rgba(0, 255, 221, 0.7);
+    --led-priority1: 0 0 3px 1px rgb(251, 255, 0, 0.7);
+    --led-priority2: 0 0 3px 1px rgb(255, 0, 0, 0.7);
     /*** border-radius ***/
     /* 1rem ^= 16px (if not defined otherwise) */
     --br-main: 0.25rem;
