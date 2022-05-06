@@ -22,10 +22,11 @@
         box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.7);
         position: fixed;
         z-index: 100;
+        top: 0;
+        right: 0;
+        left: 0;
     }
     .nav-bar-mobile-content {
-        height: 55px;
-        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -33,7 +34,7 @@
     .mobile-menu {
         height: 25px;
         position: absolute;
-        top: 15px;
+        top: 13px;
         left: 15px;
         cursor: pointer;
     }
@@ -44,16 +45,19 @@
         cursor: pointer;
     }
     .mobile-logo {
-        height: 40px;
+        height: 35px;
+        padding: 5px;
     }
     .navbar-container {
         height: 90vh;
         padding-top: 10vh;
+        position: absolute;
         /* background-color: rgb(3, 4, 94, 0.5); */
     }
     /* start-page */
     .welcome-text {
         padding-top: 40px;
+        height: 19vh;
     }
     .card {
         height: 19vh;
