@@ -21,19 +21,19 @@
 
         <div class="input-box">
             <i class="fa fa-envelope icon"></i>
-            <input class="email-input" type="email" placeholder="E-mail">
+            <input required class="email-input" type="email" placeholder="E-mail" id="user">
         </div>
 
         <div class="input-box">
             <i class="fa fa-key icon"></i>
-            <input class="password-input" type="password" placeholder="Passwort" id="myInput">
-            <span class="eye" onclick="myFunction()">
+            <input class="password-input" type="password" placeholder="Passwort" id="password">
+            <span class="eye" onclick="showPassword()">
             <i class="fa fa-eye" id="hide1"></i>
             <i class="fa fa-eye-slash" id="hide2"></i>
             </span>
         </div>
 
-        <button type="button" class="login-btn">LOGIN</button>
+        <button type="button" class="login-btn" onclick="checkLogin()">LOGIN</button>
     </div>
 </body>
 

@@ -19,6 +19,7 @@ function renderLogss() {
 
 
 
+
 function backlogToBoard(i) {
     tasks[i]['board'] = 'todo'
     renderLogs()
@@ -44,3 +45,4 @@ function deleteBacklogTask(i) {
     renderLogs();
     saveTasks();
 }
+

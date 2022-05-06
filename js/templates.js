@@ -25,6 +25,7 @@ function boardTaskHTML(element, i) {
             <h4 class="task-headline-text">${element['title']}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>
+                Category: <b>${element['category']}</b><br>
                 Due date: <span>${element['date']}</span>
             </span>
             <p class="task-description-text">${element['description']}</p>

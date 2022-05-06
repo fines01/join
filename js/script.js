@@ -31,12 +31,20 @@ async function loadServerData() {
     //users = JSON.parse(backend.getItem('users')) || [];
 }
 
+async function initBoard() {
+await initScript();
+await init();
+renderBoards();
+}
+
+
+
 /**
  * function initScript() executes on load of html body
  */
-function initScript() {
+ function initScript() {
     //loadServerData(); // get data from ftp server
-    loadTasks(); // get tasks from local strage 
+   loadTasks(); // get tasks from local strage 
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
 }
@@ -128,7 +136,7 @@ function capitalizeFirst(str) {
 }
 
 /**
- * This function takes html form and input elements and empties their value.
+ * This function empties the values of all passed html form and input elements.
  * @param  {...Object} elements - HTML elements
  */
 function clearInputValues(...elements) {
@@ -141,12 +149,16 @@ function clearInputValues(...elements) {
 
 function showNavbar() {
     getId('nav-bar').classList.remove('hide-mobile');
-    getId('mobile-x').classList.remove('d-none');
-    getId('mobile-menu').classList.add('d-none')
+    hide('mobile-menu');
+    show('mobile-x');
+    // getId('mobile-x').classList.remove('d-none');
+    // getId('mobile-menu').classList.add('d-none')
 }
 
 function closeNavbar() {
     getId('nav-bar').classList.add('hide-mobile');
-    getId('mobile-x').classList.add('d-none');
-    getId('mobile-menu').classList.remove('d-none')
+    hide('mobile-x');
+    show('mobile-menu');
+    // getId('mobile-x').classList.add('d-none');
+    // getId('mobile-menu').classList.remove('d-none')
 }
