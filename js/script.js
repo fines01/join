@@ -32,9 +32,15 @@ async function loadServerData() {
 }
 
 async function initBoard() {
-await initScript();
-await init();
-renderBoards();
+    await initScript();
+    await init();
+    renderBoards();
+}
+
+async function initBacklog() {
+    await initScript();
+    await init();
+    renderLogs();
 }
 
 
@@ -42,9 +48,9 @@ renderBoards();
 /**
  * function initScript() executes on load of html body
  */
- function initScript() {
+function initScript() {
     //loadServerData(); // get data from ftp server
-   loadTasks(); // get tasks from local strage 
+    loadTasks(); // get tasks from local strage 
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
 }
@@ -58,11 +64,11 @@ function splitID(id, separator) {
  * This function generates a random hex color code.
  * @returns {string} - the string value for a random hex color code
  */
-function randomHexColor(){
-    let hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+function randomHexColor() {
+    let hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
     let hexColorStr = '#';
     for (let i = 0; i < 6; i++) {
-        let randNr = Math.floor( Math.random() * hex.length );    //random number between [0, hex.length[
+        let randNr = Math.floor(Math.random() * hex.length); //random number between [0, hex.length[
         hexColorStr += hex[randNr];
     }
     console.log(hexColorStr);
@@ -111,7 +117,7 @@ function show(...ids) {
     for (let i = 0; i < ids.length; i++) {
         let element = getId(ids[i]);
         //if (element.classList.contains('d-none')){
-            element.classList.remove('d-none');
+        element.classList.remove('d-none');
         //}
     }
 }
