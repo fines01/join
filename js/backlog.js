@@ -3,13 +3,6 @@
 /**
  * Renders all logs from the tasks array
  */
-function backlogToBoard(i) {
-    tasks[i]['board'] = 'todo'
-    renderLogs()
-    saveTasks();
-}
-
-
 function renderLogs() {
     let backlog = tasks.filter(t => t['board'] == 'backlog');
 
@@ -21,6 +14,12 @@ function renderLogs() {
         getId('logs').innerHTML += logsHTML(element, taskIndex);
 
     }
+}
+
+function backlogToBoard(i) {
+    tasks[i]['board'] = 'todo'
+    renderLogs()
+    saveTasks();
 }
 
 function deleteBacklogTask(i) {
