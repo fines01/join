@@ -7,7 +7,7 @@ function addToTasks() {
     let task = saveTaskInputs();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
-    task.board = 'todo'; // default-board on task creation
+    task.board = 'backlog'; // default-board on task creation
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
 
