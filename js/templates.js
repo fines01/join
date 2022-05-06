@@ -71,7 +71,7 @@ function editFormHTML(i) {
                     <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">(x)</span></h2>
                     <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icon-plus.png" alt="">
                     <select multiple id="assignUser" class="d-none">
-                        ${renderUserOptionFields()}
+                        ${renderUserOptionFields(tasks[i].assignedTo)}
                     </select>
                     <!-- TODO: ASSIGNMENT_CONTAINER: renders icons of assigned users -->
                     <div class="assignment-container">
@@ -79,9 +79,9 @@ function editFormHTML(i) {
                         <!-- <h2>ASSIGNED</h2> -->
                         <div id="assigned" class="assignment-button-container">
                             <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->
-                            <img src="img/icon-plus.png" alt="">
-                            <img src="img/icon-plus.png" alt="">
-                            <img src="img/icon-plus.png" alt="">
+                            <!-- <img src="img/icon-plus.png" alt="">
+                            <img src="img/icon-plus.png" alt=""> -->
+                            ${renderAssignedUsers(tasks[i].assignedTo)}
                         </div>
                     </div>
                     <div class="btn-box">
@@ -98,38 +98,24 @@ function editFormHTML(i) {
     `;
 }
 
-// render users Vers A.:
-function showUsersHTML(showUser) {
-    return /*html*/ `
-    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
-    <span class="light-text">
-        <span>${showUser['img']}</span>
-        Name: <b>${showUser['name']}</b><br>
-        E-Mail: <span>${showUser['email']}</span>
-    </span>
-    </div>
-    `
+function renderAssignedUsers(usersArr) {
+    for (let i = 0; i < usersArr.length; i++) {
+        let user = usersArr[i];
+        renderUserIcon(user);
+    }
 }
 
-// render users Vers. B.: in select field, st that value can be passed?
-function selectUsersHTML(user) {
-    return /*html*/ `
-    <!--  -->
-    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
-    <span class="light-text">
-        <span>${showUser['img']}</span>
-        Name: <b>${showUser['name']}</b><br>
-        E-Mail: <span>${showUser['email']}</span>
-    </span>
-    </div>
-    `
+function renderUserIcon(userName){
+    let user = users.filter(usr => usr.name == userName);
+    // get initials (max 2 or 3)
+    let splitNameArr = userName.split(' ');
+    let initials = '';
+    for (let i = 0; i < 2; i++) {
+        initials += splitNameArr[i][0] + ' ';      
+    }
+    // return user-icon
+    return /*html*/ `<span class="user-icon" alt="user icon" style="background-color: ${user.color}">${initials}<span></span>`;
 }
-
-function renderAssignedUser() {
-    //for each user in assignedTo (if several users can be assigned? [] )
-    return /*html*/ ``;
-}
-
 
 /**
  * This function renders all options from a given array of values in an html select field
@@ -145,12 +131,12 @@ function renderOptionFields(selected, dataArray) {
     }
     return str;
 }
-
-function renderUserOptionFields() {
+// TODO: maybe include in function above (one fkt?)
+function renderUserOptionFields(selectedUsers = undefined) { // default undefined in case of adding a new task
     str = '';
     for (let i = 0; i < users.length; i++) {
         let el = users[i].name;
-        str += /*html*/ `<option value="${el}">${el}</option>`;
+        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)}>${el}</option>`;
     }
     return str;
 }
@@ -168,3 +154,27 @@ function renderSelected(option, value) {
         }
     }
 }
+// TODO: maybe include in function above (one fkt?)
+function renderMultipleSelected(optionsArr, value){
+    if (optionsArr != undefined) {
+        for (let i = 0; i < optionsArr.length; i++) {
+            let el = optionsArr[i];
+            if( el.toLowerCase() == value.toLowerCase() ){
+                return 'selected';
+            }
+        }
+    }
+}
+
+// //user-box
+// function showUsersHTML(showUser) {
+//     return /*html*/ `
+//     <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
+//     <span class="light-text">
+//         <span>${showUser['img']}</span>
+//         Name: <b>${showUser['name']}</b><br>
+//         E-Mail: <span>${showUser['email']}</span>
+//     </span>
+//     </div>
+//     `
+// }

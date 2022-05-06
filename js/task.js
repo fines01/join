@@ -27,6 +27,10 @@ function saveTaskInputs() {
     let id = tasks.length;
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
+
+    let assignedUsers= getAssignedUsers();
+    console.log(assignedUsers);
+
     let task = {
         //'id' : id,
         'title': title.value,
@@ -35,9 +39,25 @@ function saveTaskInputs() {
         'urgency': urgency.value,
         'date': date.value,
         'board': '',
-        'assignedTo': []
+        'assignedTo': assignedUsers
     };
     return task;
+}
+
+/**This function gets all selected user values from an html multiple select field and returns the values in an array
+ * @returns {string[]} - selected users
+ */
+function getAssignedUsers(){
+    let assignedUsers=[];
+    let selectOptions = getId('assignUser').options;
+
+    for (let i = 0; i < selectOptions.length; i++) {
+        if (selectOptions[i].selected) {
+            assignedUsers.push(selectOptions[i].value);
+        }
+    }
+
+    return assignedUsers;
 }
 
 function deleteTask(dataArray, i) {
@@ -74,7 +94,7 @@ function renderUsers() {
     }
 }
 
-function addUser(userIndex) { //default-value in case of adding a new task
+function addUser(userIndex) {
     console.log('user-index: ', userIndex);
     console.log('assign to user: ', users[userIndex]);
     console.log('task-index: ', taskIndex);
