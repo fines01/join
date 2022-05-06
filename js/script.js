@@ -37,6 +37,8 @@ await init();
 renderBoards();
 }
 
+
+
 /**
  * function initScript() executes on load of html body
  */
