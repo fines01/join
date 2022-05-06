@@ -17,8 +17,3 @@ function renderLogs() {
     }
 }
 
-
-
-function assignTask () {
-    
-}

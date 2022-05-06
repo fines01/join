@@ -24,8 +24,6 @@ function clearInputs() {
  */
 function saveTaskInputs() {
 
-    let id = tasks.length;
-
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
     let task = {
         //'id' : id,
@@ -91,4 +89,24 @@ function renderForm() {
     let userSelect = getId('assignUser');
     userSelect.innerHTML = '';
     userSelect.innerHTML = renderUserOptionFields();
+}
+
+/* Backend Folder */
+window.onload = async function() {
+    downloadFromServer();
+}
+
+function saveTasks() {
+    let tasksAsText = JSON.stringify(tasks);
+    backend.setItem('tasks', tasksAsText);
+}
+
+/**
+ *  The function is used to laod and convert the tasks from text-format to a JSON-array
+ */
+function loadTasks() {
+    let tasksAsText = backend.getItem('tasks');
+    if (tasksAsText) {
+        tasks = JSON.parse(tasksAsText);
+    }
 }

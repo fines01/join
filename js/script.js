@@ -31,12 +31,18 @@ async function loadServerData() {
     //users = JSON.parse(backend.getItem('users')) || [];
 }
 
+async function initBoard() {
+await initScript();
+await init();
+renderBoards();
+}
+
 /**
  * function initScript() executes on load of html body
  */
-function initScript() {
+ function initScript() {
     //loadServerData(); // get data from ftp server
-    loadTasks(); // get tasks from local strage 
+   loadTasks(); // get tasks from local strage 
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
 }
