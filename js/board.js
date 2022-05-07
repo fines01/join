@@ -3,6 +3,7 @@
  */
 function renderBoards() {
 
+
     let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
     getId('todoBoard').innerHTML = '';
@@ -83,7 +84,7 @@ function showMoveButtons(i) {
 }
 
 /**
- * generated task will be moved to the todo board
+ * generated task will be moved to the todo board on responsive view
  */
 function moveToTodo(i) {
     const targetBoard = 'todo'
@@ -92,7 +93,7 @@ function moveToTodo(i) {
     renderBoards()
 }
 /**
- * generated task will be moved to the in progress board
+ * generated task will be moved to the in progress board on responsive view
  */
 function moveToInProgress(i) {
     const targetBoard = 'inProgress'
@@ -101,7 +102,7 @@ function moveToInProgress(i) {
     renderBoards()
 }
 /**
- * generated task will be moved to the testing board
+ * generated task will be moved to the testing board on responsive view
  */
 function moveToTesting(i) {
     const targetBoard = 'testing'
@@ -110,7 +111,7 @@ function moveToTesting(i) {
     renderBoards()
 }
 /**
- * generated task will be moved to the done board
+ * generated task will be moved to the done board on responsive view
  */
 function moveToDone(i) {
     const targetBoard = 'done'

@@ -7,7 +7,7 @@ function addToTasks() {
     let task = saveTaskInputs();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
-    task.board = 'todo'; // default-board on task creation
+    task.board = 'backlog'; // default-board on task creation
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
 
@@ -22,8 +22,6 @@ function clearInputs() {
  * @returns {Object} - task object
  */
 function saveTaskInputs() {
-
-    let id = tasks.length;
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
@@ -173,5 +171,25 @@ function renderMultipleSelected(optionsArr, value) {
                 return 'selected';
             }
         }
+    }
+}
+
+/* Backend Folder */
+window.onload = async function() {
+    downloadFromServer();
+}
+
+function saveTasks() {
+    let tasksAsText = JSON.stringify(tasks);
+    backend.setItem('tasks', tasksAsText);
+}
+
+/**
+ *  The function is used to laod and convert the tasks from text-format to a JSON-array
+ */
+function loadTasks() {
+    let tasksAsText = backend.getItem('tasks');
+    if (tasksAsText) {
+        tasks = JSON.parse(tasksAsText);
     }
 }

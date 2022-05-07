@@ -21,6 +21,10 @@ let users = [{
 ]
 
 
+/**
+ * function schowPassword() is used to show the password when clicking on the eye symbol
+ */
+
 function showPassword() {
     var x = document.getElementById('password');
     var y = document.getElementById('hide1');
@@ -38,6 +42,11 @@ function showPassword() {
 }
 
 
+/**
+ * function checkLogin() checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
+ */
+
+
 function checkLogin() {
     let username = document.getElementById('user');
     let password = document.getElementById('password');
@@ -48,8 +57,9 @@ function checkLogin() {
         if (username.value == element['user'] &&
             password.value == element['password']) {
             window.open('index.html');
-        } else {
-            alert('username or password is not correct!');
+            return
         }
+
     }
+    alert('Username or Password is not correct!')
 }

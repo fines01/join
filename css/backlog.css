@@ -2,8 +2,8 @@
     padding-top: 80px;
     padding-bottom: 80px;
     padding-left: 50px;
-    padding-right:50px;
-    width:100%;
+    padding-right: 50px;
+    width: 100%;
 }
 
 .backlog-sub-menu p {
@@ -12,26 +12,27 @@
     color: var(--col-blue1);
 }
 
-.backlog-titles{
+.backlog-titles {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     /* color: rgb(14, 11, 167); */
-    color:var(--col-blue1);
+    color: var(--col-blue1);
     /* text-transform: uppercase; */
 }
 
 .backlog-titles div {
-    width:33%;
-     align-self: center;
+    width: 33%;
+    align-self: center;
 }
 
 .log {
+    position: relative;
     background-color: rgb(233, 233, 241);
     width: 100%;
     height: 75px;
     border-radius: 6px;
-    border-left: 4px solid rgb(14,11,167);
+    border-left: 4px solid rgb(14, 11, 167);
     display: flex;
     padding: 8px;
     margin-bottom: 16px;
@@ -58,3 +59,28 @@
     color: inherit;
 }
 
+.backlog-buttons {
+    width: unset !important;
+    position: absolute;
+    float: right;
+    right: 50px;
+}
+
+.delete-backlog {
+    width: 35px;
+    margin-bottom: 2px;
+}
+
+.backlog-arrow {
+    cursor: pointer;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.delete-backlog:hover {
+    transform: scale(1.02);
+}
+
+.backlog-arrow:hover {
+    transform: scale(1.03);
+}
