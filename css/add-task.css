@@ -39,6 +39,7 @@
     margin: 20px;
     padding: 16px;
     padding-bottom: 40px;
+    gap:0  50px;
 }
 
 .form-field input {
@@ -69,10 +70,6 @@
     font-size: 16px;
     padding-top: 20px;
     padding-bottom: 5px;
-}
-
-.form-field div {
-    padding-right: 50px;
 }
 
 .mgn-t {
@@ -119,7 +116,7 @@
 .assignment-container {
     /* padding-top: 80px; */
     position: relative;
-    /* margin-top:24px; */
+    margin:24px 0 32px 0;
 }
 
 .assignment-container img, .user-icon,
@@ -131,6 +128,17 @@
 .user-icon {
     border-radius: 50%;
     border: 1px solid gray;
+    height: 45px;
+    /* padding: 10px 12px; */
+    color: var(--col-blue1);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .assignment-container h2 {
@@ -141,6 +149,7 @@
 .assignment-btn:hover {
     cursor: pointer;
     transform: scale(1.05);
+    opacity: 1;
 }
 
 .assignment-button-container {
@@ -148,6 +157,8 @@
     align-items: center;
     gap: 16px;
     margin-top: 24px;
+    flex-wrap: wrap;
+    max-width: 85%;
 }
 
 .assign-button {

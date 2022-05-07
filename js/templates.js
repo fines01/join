@@ -75,13 +75,9 @@ function editFormHTML(i) {
                     </select>
                     <!-- TODO: ASSIGNMENT_CONTAINER: renders icons of assigned users -->
                     <div class="assignment-container">
-                        <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
-                        <!-- <h2>ASSIGNED</h2> -->
-                        <div id="assigned" class="assignment-button-container">
-                            <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->
-                            <!-- <img src="img/icon-plus.png" alt="">
-                            <img src="img/icon-plus.png" alt=""> -->
+                        <div id="iconsContainer" class="assignment-button-container">
                             ${renderAssignedUsers(tasks[i].assignedTo)}
+                            <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->                            
                         </div>
                     </div>
                     <div class="btn-box">
@@ -90,31 +86,45 @@ function editFormHTML(i) {
                         </button>
                         <button class="assign-button" onclick="saveEdit(tasks, ${i})">
                             UPDATE TASK
-                        <button>
+                        </button>
                     </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+    </div>
     `;
 }
 
 function renderAssignedUsers(usersArr) {
+    console.log(usersArr); // check
+    let iconsHTML = '';
     for (let i = 0; i < usersArr.length; i++) {
         let user = usersArr[i];
-        renderUserIcon(user);
+        console.log(user); //
+        iconsHTML += renderUserIcon(user);
     }
+    return iconsHTML;
 }
 
-function renderUserIcon(userName){
-    let user = users.filter(usr => usr.name == userName);
-    // get initials (max 2 or 3)
+// returns up to 2 initials of a given user name
+function extractInitials(userName){
     let splitNameArr = userName.split(' ');
     let initials = '';
-    for (let i = 0; i < 2; i++) {
-        initials += splitNameArr[i][0] + ' ';      
+    if (splitNameArr.length > 1) {
+        for (let i = 0; i < 2; i++) { // max 2 initials 
+            initials += splitNameArr[i][0] + ' '; // get first character (with a space) of every string/ name
+        }
+    } else {
+        initials = splitNameArr[0][0]; // get first character
     }
-    // return user-icon
-    return /*html*/ `<span class="user-icon" alt="user icon" style="background-color: ${user.color}">${initials}<span></span>`;
+    return initials;
+}
+
+function renderUserIcon(userName) {
+    let user = users.filter(usr => usr.name == userName);
+    // get initials (max 2 or 3)
+    let initials = extractInitials(userName);
+    console.log(userName, initials, user[0].color); //check
+    return /*html*/ `<span class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
 }
 
 /**
@@ -155,11 +165,11 @@ function renderSelected(option, value) {
     }
 }
 // TODO: maybe include in function above (one fkt?)
-function renderMultipleSelected(optionsArr, value){
+function renderMultipleSelected(optionsArr, value) {
     if (optionsArr != undefined) {
         for (let i = 0; i < optionsArr.length; i++) {
             let el = optionsArr[i];
-            if( el.toLowerCase() == value.toLowerCase() ){
+            if (el.toLowerCase() == value.toLowerCase()) {
                 return 'selected';
             }
         }
