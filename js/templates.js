@@ -68,8 +68,8 @@ function editFormHTML(i) {
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
                     <!-- TODO: in span closeBtn: choose some close-button (replace (x)) -->
-                    <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">(x)</span></h2>
-                    <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icon-plus.png" alt="">
+                    <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">x</span></h2>
+                    <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icons8-plus.png" alt="">
                     <select multiple id="assignUser" class="d-none">
                         ${renderUserOptionFields(tasks[i].assignedTo)}
                     </select>
@@ -96,15 +96,15 @@ function editFormHTML(i) {
 
 function renderAssignedUsers(usersArr) {
     let iconsHTML = '';
-    if(usersArr){
+    if(usersArr && usersArr.length > 0){
         for (let i = 0; i < usersArr.length; i++) {
             let user = usersArr[i];
             iconsHTML += renderUserIcon(user);
         }
-        return iconsHTML;
     } else {
-        return '';
+        iconsHTML = '<img src="img/icon-plus.png" alt="">';
     }
+    return iconsHTML;
 }
 
 // returns up to 2 initials of a given user name

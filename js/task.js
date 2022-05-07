@@ -15,7 +15,6 @@ function addToTasks() {
 
 function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
-
 }
 
 /**
@@ -103,6 +102,13 @@ function addUser(userIndex) {
     //task.assignedTo.push(users[userIndex]);
 
     //return users[userIndex]; //return full user object?
+}
+
+function clearAssignments(){
+    // let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
+    // clearInputValues(title, date, category, urgency, description);
+    //hide('assignUser');
+    getId('iconsContainer').innerHTML = renderAssignedUsers([]);
 }
 
 /* ****** render add to task form fields ****** */

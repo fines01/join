@@ -119,10 +119,15 @@
     margin:24px 0 32px 0;
 }
 
-.assignment-container img, .user-icon,
-.assignment-btn {
+.assignment-container img, .user-icon
+/* ,.assignment-btn  */
+{
     height: 45px;
     width: 45px;
+}
+
+.assignment-btn {
+    height:35px;
 }
 
 .user-icon {
