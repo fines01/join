@@ -209,6 +209,8 @@
 
 #closeBtn {
     cursor: pointer;
+    color: var(--col-blue1);
+    font-weight: bold;
 }
 
 input {

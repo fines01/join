@@ -67,17 +67,13 @@ function editFormHTML(i) {
                     <select id="urgency">
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
-                    <!-- TODO: in span closeBtn: choose some close-button (replace (x)) -->
-                    <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">x</span></h2>
-                    <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icons8-plus.png" alt="">
-                    <select multiple id="assignUser" class="d-none">
+                    <h2>ASSIGN TO</h2>
+                    <select multiple id="assignUser" class="">
                         ${renderUserOptionFields(tasks[i].assignedTo)}
                     </select>
-                    <!-- TODO: ASSIGNMENT_CONTAINER: renders icons of assigned users -->
                     <div class="assignment-container">
                         <div id="iconsContainer" class="assignment-button-container">
-                            ${renderAssignedUsers(tasks[i].assignedTo)}
-                            <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->                            
+                            ${renderAssignedUsers(tasks[i].assignedTo)}                           
                         </div>
                     </div>
                     <div class="btn-box">
