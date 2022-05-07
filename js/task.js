@@ -94,27 +94,84 @@ function renderUsers() {
 }
 
 function addUser(userIndex) {
-    console.log('user-index: ', userIndex);
-    console.log('assign to user: ', users[userIndex]);
-    console.log('task-index: ', taskIndex);
-
     tasks[taskIndex].assignedTo.push(users[userIndex]);
-    //task.assignedTo.push(users[userIndex]);
-
-    //return users[userIndex]; //return full user object?
 }
 
+/**
+ * Clears user icons when resetting the addToTask.html form
+ */
 function clearAssignments(){
-    // let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
-    // clearInputValues(title, date, category, urgency, description);
-    //hide('assignUser');
     getId('iconsContainer').innerHTML = renderAssignedUsers([]);
 }
 
-/* ****** render add to task form fields ****** */
+/* ****** render add-to-task form fields ****** */
 
+/**
+ * Renders HTML option fields from the users array into addToTask.html form select-field
+ */
 function renderForm() {
     let userSelect = getId('assignUser');
     userSelect.innerHTML = '';
     userSelect.innerHTML = renderUserOptionFields();
+}
+
+/* ****** render HTML option select fields ****** */
+/**
+ * This function renders all options from a given array of values in an html select field
+ * @param {string} selected - the pre-selected element/option
+ * @param {string[]} dataArray - array with string values of all options
+ * @returns {string} - html that creates option fields
+ */
+function renderOptionFields(selected, dataArray) {
+    str = '';
+    for (let i = 0; i < dataArray.length; i++) {
+        let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
+        str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
+    }
+    return str;
+}
+// TODO: maybe include in function above (one fkt?)
+/**
+ * Renders option fields and shows preselected values for all users in an html select field
+ * @param {(string[] | undefined)} selectedUsers 
+ * @returns {string} - html that creates option fields
+ */
+function renderUserOptionFields(selectedUsers = undefined) { // default undefined in case of adding a new task
+    str = '';
+    for (let i = 0; i < users.length; i++) {
+        let el = users[i].name;
+        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)} onclick="showSelectedUserIcon()">${el}</option>`;
+    }
+    return str;
+}
+
+/**
+ * This function compares the value of a given element against the current value of a select field and returns the attribut 'selected' if they match (comparison is case-insensitive)
+ * @param {string} option 
+ * @param {string} value 
+ * @returns {(string | undefined)} - returns 'selected' if true
+ */
+function renderSelected(option, value) {
+    if (option != undefined) {
+        if (option.toLowerCase() == value.toLowerCase()) {
+            return 'selected';
+        }
+    }
+}
+// TODO: maybe include in function above (one fkt?)
+/**
+ * This functions compares an array of passed options from a multiple select field with a given value and returns 'selected' if one of them matches the given value
+ * @param {string[]} optionsArr 
+ * @param {string} value 
+ * @returns {(string | undefined )} - returns 'selected' if true
+ */
+function renderMultipleSelected(optionsArr, value) {
+    if (optionsArr != undefined) {
+        for (let i = 0; i < optionsArr.length; i++) {
+            let el = optionsArr[i];
+            if (el.toLowerCase() == value.toLowerCase()) {
+                return 'selected';
+            }
+        }
+    }
 }
