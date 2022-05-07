@@ -95,11 +95,9 @@ function editFormHTML(i) {
 }
 
 function renderAssignedUsers(usersArr) {
-    console.log(usersArr); // check
     let iconsHTML = '';
     for (let i = 0; i < usersArr.length; i++) {
         let user = usersArr[i];
-        console.log(user); //
         iconsHTML += renderUserIcon(user);
     }
     return iconsHTML;
@@ -123,8 +121,7 @@ function renderUserIcon(userName) {
     let user = users.filter(usr => usr.name == userName);
     // get initials (max 2 or 3)
     let initials = extractInitials(userName);
-    console.log(userName, initials, user[0].color); //check
-    return /*html*/ `<span class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
+    return /*html*/ `<span id="icon-${userName}" class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
 }
 
 /**
@@ -146,9 +143,14 @@ function renderUserOptionFields(selectedUsers = undefined) { // default undefine
     str = '';
     for (let i = 0; i < users.length; i++) {
         let el = users[i].name;
-        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)}>${el}</option>`;
+        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)} onclick="showSelectedUserIcon()">${el}</option>`;
     }
     return str;
+}
+
+function showSelectedUserIcon() {
+    let selectedUsersArr = getAssignedUsers();
+    getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
 }
 
 /**
