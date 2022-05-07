@@ -96,11 +96,15 @@ function editFormHTML(i) {
 
 function renderAssignedUsers(usersArr) {
     let iconsHTML = '';
-    for (let i = 0; i < usersArr.length; i++) {
-        let user = usersArr[i];
-        iconsHTML += renderUserIcon(user);
+    if(usersArr){
+        for (let i = 0; i < usersArr.length; i++) {
+            let user = usersArr[i];
+            iconsHTML += renderUserIcon(user);
+        }
+        return iconsHTML;
+    } else {
+        return '';
     }
-    return iconsHTML;
 }
 
 // returns up to 2 initials of a given user name
