@@ -154,7 +154,7 @@ function clearInputValues(...elements) {
 /* ****** Navbar ****** */
 
 function showNavbar() {
-    getId('nav-bar').classList.remove('hide-mobile');
+    getId('mobile-onclick-navbar').classList.remove('hide-mobile');
     hide('mobile-menu');
     show('mobile-x');
     // getId('mobile-x').classList.remove('d-none');
@@ -162,7 +162,7 @@ function showNavbar() {
 }
 
 function closeNavbar() {
-    getId('nav-bar').classList.add('hide-mobile');
+    getId('mobile-onclick-navbar').classList.add('hide-mobile');
     hide('mobile-x');
     show('mobile-menu');
     // getId('mobile-x').classList.add('d-none');
