@@ -207,6 +207,11 @@
     gap: 32px;
 }
 
+#assignUser {
+    background-image: none;
+    height: 64px;
+}
+
 #closeBtn {
     cursor: pointer;
     color: var(--col-blue1);
