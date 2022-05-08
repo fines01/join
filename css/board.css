@@ -73,6 +73,7 @@
 .task-headline-text {
     padding-left: 47px;
     padding-right: 47px;
+    padding-top: 8px;
 }
 
 .task-description-text {
@@ -87,8 +88,8 @@
 
 .task-links {
     position: absolute;
-    bottom: 8px;
-    left: 8px; right: 8px;
+    bottom: 12px;
+    left: 12px; right: 12px;
     /* left: 5px; */
     display: flex;
     justify-content: space-between;
@@ -103,23 +104,28 @@
 
 .delete-task,
 .edit-task {
-    width: 18px;
+    width: 22px;
+    transition: all 225ms linear;
 }
 
 .delete-task:hover,
 .edit-task:hover {
     cursor: pointer;
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
-.member {
-    position: absolute;
-    left: 8px;
-    bottom: 5px;
+.members {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px;
+    margin-bottom: 24px;
 }
 
-.member img {
-    width: 40px;
+.members img, .members .user-icon {
+    height: 35px;
+    width: 35px;
+    font-size: 0.8rem;
 }
 
 
@@ -232,6 +238,7 @@
     padding: 8px;
 }
 
+/* TODO */
 .show-more {
     z-index: 2;
     cursor: pointer;

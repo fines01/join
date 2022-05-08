@@ -145,6 +145,7 @@
     align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
+    transition: all 225ms linear;
 }
 
 .assignment-container h2 {

@@ -33,7 +33,11 @@ function boardTaskHTML(element, i) {
                 <span onclick="" class="show-more">...</span>
                 <p class="task-description-text d-none" id="showDescription">${element['description']}</p>
             </div>
-            <div class="member"><img src="img/icon-plus.png" alt="">
+            <div class="members">
+                ${renderAssignedUsers(element.assignedTo)}
+                <!-- <img src="img/icon-plus.png" alt="">
+                <img src="img/icon-plus.png" alt="">
+                <img src="img/icon-plus.png" alt=""> -->
             </div>
             <div class="move-to">
                 <img onclick="showMoveButtons(${i})" class="move-to-btn" src="img/arrow-204-48.png" alt="">
