@@ -48,7 +48,6 @@ function boardTaskHTML(element, i) {
     `;
 }
 
-// TODO: fix form view and style !!
 function editFormHTML(i) {
     return /*html*/ `
         <div class="task-input container" onclick="event.stopPropagation()">
@@ -94,65 +93,3 @@ function editFormHTML(i) {
     </div>
     `;
 }
-
-// /**
-//  * This function renders all options from a given array of values in an html select field
-//  * @param {string} selected - the pre-selected element/option
-//  * @param {string[]} dataArray - array with string values of all options
-//  * @returns {string} - html that creates option fields
-//  */
-// function renderOptionFields(selected, dataArray) {
-//     str = '';
-//     for (let i = 0; i < dataArray.length; i++) {
-//         let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
-//         str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
-//     }
-//     return str;
-// }
-// // TODO: maybe include in function above (one fkt?)
-// function renderUserOptionFields(selectedUsers = undefined) { // default undefined in case of adding a new task
-//     str = '';
-//     for (let i = 0; i < users.length; i++) {
-//         let el = users[i].name;
-//         str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)} onclick="showSelectedUserIcon()">${el}</option>`;
-//     }
-//     return str;
-// }
-
-// /**
-//  * This function compares a set value of a given element against the current value of a select field and returns the attribut 'selected' if they match (comparison is case-insensitive)
-//  * @param {string} option 
-//  * @param {string} value 
-//  * @returns {(string | undefined)} - returns 'selected' if true
-//  */
-// function renderSelected(option, value) {
-//     if (option != undefined) {
-//         if (option.toLowerCase() == value.toLowerCase()) {
-//             return 'selected';
-//         }
-//     }
-// }
-// // TODO: maybe include in function above (one fkt?)
-// function renderMultipleSelected(optionsArr, value) {
-//     if (optionsArr != undefined) {
-//         for (let i = 0; i < optionsArr.length; i++) {
-//             let el = optionsArr[i];
-//             if (el.toLowerCase() == value.toLowerCase()) {
-//                 return 'selected';
-//             }
-//         }
-//     }
-// }
-
-// //user-box
-// function showUsersHTML(showUser) {
-//     return /*html*/ `
-//     <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
-//     <span class="light-text">
-//         <span>${showUser['img']}</span>
-//         Name: <b>${showUser['name']}</b><br>
-//         E-Mail: <span>${showUser['email']}</span>
-//     </span>
-//     </div>
-//     `
-// }

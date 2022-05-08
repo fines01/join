@@ -21,7 +21,7 @@ const backend = {
 
 async function downloadFromServer() {
     let result = await loadJSONFromServer();
-    jsonFromServer = JSON.parse(result);
+    jsonFromServer = JSON.parse(result); // Uncaught (in promise) SyntaxError: Unexpected end of JSON input
     console.log('Loaded', result);
 }
 
@@ -62,6 +62,8 @@ function loadJSONFromServerOld() {
         };
 
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        // xhttp.setRequestHeader("Access-Control-Allow-Origin", "*"); // ND
+        // xhttp.setRequestHeader("Access-Control-Allow-Credentials", true); // ND
         xhttp.send();
 
     });

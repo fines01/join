@@ -36,7 +36,7 @@ function saveTaskInputs() {
         'urgency': urgency.value,
         'date': date.value,
         'board': '',
-        'assignedTo': assignedUsers
+        'assignedTo': assignedUsers,
     };
     return task;
 }
@@ -69,11 +69,14 @@ function renderEditForm(i) {
     overlay.innerHTML = editFormHTML(i);
 }
 
-async function saveEdit(dataArray, i) {
+async function saveEdit(dataArray, i) { // check: async no diff
     let task = await saveTaskInputs();
     task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
     saveTasks();
+    renderBoards();
+    hide('overlay');
+    
 }
 
 function showAssignBox() {
@@ -179,9 +182,13 @@ window.onload = async function() {
     downloadFromServer();
 }
 
-function saveTasks() {
+// ERROR: Uncaught (in promise) SyntaxError: Unexpected end of JSON input...
+async function saveTasks() { //check async: no diff
+    event.preventDefault(); // no reload so that i can see logs in console
     let tasksAsText = JSON.stringify(tasks);
-    backend.setItem('tasks', tasksAsText);
+    //console.log(tasks); // check: json looks correct
+    //console.log(tasksAsText); //check: string looks correct
+    await backend.setItem('tasks', tasksAsText);
 }
 
 /**
