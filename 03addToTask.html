@@ -22,6 +22,7 @@
     <script src="js/backlog.js"></script>
     <script src="js/task.js"></script>
     <script src="js/templates.js"></script>
+    <script src="js/assign.js"></script>
     <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
     <!-- serverBackend for saving and loading tasks on the server -->
@@ -59,7 +60,7 @@
                             <h2>TITLE</h2>
                             <input required id="title" placeholder="Enter a title">
                             <h2>CATEGORY</h2>
-                            <select required id="category" placeholder="Management">
+                            <select required id="category">
                                 <option value="Management"> Management</option>
                                 <option value="Software Developement">Software Developement</option>
                                 <option value="UX/UI Design">UX/UI Design</option>
@@ -77,22 +78,15 @@
                                 <option value="Intermediate">Intermediate</option>
                                 <option value="Low">Low</option>
                             </select>
-                            <!-- TODO: in span closeBtn: choose some close-button (replace (x)) -->
-                            <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">(x)</span></h2>
-                            <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icon-plus.png" alt="">
-                            <select multiple id="assignUser" class="d-none"></select>
+                            <h2>ASSIGN TO</h2>
+                            <select multiple id="assignUser" class=""></select>
                             <div class="assignment-container">
-                                <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
-                                <!-- <h2>ASSIGNED</h2> -->
-                                <!-- TODO: ASSIGNMENT_CONTAINER: renders icons of assigned users -->
-                                <div id="assignment" class="assignment-button-container">
+                                <div id="iconsContainer" class="assignment-button-container">
                                     <img src="img/icon-plus.png" alt="">
-                                    <!-- <img src="img/icon-plus.png" alt="">
-                                    <img src="img/icon-plus.png" alt=""> -->
                                 </div>
                             </div>
                             <div class="btn-box">
-                                <button type="reset" class="cancel-button">CANCEL</button>
+                                <button type="reset" class="cancel-button" onclick="clearAssignments()">CANCEL</button>
                                 <button type="submit" class="assign-button">CREATE TASK</button>
                             </div>
                         </div>

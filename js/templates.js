@@ -72,21 +72,13 @@ function editFormHTML(i) {
                     <select id="urgency">
                         ${renderOptionFields(tasks[i].urgency, urgencies)}
                     </select>
-                    <!-- TODO: in span closeBtn: choose some close-button (replace (x)) -->
-                    <h2>ASSIGN TO <span id="closeBtn" class="d-none" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')">(x)</span></h2>
-                    <img class="assignment-btn" id="assignmentBtn" onclick="toggle('assignmentBtn','assignUser', 'closeBtn')" src="img/icon-plus.png" alt="">
-                    <select multiple id="assignUser" class="d-none">
-                        ${renderUserOptionFields()}
+                    <h2>ASSIGN TO</h2>
+                    <select multiple id="assignUser" class="">
+                        ${renderUserOptionFields(tasks[i].assignedTo)}
                     </select>
-                    <!-- TODO: ASSIGNMENT_CONTAINER: renders icons of assigned users -->
                     <div class="assignment-container">
-                        <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
-                        <!-- <h2>ASSIGNED</h2> -->
-                        <div id="assigned" class="assignment-button-container">
-                            <!-- <img onclick="showAssignBox()" src="img/icon-plus.png" alt=""> -->
-                            <img src="img/icon-plus.png" alt="">
-                            <img src="img/icon-plus.png" alt="">
-                            <img src="img/icon-plus.png" alt="">
+                        <div id="iconsContainer" class="assignment-button-container">
+                            ${renderAssignedUsers(tasks[i].assignedTo)}                           
                         </div>
                     </div>
                     <div class="btn-box">
@@ -95,81 +87,72 @@ function editFormHTML(i) {
                         </button>
                         <button class="assign-button" onclick="saveEdit(tasks, ${i})">
                             UPDATE TASK
-                        <button>
+                        </button>
                     </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+    </div>
     `;
 }
 
-// render users Vers A.:
-function showUsersHTML(showUser) {
-    return /*html*/ `
-    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
-    <span class="light-text">
-        <span>${showUser['img']}</span>
-        Name: <b>${showUser['name']}</b><br>
-        E-Mail: <span>${showUser['email']}</span>
-    </span>
-    </div>
-    `
-}
+// /**
+//  * This function renders all options from a given array of values in an html select field
+//  * @param {string} selected - the pre-selected element/option
+//  * @param {string[]} dataArray - array with string values of all options
+//  * @returns {string} - html that creates option fields
+//  */
+// function renderOptionFields(selected, dataArray) {
+//     str = '';
+//     for (let i = 0; i < dataArray.length; i++) {
+//         let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
+//         str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
+//     }
+//     return str;
+// }
+// // TODO: maybe include in function above (one fkt?)
+// function renderUserOptionFields(selectedUsers = undefined) { // default undefined in case of adding a new task
+//     str = '';
+//     for (let i = 0; i < users.length; i++) {
+//         let el = users[i].name;
+//         str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)} onclick="showSelectedUserIcon()">${el}</option>`;
+//     }
+//     return str;
+// }
 
-// render users Vers. B.: in select field, st that value can be passed?
-function selectUsersHTML(user) {
-    return /*html*/ `
-    <!--  -->
-    <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
-    <span class="light-text">
-        <span>${showUser['img']}</span>
-        Name: <b>${showUser['name']}</b><br>
-        E-Mail: <span>${showUser['email']}</span>
-    </span>
-    </div>
-    `
-}
+// /**
+//  * This function compares a set value of a given element against the current value of a select field and returns the attribut 'selected' if they match (comparison is case-insensitive)
+//  * @param {string} option 
+//  * @param {string} value 
+//  * @returns {(string | undefined)} - returns 'selected' if true
+//  */
+// function renderSelected(option, value) {
+//     if (option != undefined) {
+//         if (option.toLowerCase() == value.toLowerCase()) {
+//             return 'selected';
+//         }
+//     }
+// }
+// // TODO: maybe include in function above (one fkt?)
+// function renderMultipleSelected(optionsArr, value) {
+//     if (optionsArr != undefined) {
+//         for (let i = 0; i < optionsArr.length; i++) {
+//             let el = optionsArr[i];
+//             if (el.toLowerCase() == value.toLowerCase()) {
+//                 return 'selected';
+//             }
+//         }
+//     }
+// }
 
-function renderAssignedUser() {
-    //for each user in assignedTo (if several users can be assigned? [] )
-    return /*html*/ ``;
-}
-
-
-/**
- * This function renders all options from a given array of values in an html select field
- * @param {string} selected - the pre-selected element/option
- * @param {string[]} dataArray - array with string values of all options
- * @returns {string} - html that creates option fields
- */
-function renderOptionFields(selected, dataArray) {
-    str = '';
-    for (let i = 0; i < dataArray.length; i++) {
-        let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
-        str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
-    }
-    return str;
-}
-
-function renderUserOptionFields() {
-    str = '';
-    for (let i = 0; i < users.length; i++) {
-        let el = users[i].name;
-        str += /*html*/ `<option value="${el}">${el}</option>`;
-    }
-    return str;
-}
-
-/**
- * This function compares a set value of a given element against the current value of a select field and returns the attribut 'selected' if they match (comparison is case-insensitive)
- * @param {string} option 
- * @param {string} value 
- * @returns {(string | undefined)} - returns 'selected' if true
- */
-function renderSelected(option, value) {
-    if (option != undefined) {
-        if (option.toLowerCase() == value.toLowerCase()) {
-            return 'selected';
-        }
-    }
-}
+// //user-box
+// function showUsersHTML(showUser) {
+//     return /*html*/ `
+//     <div class="user-box" onclick="addUser('${users.indexOf(showUser)}')">
+//     <span class="light-text">
+//         <span>${showUser['img']}</span>
+//         Name: <b>${showUser['name']}</b><br>
+//         E-Mail: <span>${showUser['email']}</span>
+//     </span>
+//     </div>
+//     `
+// }

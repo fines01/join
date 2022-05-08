@@ -3,28 +3,28 @@ let tasks = [];
 let users = [{
         name: 'Jolene Bauer',
         email: 'jo@test.at',
-        color: 'orange',
+        color: 'lightseagreen',
         img: '',
         status: false
     },
     {
         name: 'Jimmmy Dude',
         email: 'dude@company.com',
-        color: 'green',
+        color: 'sandybrown',
         img: '',
         status: false
     },
     {
         name: 'Max Mo',
         email: 'donot@email.me',
-        color: 'blue',
+        color: 'blueviolet',
         img: '',
         status: false
     },
     {
         name: 'Maja',
         email: 'maja@muster.mix',
-        color: 'red',
+        color: 'darkcyan',
         img: '',
         status: false
     }
