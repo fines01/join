@@ -67,6 +67,27 @@
         padding-top: 80px;
         padding-left: 50px;
     }
+    .backlog-buttons {
+        display: flex;
+        flex-direction: column;
+        right: 5px;
+    }
+    .delete-backlog {
+        width: 25px;
+    }
+    .backlog-arrow {
+        width: 25px;
+        padding-bottom: 10px;
+    }
+    .backlog-titles {
+        padding-left: 8px;
+    }
+    .log h4 {
+        font-size: 12px;
+    }
+    .category {
+        padding-left: 8px;
+    }
 }
 
 @media (max-width: 600px) {
