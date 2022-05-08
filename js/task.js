@@ -69,11 +69,12 @@ function renderEditForm(i) {
     overlay.innerHTML = editFormHTML(i);
 }
 
-function saveEdit(dataArray, i) {
+async function saveEdit(dataArray, i) {
     let task = saveTaskInputs();
     task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
-    saveTasks();
+    await saveTasks();
+   
 }
 
 function showAssignBox() {
