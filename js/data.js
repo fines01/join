@@ -25,7 +25,7 @@ let users = [{
         password: 'StefanH.Join',
     },
     {
-        name: 'fritsch',
+        name: 'Ines Fritsch',
         email: 'InesFritsch@mail.de',
         color: 'darkcyan',
         img: '',

@@ -1,24 +1,3 @@
-// let users = [{
-//         'user': 'FabianEichhorn@mail.de',
-//         'password': 'FabianE.Join',
-//     },
-//     {
-//         'user': 'MarcoBeer@mail.de',
-//         'password': 'MarcoB.Join',
-//     },
-//     {
-//         'user': 'StefanHerrmann@mail.de',
-//         'password': 'StefanH.Join',
-//     },
-//     {
-//         'user': 'InesFritsch@mail.de',
-//         'password': 'InesF.Join',
-//     },
-//     {
-//         'user': 'Test@mail.de',
-//         'password': 'Test',
-//     }
-// ]
 // users moved to data.js
 
 /**
@@ -78,8 +57,11 @@ function registerNewUser() {
     let registerUser = document.getElementById('new-user');
     let registerPassword = document.getElementById('new-password');
     let newUser = {
+        //'name' :
         'email': registerUser.value,
         'password': registerPassword.value,
+        'color' : randomHexColor(),
+        'status': false,
     }
 
     for (let i = 0; i < users.length; i++) {
