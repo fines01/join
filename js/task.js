@@ -26,7 +26,7 @@ function saveTaskInputs() {
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
-    let assignedUsers= getAssignedUsers();
+    let assignedUsers = getAssignedUsers();
 
     let task = {
         //'id' : id,
@@ -60,13 +60,19 @@ async function saveEdit(dataArray, i) { // check: async no diff
     saveTasks();
     renderBoards();
     hide('overlay');
-    
+
 }
 
 function showAssignBox() {
     toggle('assignmentBox');
     renderUsers();
 }
+
+
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("date")[0].setAttribute('min', today);
+
+
 
 function renderUsers() {
     let assignmentBox = getId('assignmentBox');
@@ -100,7 +106,7 @@ function renderOptionFields(selected, dataArray) {
     str = '';
     for (let i = 0; i < dataArray.length; i++) {
         let el = dataArray[i]; // if dataArray == 'users' el = dataArray[i].name
-        str += /*html*/ `<option value="${el}" ${renderSelected(selected,el)}>${el}</option>`;
+        str += /*html*/ `<option value="${el}" ${renderSelected(selected, el)}>${el}</option>`;
     }
     return str;
 }
@@ -114,7 +120,7 @@ function renderUserOptionFields(selectedUsers = undefined) { // default undefine
     str = '';
     for (let i = 0; i < users.length; i++) {
         let el = users[i].name;
-        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers,el)} onclick="showSelectedUserIcon()">${el}</option>`;
+        str += /*html*/ `<option value="${el}" ${renderMultipleSelected(selectedUsers, el)} onclick="showSelectedUserIcon()">${el}</option>`;
     }
     return str;
 }
@@ -151,7 +157,7 @@ function renderMultipleSelected(optionsArr, value) {
 }
 
 /* Backend Folder */
-window.onload = async function() {
+window.onload = async function () {
     downloadFromServer();
 }
 
