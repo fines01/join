@@ -53,7 +53,7 @@ function editFormHTML(i) {
     return /*html*/ `
         <div class="task-input container" onclick="event.stopPropagation()">
             <h2 class="edit-task-headline">UPDATE TASK</h2>
-            <form class="form-field edit-form">
+            <form class="form-field edit-form" onsubmit="saveEdit(tasks, ${i})">
                 <div class="form-section">
                     <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
                     <h2>TITLE</h2>
@@ -82,10 +82,10 @@ function editFormHTML(i) {
                         </div>
                     </div>
                     <div class="btn-box">
-                        <button class="cancel-button" onclick="hide('overlay'); event.preventDefault()">
+                        <button class="cancel-button" onclick="hide('overlay')" type="reset">
                             CANCEL
                         </button>
-                        <button class="assign-button" onclick="saveEdit(tasks, ${i})">
+                        <button class="assign-button" type="submit">
                             UPDATE TASK
                         </button>
                     </div>

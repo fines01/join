@@ -10,6 +10,7 @@ function addToTasks() {
     task.board = 'backlog'; // default-board on task creation
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
+    clearAssignments(); // clear assigned users icons
 
 }
 
@@ -26,7 +27,6 @@ function saveTaskInputs() {
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
     let assignedUsers= getAssignedUsers();
-    console.log(assignedUsers);
 
     let task = {
         //'id' : id,
@@ -70,11 +70,10 @@ function renderEditForm(i) {
 }
 
 async function saveEdit(dataArray, i) {
-    let task = saveTaskInputs();
+    let task = await saveTaskInputs();
     task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
-    await saveTasks();
-   
+    saveTasks();
 }
 
 function showAssignBox() {
