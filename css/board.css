@@ -236,6 +236,7 @@
 .move-to-btn {
     z-index: 2;
     padding: 8px;
+    margin-bottom: 16px;
 }
 
 /* TODO */
@@ -244,4 +245,8 @@
     cursor: pointer;
     display: unset;
     padding: 8px;
+}
+
+.icon-replacement{
+    cursor:default !important;
 }
