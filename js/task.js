@@ -155,6 +155,9 @@ window.onload = async function() {
     downloadFromServer();
 }
 
+
+
+
 // ERROR: Uncaught (in promise) SyntaxError: Unexpected end of JSON input...
 async function saveTasks() { //check async: no diff
     event.preventDefault(); // prevent reload (forms)
@@ -165,7 +168,8 @@ async function saveTasks() { //check async: no diff
 }
 
 /**
- *  The function is used to laod and convert the tasks from text-format to a JSON-array
+ *  The function is used to laod and convert the tasks from text-format to a JSON-array. 
+ *  The preventDefault() function is necessary to prevent the page from reloading when adding a new task.
  */
 function loadTasks() {
     event.preventDefault();

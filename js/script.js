@@ -32,11 +32,25 @@ async function loadServerData() {
     //users = JSON.parse(backend.getItem('users')) || [];
 }
 
+/**
+ * This function initializes the tasks generated in the addToTask() function, the include HTML function 
+ * and load the backend with the init function.
+ * Then the tasks are rendered in the different boards.
+ * 
+ */
+
 async function initBoard() {
     await initTaksAndIncludeHTML();
     await init();
     renderBoards();
 }
+
+/**
+ * This function initializes the tasks generated in the addToTask() function, the include HTML function
+ * and load the backend with the init function.
+ * Then the tasks are rendered in the backlog.
+ * 
+ */
 
 async function initBacklog() {
     await initTaksAndIncludeHTML();
