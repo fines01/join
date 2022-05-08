@@ -55,7 +55,7 @@ function renderUserIcon(userName) {
     return /*html*/ `<span id="icon-${userName}" class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
 }
 
-function showSelectedUserIcon() {
+function showSelectedUserIcon() { // ...iconS !
     let selectedUsersArr = getAssignedUsers();
     getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
 }

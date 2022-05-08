@@ -1,25 +1,25 @@
-let users = [{
-        'user': 'FabianEichhorn@mail.de',
-        'password': 'FabianE.Join',
-    },
-    {
-        'user': 'MarcoBeer@mail.de',
-        'password': 'MarcoB.Join',
-    },
-    {
-        'user': 'StefanHerrmann@mail.de',
-        'password': 'StefanH.Join',
-    },
-    {
-        'user': 'InesFritsch@mail.de',
-        'password': 'InesF.Join',
-    },
-    {
-        'user': 'Test@mail.de',
-        'password': 'Test',
-    }
-]
-
+// let users = [{
+//         'user': 'FabianEichhorn@mail.de',
+//         'password': 'FabianE.Join',
+//     },
+//     {
+//         'user': 'MarcoBeer@mail.de',
+//         'password': 'MarcoB.Join',
+//     },
+//     {
+//         'user': 'StefanHerrmann@mail.de',
+//         'password': 'StefanH.Join',
+//     },
+//     {
+//         'user': 'InesFritsch@mail.de',
+//         'password': 'InesF.Join',
+//     },
+//     {
+//         'user': 'Test@mail.de',
+//         'password': 'Test',
+//     }
+// ]
+// users moved to data.js
 
 /**
  * function schowPassword() is used to show the password when clicking on the eye symbol
@@ -54,7 +54,7 @@ function checkLogin() {
     for (let i = 0; i < users.length; i++) {
         let element = users[i];
 
-        if (username.value == element['user'] &&
+        if (username.value == element['email'] &&
             password.value == element['password']) {
             window.open('index.html');
             return
@@ -78,12 +78,12 @@ function registerNewUser() {
     let registerUser = document.getElementById('new-user');
     let registerPassword = document.getElementById('new-password');
     let newUser = {
-        'user': registerUser.value,
+        'email': registerUser.value,
         'password': registerPassword.value,
     }
 
     for (let i = 0; i < users.length; i++) {
-        if (registerUser.value == users[i]['user']) {
+        if (registerUser.value == users[i]['email']) {
             alert('that username already exists please choose another');
             return;
         } else if (registerPassword.value.length < 3) {
