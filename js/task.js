@@ -184,7 +184,7 @@ window.onload = async function() {
 
 // ERROR: Uncaught (in promise) SyntaxError: Unexpected end of JSON input...
 async function saveTasks() { //check async: no diff
-    event.preventDefault(); // no reload so that i can see logs in console
+    event.preventDefault(); // prevent reload (forms)
     let tasksAsText = JSON.stringify(tasks);
     //console.log(tasks); // check: json looks correct
     //console.log(tasksAsText); //check: string looks correct

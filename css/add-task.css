@@ -5,8 +5,8 @@
 }
 
 .add-to-task-sub-menu {
-    padding-top: 80px;
-    padding-left: 50px;
+    padding: 80px 50px;
+    /* padding: 45px 50px; */
     max-width: 1000px;
 }
 
