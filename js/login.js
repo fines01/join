@@ -63,3 +63,50 @@ function checkLogin() {
     }
     alert('Username or Password is not correct!')
 }
+
+function openRegisterWindow() {
+    document.getElementById('form-box2').classList.remove('display-none');
+    document.getElementById('form-box1').classList.add('display-none');
+}
+
+function closeRegisterWindow() {
+    document.getElementById('form-box2').classList.add('display-none');
+    document.getElementById('form-box1').classList.remove('display-none');
+}
+
+function registerNewUser() {
+    let registerUser = document.getElementById('new-user');
+    let registerPassword = document.getElementById('new-password');
+    let newUser = {
+        'user': registerUser.value,
+        'password': registerPassword.value,
+    }
+
+    for (let i = 0; i < users.length; i++) {
+        if (registerUser.value == users[i]['user']) {
+            alert('that username already exists please choose another');
+            return;
+        } else if (registerPassword.value.length < 3) {
+            alert('that password is too short, include more than 3 characters');
+            return;
+        }
+
+    }
+    users.push(newUser);
+    console.log(users);
+    saveNewUser();
+}
+
+function saveNewUser() {
+    let usersAsText = JSON.stringify(users);
+
+    localStorage.setItem('users', usersAsText);
+}
+
+function loadNewUser() {
+    let usersAsText = localStorage.getItem('users');
+    if (usersAsText) {
+        users = JSON.parse(usersAsText);
+    }
+
+}

@@ -14,9 +14,9 @@
     <script src="./js/login.js"></script>
 </head>
 
-<body>
+<body onload="loadNewUser()">
     <div class="body-login"></div>
-    <div class="form-box">
+    <div class="form-box" id="form-box1">
         <h1>Login</h1>
 
         <div class="input-box">
@@ -33,7 +33,31 @@
             </span>
         </div>
 
-        <button type="button" class="login-btn" onclick="checkLogin()">LOGIN</button>
+        <button type="button" class="login-btn" onclick="checkLogin()">Login</button>
+        <button type="button" class="login-button" onclick="openRegisterWindow()">Register</button>
+    </div>
+
+
+    <div class="body-login"></div>
+    <div class="form-box display-none" id="form-box2">
+        <h1>Register</h1>
+
+        <div class="input-box">
+            <i class="fa fa-envelope icon"></i>
+            <input required class="email-input" type="email" placeholder="E-mail" id="new-user">
+        </div>
+
+        <div class="input-box">
+            <i class="fa fa-key icon"></i>
+            <input class="password-input" type="password" placeholder="Passwort" id="new-password">
+            <span class="eye" onclick="showPassword()">
+            <i class="fa fa-eye" id="hide1"></i>
+            <i class="fa fa-eye-slash" id="hide2"></i>
+            </span>
+        </div>
+
+        <button type="button" class="login-btn" onclick="registerNewUser()">Register</button>
+        <button type="button" class="login-button" onclick="closeRegisterWindow()">Back</button>
     </div>
 </body>
 
