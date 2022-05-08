@@ -32,23 +32,22 @@ async function loadServerData() {
 }
 
 async function initBoard() {
-    await initScript();
+    await initTaksAndIncludeHTML();
     await init();
     renderBoards();
 }
 
 async function initBacklog() {
-    await initScript();
+    await initTaksAndIncludeHTML();
     await init();
     renderLogs();
 }
 
 
-
 /**
- * function initScript() executes on load of html body
+ * function initTaksAndIncludeHTML() executes on load of html body
  */
-function initScript() {
+function initTaksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
     loadTasks(); // get tasks from local strage 
     // Todo: get all local data additionally or only if there is no data on the server? 
