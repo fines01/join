@@ -41,22 +41,6 @@ function saveTaskInputs() {
     return task;
 }
 
-/**This function gets all selected user values from an html multiple select field and returns the values in an array
- * @returns {string[]} - selected users
- */
-function getAssignedUsers(){
-    let assignedUsers=[];
-    let selectOptions = getId('assignUser').options;
-
-    for (let i = 0; i < selectOptions.length; i++) {
-        if (selectOptions[i].selected) {
-            assignedUsers.push(selectOptions[i].value);
-        }
-    }
-
-    return assignedUsers;
-}
-
 function deleteTask(dataArray, i) {
     dataArray.splice(i, 1);
     renderBoards()
@@ -92,17 +76,6 @@ function renderUsers() {
         const showUser = users[j];
         assignmentBox.innerHTML += showUsersHTML(showUser);
     }
-}
-
-function addUser(userIndex) {
-    tasks[taskIndex].assignedTo.push(users[userIndex]);
-}
-
-/**
- * Clears user icons when resetting the addToTask.html form
- */
-function clearAssignments(){
-    getId('iconsContainer').innerHTML = renderAssignedUsers([]);
 }
 
 /* ****** render add-to-task form fields ****** */
@@ -195,6 +168,7 @@ async function saveTasks() { //check async: no diff
  *  The function is used to laod and convert the tasks from text-format to a JSON-array
  */
 function loadTasks() {
+    event.preventDefault();
     let tasksAsText = backend.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);

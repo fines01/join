@@ -87,8 +87,12 @@
 
 .task-links {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    bottom: 8px;
+    left: 8px; right: 8px;
+    /* left: 5px; */
+    display: flex;
+    justify-content: space-between;
+    /* z-index: -1; */
 }
 
 .task-links a {
@@ -129,18 +133,20 @@
 }
 
 .background-urgency-high:hover {
-    background-color: rgba(228, 87, 87, 0.2);
+    /* background-color: rgba(228, 87, 87, 0.2); */
+    /* background-color: rgba(168, 67, 60, 0.3); */
+    background-color: rgba(173, 123, 126, 0.4);
     transform: scale(1.01);
 }
 
-.background-urgency-intermediate {
+.background-urgency-medium {
     background-color: rgba(197, 197, 197);
     /* border: 3px solid var(--col-yellow1); */
     box-shadow: var(--led-priority1);
     transition: all 225ms linear;
 }
 
-.background-urgency-intermediate:hover {
+.background-urgency-medium:hover {
     background-color: rgba(255, 255, 0, 0.2);
     transform: scale(1.01);
 }
@@ -218,4 +224,17 @@
 
 .move-to {
     display: none;
+    /* margin-bottom: 16px; */
+}
+
+.move-to-btn {
+    z-index: 2;
+    padding: 8px;
+}
+
+.show-more {
+    z-index: 2;
+    cursor: pointer;
+    display: unset;
+    padding: 8px;
 }

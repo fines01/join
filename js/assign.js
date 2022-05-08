@@ -1,4 +1,26 @@
 
+/**This function gets all selected user values from an html multiple select field and returns the values in an array
+ * @returns {string[]} - selected users
+ */
+function getAssignedUsers() {
+    let assignedUsers = [];
+    let selectOptions = getId('assignUser').options;
+
+    for (let i = 0; i < selectOptions.length; i++) {
+        if (selectOptions[i].selected) {
+            assignedUsers.push(selectOptions[i].value);
+        }
+    }
+    return assignedUsers;
+}
+
+/**
+ * Clears user icons when resetting the addToTask.html form
+ */
+function clearAssignments() {
+    getId('iconsContainer').innerHTML = renderAssignedUsers([]);
+}
+
 function renderAssignedUsers(usersArr) {
     let iconsHTML = '';
     if (usersArr && usersArr.length > 0) {

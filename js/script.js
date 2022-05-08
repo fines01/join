@@ -50,7 +50,7 @@ async function initBacklog() {
  */
 function initTaksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
-    loadTasks(); // get tasks from local strage 
+    loadTasks();
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();
 }

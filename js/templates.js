@@ -28,21 +28,26 @@ function boardTaskHTML(element, i) {
                 Category: <b>${element['category']}</b><br>
                 Due date: <span>${element['date']}</span>
             </span>
-            <p class="task-description-text">${element['description']}</p>
-            <div class="task-links">
-                <img class="delete-task" src="img/delete-24.png" 
-                onclick="deleteTask(tasks, ${i})" alt="delete icon">
-                <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
+            <!-- TODO show description on click -->
+            <div>
+                <span onclick="" class="show-more">...</span>
+                <p class="task-description-text d-none" id="showDescription">${element['description']}</p>
             </div>
-            <div class="member"><img src="img/icon-plus.png" alt=""></div>
+            <div class="member"><img src="img/icon-plus.png" alt="">
+            </div>
             <div class="move-to">
-                <img onclick="showMoveButtons(${i})" src="img/arrow-204-48.png" alt="">
+                <img onclick="showMoveButtons(${i})" class="move-to-btn" src="img/arrow-204-48.png" alt="">
                 <div id="moveButtonBox${i}" class="move-button-box d-none">
                     <div><button onclick="moveToTodo(${i})" class="move-button">Todo</button></div>
                     <div><button onclick="moveToInProgress(${i})" class="move-button">In Progress</button></div>
                     <div><button onclick="moveToTesting(${i})" class="move-button">Testing</button></div>
                     <div><button onclick="moveToDone(${i})" class="move-button">Done</button></div>
                 </div>
+            </div>
+            <div class="task-links">
+                <img class="delete-task" src="img/delete-24.png" 
+                onclick="deleteTask(tasks, ${i})" alt="delete icon">
+                <img class="edit-task" src="img/edit-24.png" onclick="renderEditForm(${i})" alt="edit icon">
             </div>
         </div>
     `;
