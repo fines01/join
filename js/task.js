@@ -207,13 +207,25 @@ function loadTasks() {
         tasks = JSON.parse(tasksAsText);
     }
 }
-
+/**
+ *  The function is used to show the description of the task who is clicked
+ */
 function showDescription(i) {
     let description = document.getElementById('showDescription' + i);
+    let descriptionPlaceholder = document.getElementById('clickMe' + i);
+    let taskBox = document.getElementById('task' + i);
+    description.classList.remove('description-transition-in')
+    taskBox.classList.remove('hide-scrollbar');
+
 
     if (description.classList.contains('d-none')) {
         description.classList.remove('d-none')
+        description.classList.add('description-transition-in')
+        taskBox.classList.add('hide-scrollbar');
+        descriptionPlaceholder.innerHTML = `Description:`;
     } else {
         description.classList.add('d-none')
+        descriptionPlaceholder.classList.remove('d-none')
+        descriptionPlaceholder.innerHTML = `Click to show description`;
     }
 }
