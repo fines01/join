@@ -39,7 +39,7 @@
     margin: 20px;
     padding: 16px;
     padding-bottom: 40px;
-    gap:0  50px;
+    gap: 0 50px;
 }
 
 .form-field input {
@@ -116,23 +116,25 @@
 .assignment-container {
     /* padding-top: 80px; */
     position: relative;
-    margin:24px 0 32px 0;
+    margin: 24px 0 32px 0;
 }
 
-.assignment-container img, .user-icon
+.assignment-container img,
+.user-icon
 /* ,.assignment-btn  */
+
 {
     height: 45px;
     width: 45px;
 }
 
 .assignment-btn {
-    height:35px;
+    height: 35px;
 }
 
 .user-icon {
     border-radius: 50%;
-    border: 1px solid gray;
+    border: 1px solid rgb(192, 192, 192);
     height: 45px;
     /* padding: 10px 12px; */
     color: var(--col-blue1);
@@ -152,7 +154,8 @@
     padding-bottom: 12px;
 }
 
-.assignment-container img:hover, .user-icon:hover,
+.assignment-container img:hover,
+.user-icon:hover,
 .assignment-btn:hover {
     cursor: pointer;
     transform: scale(1.05);
