@@ -182,3 +182,19 @@ function closeNavbar() {
     // getId('mobile-x').classList.add('d-none');
     // getId('mobile-menu').classList.remove('d-none')
 }
+
+/* ****** ****** */
+
+/**
+ * This function splits given an array of strings and displays them nicely (with ', ' in between strings)
+ * @param {string[]} namesArray 
+ * @returns {string}
+ */
+function displayStringsArr(stringsArray) {
+    let strings = '';
+    for (let i = 0; i < stringsArray.length; i++) {
+        let element = stringsArray[i];
+        strings += stringsArray[i] + ', ';
+    }
+    return strings;
+}

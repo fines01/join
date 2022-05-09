@@ -1,20 +1,21 @@
 function logsHTML(element, i) {
     return /*html*/ `
-        <div class="log" onclick="renderEditForm(${i})">
+        <div class="log background-urgency-${(element['urgency']).toLowerCase()}" onclick="renderEditForm(${i})" 
+        style = "border-color: ${getLogBorderColor(element['assignedTo'])}" >
             <div class="">
-                 <h4 class="log-name hide-long-text">${element['assignedTo']}</h4>
+                 <h4 class="log-name">${displayStringsArr(element['assignedTo'])}</h4>
             </div>
             <div class="">
-                <h4 class="hide-long-text">${element['category']}</h4>
+                <h4 class="">${element['category']}</h4>
             </div>
             <div class="">
-                <h5 class="hide-long-text">${capitalizeFirst(element['title'])}</h5>
-                <p class="hide-long-text">${capitalizeFirst(element['description'])}</p>
+                <h5 class="">${capitalizeFirst(element['title'])}</h5>
+                <p class="">${capitalizeFirst(element['description'])}</p>
         
             </div>
             <div class="backlog-buttons">
-                    <img onclick="backlogToBoard(${i})" class="backlog-arrow" src="img/arrow-4-48.png">
-                    <img onclick="deleteBacklogTask(${i})" class="delete-backlog" src="img/delete-128.png">
+                    <img onclick="backlogToBoard(${i}); event.stopPropagation()" class="backlog-arrow" src="img/arrow-4-48.png">
+                    <img onclick="deleteBacklogTask(${i}); event.stopPropagation()" class="delete-backlog" src="img/delete-128.png">
             </div>
         </div>`;
 }

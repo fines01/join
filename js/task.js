@@ -74,9 +74,13 @@ async function saveEdit(dataArray, i) { // check: async no diff
     task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
     saveTasks();
-    renderBoards();
     hide('overlay');
-
+    // check if sent from boards page or backlog page and render content
+    if (getId('todoBoard')) {
+        renderBoards()
+    } else {
+        renderLogs();
+    }
 }
 
 

@@ -31,7 +31,7 @@
     position: relative;
     background-color: rgb(233, 233, 241);
     width: 95%;
-    height: 75px;
+    height: 80px;
     border-radius: 6px;
     border-left: 4px solid rgb(14, 11, 167);
     display: flex;
@@ -60,6 +60,7 @@
 .log p {
     overflow: auto;
     color: inherit;
+    padding-right: 4px;
 }
 
 .backlog-buttons {

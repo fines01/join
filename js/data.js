@@ -3,7 +3,7 @@ let tasks = [];
 let users = [{
         name: 'Fabian Eichhorn',
         email: 'FabianEichhorn@mail.de',
-        color: 'lightseagreen',
+        color: '#00e6c7',
         img: '',
         status: false,
         password: 'FabianE.Join',
@@ -11,7 +11,7 @@ let users = [{
     {
         name: 'Marco Beer',
         email: 'MarcoBeer@mail.de',
-        color: 'sandybrown',
+        color: '#993600',
         img: '',
         status: false,
         password: 'MarcoB.Join',
@@ -19,7 +19,7 @@ let users = [{
     {
         name: 'Stefan Herrmann',
         email: 'StefanHerrmann@mail.de',
-        color: 'blueviolet',
+        color: '#FFBD35',
         img: '',
         status: false,
         password: 'StefanH.Join',
@@ -27,15 +27,15 @@ let users = [{
     {
         name: 'Ines Fritsch',
         email: 'InesFritsch@mail.de',
-        color: 'darkcyan',
+        color: '#502064',
         img: '',
         status: false,
         password: 'InesF.Join',
     },
     {
-        name: 'testuser',
+        name: 'Testuser',
         email: 'Test@mail.de',
-        color: 'indigo',
+        color: '#0C1E7F',
         img: '',
         status: false,
         password: 'Test',
