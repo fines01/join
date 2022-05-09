@@ -215,7 +215,6 @@ function showDescription(i) {
     let descriptionPlaceholder = document.getElementById('clickMe' + i);
     let taskBox = document.getElementById('task' + i);
     description.classList.remove('description-transition-in')
-    taskBox.classList.remove('hide-scrollbar');
 
     if (description.classList.contains('d-none')) {
         description.classList.remove('d-none')
@@ -227,5 +226,4 @@ function showDescription(i) {
         descriptionPlaceholder.classList.remove('d-none')
         descriptionPlaceholder.innerHTML = `Click to show description`;
     }
-    taskBox.classList.remove('hide-scrollbar');
 }

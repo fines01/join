@@ -39,7 +39,8 @@
     position: relative;
     /* margin-right: 20px; */
     padding: 5px;
-    min-width: 300px;
+    min-width: 265px;
+    max-width: 265px;
     min-height: 550px;
     border-radius: 8px;
     display: flex;
@@ -123,7 +124,7 @@
     justify-content: center;
     gap: 16px;
     padding: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .members img,
