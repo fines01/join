@@ -36,11 +36,12 @@ function checkLogin() {
         if (username.value == element['email'] &&
             password.value == element['password']) {
             window.open('index.html');
+            username.value = '';
+            password.value = '';
             return
         }
-
     }
-    alert('Username or Password is not correct!')
+    alert('Username or Password is not correct!');
 }
 
 function openRegisterWindow() {
@@ -60,7 +61,7 @@ function registerNewUser() {
         //'name' :
         'email': registerUser.value,
         'password': registerPassword.value,
-        'color' : randomHexColor(),
+        'color': randomHexColor(),
         'status': false,
     }
 
