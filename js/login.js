@@ -20,6 +20,22 @@ function showPassword() {
     }
 }
 
+function showPasswordRegister() {
+    var x = document.getElementById('new-password');
+    var y = document.getElementById('hide3');
+    var z = document.getElementById('hide4');
+
+    if (x.type == 'password') {
+        x.type = "text";
+        y.style.display = 'block';
+        z.style.display = 'none';
+    } else {
+        x.type = "password";
+        y.style.display = 'none';
+        z.style.display = 'block';
+    }
+}
+
 
 /**
  * function checkLogin() checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
@@ -45,13 +61,13 @@ function checkLogin() {
 }
 
 function openRegisterWindow() {
-    document.getElementById('form-box2').classList.remove('display-none');
-    document.getElementById('form-box1').classList.add('display-none');
+    document.getElementById('body-login2').classList.remove('display-none');
+    document.getElementById('body-login1').classList.add('display-none');
 }
 
 function closeRegisterWindow() {
-    document.getElementById('form-box2').classList.add('display-none');
-    document.getElementById('form-box1').classList.remove('display-none');
+    document.getElementById('body-login2').classList.add('display-none');
+    document.getElementById('body-login1').classList.remove('display-none');
 }
 
 function registerNewUser() {
