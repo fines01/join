@@ -1,10 +1,12 @@
 /* ********* addToTasks ********** */
 
-/** addToTaskJS the function is meant to enable the add of tasks to a json array
+/** addToTaskJS 
+ * The function is meant to enable the add of tasks to a json array.
+ * It also generates a certain ID for new tasks and sends them to the backlog board.
  */
 function addToTasks() {
 
-    let task = saveTaskInputs();
+    let task = processTaskInputs();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
     task.board = 'backlog'; // default-board on task creation
@@ -13,6 +15,7 @@ function addToTasks() {
     clearAssignments(); // clear assigned users icons
 
 }
+/**The function empties the input fields in addToTask.html.*/
 
 function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
@@ -20,10 +23,10 @@ function clearInputs() {
 
 
 /**
- * This function saves input values and returns them as task objects
+ * This function gets input values and returns them as task objects.
  * @returns {Object} - task object
  */
-function saveTaskInputs() {
+function processTaskInputs() {
 
     let [title, description, category, urgency, date] = getIds('title', 'description', 'category', 'urgency', 'date');
 
@@ -42,7 +45,10 @@ function saveTaskInputs() {
     return task;
 }
 
-
+/**The function is used to delete certain tasks or a different arrays.
+ * @param {dataArray} @type {Array}
+ * @param {i} @type {Number}
+*/
 
 function deleteTask(dataArray, i) {
     dataArray.splice(i, 1);
@@ -56,8 +62,14 @@ function renderEditForm(i) {
     overlay.innerHTML = editFormHTML(i);
 }
 
+/**The function is used to edit already written tasks and save them as JSON in the backend.
+ * @param {dataArray} @type {Array}
+ * @param {i} @type {Number}
+ * 
+*/
+
 async function saveEdit(dataArray, i) { // check: async no diff
-    let task = await saveTaskInputs();
+    let task = await processTaskInputs();
     task.board = dataArray[i].board; // keep the right board
     dataArray[i] = task;
     saveTasks();
@@ -66,20 +78,19 @@ async function saveEdit(dataArray, i) { // check: async no diff
 
 }
 
+
+
 function showAssignBox() {
     toggle('assignmentBox');
     renderUsers();
 }
 
-/* 
-let today = new Date().toISOString().split('T')[0];
-document.getElementById('date').setAttribute('min', today);
- */
-
+/** The function disables choosing of a date before the actual day */
 function compareDate() {
 let today = new Date().toISOString().split('T')[0];
 document.getElementById('date').setAttribute('min', today);   
 }
+
 
 function renderUsers() {
     let assignmentBox = getId('assignmentBox');
@@ -169,7 +180,7 @@ window.onload = async function () {
 }
 
 
-
+/**The function saves tasks in the backend in form of an JSON string */
 
 // ERROR: Uncaught (in promise) SyntaxError: Unexpected end of JSON input...
 async function saveTasks() { //check async: no diff
