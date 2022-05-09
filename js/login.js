@@ -73,8 +73,10 @@ function closeRegisterWindow() {
 function registerNewUser() {
     let registerUser = document.getElementById('new-user');
     let registerPassword = document.getElementById('new-password');
+    let newName = document.getElementById('new-name');
     let newUser = {
         //'name' :
+        'name': newName.value,
         'email': registerUser.value,
         'password': registerPassword.value,
         'color': randomHexColor(),
