@@ -23,7 +23,7 @@ function logsHTML(element, i) {
 function boardTaskHTML(element, i) {
     return /*html*/ `
         <div draggable="true" ondragstart="startDragging(${i})" class="scroll-bar-small background-urgency-${(element['urgency']).toLowerCase()} task">
-            <h4 class="task-headline-text">${element['title']}</h4>
+            <h4 class="task-headline-text">${capitalizeFirst(element['title'])}</h4>
             <span class="light-text">
                 Priority: <b>${element['urgency']}</b><br>
                 Category: <b>${element['category']}</b><br>
@@ -32,7 +32,7 @@ function boardTaskHTML(element, i) {
             <!-- TODO show description on click -->
             <div>
                 <span onclick="" class="show-more">...</span>
-                <p class="task-description-text d-none" id="showDescription">${element['description']}</p>
+                <p class="task-description-text d-none" id="showDescription">${capitalizeFirst(element['description'])}</p>
             </div>
             <div class="members">
                 ${renderAssignedUsers(element.assignedTo)}
