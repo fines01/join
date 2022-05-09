@@ -1,6 +1,6 @@
 /* ********* addToTasks ********** */
 
-/** addToTaskJS the function is meant to enable the add of task to a json array
+/** addToTaskJS the function is meant to enable the add of tasks to a json array
  */
 function addToTasks() {
 
@@ -18,8 +18,9 @@ function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
 }
 
+
 /**
- * This function saves input values and returns them as a task object
+ * This function saves input values and returns them as task objects
  * @returns {Object} - task object
  */
 function saveTaskInputs() {
@@ -40,6 +41,8 @@ function saveTaskInputs() {
     };
     return task;
 }
+
+
 
 function deleteTask(dataArray, i) {
     dataArray.splice(i, 1);
