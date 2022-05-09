@@ -227,4 +227,5 @@ function showDescription(i) {
         descriptionPlaceholder.classList.remove('d-none')
         descriptionPlaceholder.innerHTML = `Click to show description`;
     }
+    taskBox.classList.remove('hide-scrollbar');
 }
