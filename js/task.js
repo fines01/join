@@ -49,7 +49,7 @@ function processTaskInputs() {
 /**The function is used to delete certain tasks or a different arrays.
  * @param {dataArray} @type {Array}
  * @param {i} @type {Number}
-*/
+ */
 
 function deleteTask(dataArray, i) {
     dataArray.splice(i, 1);
@@ -67,7 +67,7 @@ function renderEditForm(i) {
  * @param {dataArray} @type {Array}
  * @param {i} @type {Number}
  * 
-*/
+ */
 
 async function saveEdit(dataArray, i) { // check: async no diff
     let task = await processTaskInputs();
@@ -92,8 +92,8 @@ function showAssignBox() {
 
 /** The function disables selection of a date before the current day */
 function compareDate() {
-let today = new Date().toISOString().split('T')[0];
-document.getElementById('date').setAttribute('min', today);   
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
 }
 
 
@@ -180,7 +180,7 @@ function renderMultipleSelected(optionsArr, value) {
 }
 
 /* Backend Folder */
-window.onload = async function () {
+window.onload = async function() {
     downloadFromServer();
 }
 
@@ -205,5 +205,15 @@ function loadTasks() {
     let tasksAsText = backend.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);
+    }
+}
+
+function showDescription(i) {
+    let description = document.getElementById('showDescription' + i);
+
+    if (description.classList.contains('d-none')) {
+        description.classList.remove('d-none')
+    } else {
+        description.classList.add('d-none')
     }
 }
