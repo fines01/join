@@ -194,7 +194,11 @@ function displayStringsArr(stringsArray) {
     let strings = '';
     for (let i = 0; i < stringsArray.length; i++) {
         let element = stringsArray[i];
-        strings += stringsArray[i] + ', ';
+        if (i == stringsArray.length - 1){
+            strings += stringsArray[i];
+        } else {
+            strings += stringsArray[i] + ', ';
+        }
     }
     return strings;
 }
