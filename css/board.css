@@ -88,12 +88,13 @@
 
 .task-links {
     position: absolute;
-    bottom: 12px;
+    bottom:10px;
     left: 12px; right: 12px;
     /* left: 5px; */
     display: flex;
     justify-content: space-between;
     /* z-index: -1; */
+    transition: all 225ms linear;
 }
 
 .task-links a {
@@ -111,7 +112,7 @@
 .delete-task:hover,
 .edit-task:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 .members {

@@ -63,10 +63,12 @@ function showSelectedUserIcon() { // ...iconS !
 }
 
 function getLogBorderColor(namesArr) {
-    let userName = namesArr[0]; // so right now only first user will be marked by border-color (which will always be user with index 0, need better ideas
-    let user = users.filter(usr => usr.name == userName);
-    if (user) {
-        return user[0].color;
+    if(namesArr){
+        let userName = namesArr[0]; // so right now only first user will be marked by border-color (which will always be user with index 0, need better ideas
+        let user = users.filter(usr => usr.name == userName);
+        if (user && user.length > 0) {
+            return user[0].color;
+        }
     }
 }
 
