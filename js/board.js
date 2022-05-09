@@ -73,10 +73,12 @@ function moveTo(board) {
  * shows move buttons on responsive view when arrow img is clicked 
  */
 function showMoveButtons(i) {
+    let taskBox = document.getElementById('task' + i);
     let moveButtonBox = document.getElementById('moveButtonBox' + i)
 
     if (moveButtonBox.classList.contains('d-none')) {
         moveButtonBox.classList.remove('d-none')
+        taskBox.classList.add('hide-scrollbar')
         moveButtonBox.classList.add('move-button-box-transition-in')
     } else {
         moveButtonBox.classList.add('d-none')
