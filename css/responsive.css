@@ -181,6 +181,9 @@
     .move-to img {
         width: 24px;
     }
+    .move-to img:hover {
+        transform: scale(1.05);
+    }
     .move-button-box {
         padding-bottom: 5px;
     }

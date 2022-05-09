@@ -217,7 +217,6 @@ function showDescription(i) {
     description.classList.remove('description-transition-in')
     taskBox.classList.remove('hide-scrollbar');
 
-
     if (description.classList.contains('d-none')) {
         description.classList.remove('d-none')
         description.classList.add('description-transition-in')
