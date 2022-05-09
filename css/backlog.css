@@ -33,7 +33,7 @@
     width: 95%;
     height: 80px;
     border-radius: 6px;
-    border-left: 4px solid rgb(14, 11, 167);
+    border-left: 5px solid rgb(14, 11, 167);
     display: flex;
     padding: 8px;
     padding-right: 38px; /*space for backlog-buttons absolute*/
@@ -42,6 +42,7 @@
     transition: all 225ms ease-in-out;
     color: var(--col-main);
     /* box-sizing: border-box; */
+    clip-path: inset(-4px -4px -4px 0px); /* TEST: clips div --> so here it clips the box-shadow(4px) from left side */
 }
 
 .log:hover {
