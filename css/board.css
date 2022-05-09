@@ -16,7 +16,9 @@
 
 .board-content {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    margin-top: 4em;
+    margin-bottom: 4em;
     padding: 45px 50px;
     padding-right: 0;
     /* padding-left: 50px; align boards with headline */
