@@ -15,8 +15,9 @@ function addToTasks() {
     clearAssignments(); // clear assigned users icons
 
 }
-/**The function empties the input fields in addToTask.html.*/
 
+/**
+ * Empties the input fields in the task forms*/
 function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
 }
@@ -85,7 +86,7 @@ function showAssignBox() {
     renderUsers();
 }
 
-/** The function disables choosing of a date before the actual day */
+/** The function disables selection of a date before the current day */
 function compareDate() {
 let today = new Date().toISOString().split('T')[0];
 document.getElementById('date').setAttribute('min', today);   

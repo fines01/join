@@ -21,6 +21,7 @@
     <script src="js/board.js"></script>
     <script src="js/backlog.js"></script>
     <script src="js/task.js"></script>
+    <script src="js/assign.js"></script>
     <script src="js/templates.js"></script>
     <script src="js/script.js"></script>
     <script src="js/includeHTML.js"></script>
@@ -43,6 +44,7 @@
 </head>
 
 <body onload="initBacklog()">
+    <div id="overlay" class="d-none" onclick="hide('overlay')"></div>
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
         <div class="backlog-sub-menu">

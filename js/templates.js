@@ -1,6 +1,6 @@
 function logsHTML(element, i) {
     return /*html*/ `
-        <div class="log">
+        <div class="log" onclick="renderEditForm(${i})">
             <div class="">
                  <h4 class="log-name hide-long-text">${element['assignedTo']}</h4>
             </div>
@@ -72,7 +72,7 @@ function editFormHTML(i) {
                 </div>
                 <div class="form-section">
                     <h2>DUE DATE</h2>
-                    <input id="date" type="date" value="${tasks[i].date}">
+                    <input id="date" type="date" value="${tasks[i].date}" onclick="compareDate()">
                     <h2>URCENCY</h2>
                     <select id="urgency">
                         ${renderOptionFields(tasks[i].urgency, urgencies)}

@@ -19,6 +19,7 @@
     /* color: rgb(14, 11, 167); */
     color: var(--col-blue1);
     /* text-transform: uppercase; */
+    width: 95%;
 }
 
 .backlog-titles div {
@@ -29,16 +30,18 @@
 .log {
     position: relative;
     background-color: rgb(233, 233, 241);
-    width: 100%;
+    width: 95%;
     height: 75px;
     border-radius: 6px;
     border-left: 4px solid rgb(14, 11, 167);
     display: flex;
     padding: 8px;
+    padding-right: 38px; /*space for backlog-buttons absolute*/
     margin-bottom: 16px;
     cursor: pointer;
     transition: all 225ms ease-in-out;
     color: var(--col-main);
+    /* box-sizing: border-box; */
 }
 
 .log:hover {
@@ -63,17 +66,20 @@
     width: unset !important;
     position: absolute;
     float: right;
-    right: 50px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .delete-backlog {
-    width: 35px;
+    width: 27px;
     margin-bottom: 2px;
 }
 
 .backlog-arrow {
     cursor: pointer;
-    width: 35px;
+    width: 27px;
+    padding-bottom: 10px;
     margin-right: 10px;
 }
 

@@ -60,6 +60,7 @@ body {
     /* background-color: rgba(211, 222, 220,0.9); */
     /* background-color: rgba(200, 198, 198); */
     background-color: rgba(53, 87, 107, 0.6);
+    overflow: auto;
 }
 
 

@@ -57,5 +57,7 @@ function renderUserIcon(userName) {
 
 function showSelectedUserIcon() { // ...iconS !
     let selectedUsersArr = getAssignedUsers();
-    getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
+    //if(selectedUsersArr){
+        getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
+    //}
 }
