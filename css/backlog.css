@@ -1,5 +1,5 @@
 .backlog-sub-menu {
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 80px;
     padding-left: 50px;
     padding-right: 50px;
@@ -20,6 +20,7 @@
     color: var(--col-blue1);
     /* text-transform: uppercase; */
     width: 95%;
+    margin-top: 28px;
 }
 
 .backlog-titles div {

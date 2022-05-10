@@ -5,9 +5,12 @@
 }
 
 .add-to-task-sub-menu {
-    padding: 80px 50px;
-    /* padding: 45px 50px; */
+    /* padding: 80px 50px; */
+    /* margin-top: 40px;
+    margin-bottom: 95px; */
+    margin: 40px 50px 95px 50px;
     max-width: 1000px;
+    /* text-align: center; */
 }
 
 .add-to-task-sub-menu p {
