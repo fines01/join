@@ -40,7 +40,7 @@ async function loadServerData() {
  */
 
 async function initBoard() {
-    await initTaksAndIncludeHTML();
+    await initTasksAndIncludeHTML();
     await init();
     renderBoards();
 }
@@ -53,16 +53,16 @@ async function initBoard() {
  */
 
 async function initBacklog() {
-    await initTaksAndIncludeHTML();
+    await initTasksAndIncludeHTML();
     await init();
     renderLogs();
 }
 
 
 /**
- * function initTaksAndIncludeHTML() executes on load of html body
+ * function initTasksAndIncludeHTML() executes on load of html body
  */
-function initTaksAndIncludeHTML() {
+function initTasksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
     loadTasks();
     // Todo: get all local data additionally or only if there is no data on the server? 
