@@ -1,5 +1,5 @@
 /**
- * Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
+ * This Function used  for rendering the boards with filters
  */
 function renderBoards() {
 
@@ -9,7 +9,9 @@ function renderBoards() {
     renderEachBoard('doneBoard', 'done');
 }
 
-
+/**
+ * This Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
+ */
 function renderEachBoard(boardName, boardId) {
     boardName = tasks.filter(t => t['board'] == `${boardId}`);
     getId(`${boardId}Board`).innerHTML = '';
@@ -23,19 +25,19 @@ function renderEachBoard(boardName, boardId) {
 
 
 /**
- * saves the current id of the dragged task 
+ * This function saves the current id of the dragged task 
  */
 function startDragging(id) { // i only for testing purposes
     currentDraggedElement = id;
 }
 /**
- * makes the div container droppable
+ * This function makes the div container droppable
  */
 function allowDrop(ev) {
     ev.preventDefault();
 }
 /**
- * gives the task the new category. The category depends on the dropped board 
+ * This function gives the task the new category. The category depends on the dropped board 
  */
 function moveTo(board) {
     tasks[currentDraggedElement]['board'] = board;
@@ -43,7 +45,7 @@ function moveTo(board) {
     renderBoards()
 }
 /**
- * shows move buttons on responsive view when arrow img is clicked 
+ * This function shows move buttons on responsive view when arrow image is clicked 
  */
 function showMoveButtons(i) {
     let moveButtonBox = document.getElementById('moveButtonBox' + i)
@@ -57,11 +59,11 @@ function showMoveButtons(i) {
 }
 
 /**
- * Moves a given task to the passed target-board
+ * This function Moves a given task to the passed target-board
  * @param {integer} i - tasks index
  * @param {string} targetBoard - name of board
  */
-function moveToBoard(i, targetBoard){
+function moveToBoard(i, targetBoard) {
     console.log(targetBoard);
     tasks[i]['board'] = targetBoard;
     saveTasks();
