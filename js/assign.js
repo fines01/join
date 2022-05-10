@@ -1,5 +1,5 @@
 
-/**This function gets all selected user values from an html multiple select field and returns the values in an array
+/** This function gets all selected user values from an HTML multiple select field and returns the values in an array
  * @returns {string[]} - selected users
  */
 function getAssignedUsers() {
@@ -21,6 +21,11 @@ function clearAssignments() {
     getId('iconsContainer').innerHTML = renderAssignedUsers([]);
 }
 
+/**
+ * Renders several user icons for all passed users in an array
+ * @param {string[]} usersArr - array with usernames
+ * @returns {(string | string)} - user-icon  HTML code for all passed users | replacement image
+ */
 function renderAssignedUsers(usersArr) {
     let iconsHTML = '';
     if (usersArr && usersArr.length > 0) {
@@ -34,6 +39,11 @@ function renderAssignedUsers(usersArr) {
     return iconsHTML;
 }
 
+/**
+ * Extracts max 2 initials of a given username
+ * @param {string} userName - a username
+ * @returns {string} initials - the users initials
+ */
 // returns up to 2 initials of a given user name
 function extractInitials(userName) {
     let splitNameArr = userName.split(' ');
@@ -48,6 +58,11 @@ function extractInitials(userName) {
     return initials;
 }
 
+/**
+ * Searches a single userobject by name and returns their user icon HTML
+ * @param {string} userName - a username
+ * @returns {string} - HTML code for the users icon
+ */
 function renderUserIcon(userName) {
     let user = users.filter(usr => usr.name == userName);
     // get initials (max 2 or 3)
@@ -55,6 +70,9 @@ function renderUserIcon(userName) {
     return /*html*/ `<span id="icon-${userName}" class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
 }
 
+/**
+ * This function gets all selected users from a select field and shows their user icons
+ */
 function showSelectedUserIcon() { // ...iconS !
     let selectedUsersArr = getAssignedUsers();
     //if(selectedUsersArr){
@@ -62,6 +80,12 @@ function showSelectedUserIcon() { // ...iconS !
     //}
 }
 
+/**
+ * Finds userobject of given username strings, and returns the color code for the first assigned user
+ * @param {string[]} namesArr - array with all assigned users of a task
+ * @returns {string} - color code
+ * @issue - Only one border-color is shown, and for multiple assigned users always the user with the lowest index will be shown.
+ */
 function getLogBorderColor(namesArr) {
     if(namesArr){
         let userName = namesArr[0]; // so right now only first user will be marked by border-color (which will always be user with index 0, need better ideas

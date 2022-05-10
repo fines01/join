@@ -38,7 +38,6 @@ async function loadServerData() {
  * Then the tasks are rendered in the different boards.
  * 
  */
-
 async function initBoard() {
     initTasksAndIncludeHTML();
     await init();
@@ -51,7 +50,6 @@ async function initBoard() {
  * Then the tasks are rendered in the backlog.
  * 
  */
-
 async function initBacklog() {
     initTasksAndIncludeHTML();
     await init();
@@ -85,7 +83,6 @@ function randomHexColor() {
         let randNr = Math.floor(Math.random() * hex.length); //random number between [0, hex.length[
         hexColorStr += hex[randNr];
     }
-    console.log(hexColorStr);
     return hexColorStr;
 }
 
@@ -186,7 +183,7 @@ function closeNavbar() {
 /* ****** ****** */
 
 /**
- * This function splits given an array of strings and displays them nicely (with ', ' in between strings)
+ * This function splits an array of strings and displays them nicely (with ', ' in between strings)
  * @param {string[]} namesArray 
  * @returns {string}
  */

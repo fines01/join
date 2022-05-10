@@ -1,5 +1,3 @@
-/* ********* addToTasks ********** */
-
 /** addToTaskJS 
  * The function is meant to enable the add of tasks to a json array.
  * It also generates a certain ID for new tasks and sends them to the backlog board.
@@ -14,9 +12,11 @@ function addToTasks() {
     saveTasks();
     clearInputValues(title, date, category, urgency, description);
     clearAssignments(); // clear assigned users icons
-
 }
 
+/**
+ * This function renders a notification after successfully submitting a new task
+ */
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
@@ -58,29 +58,32 @@ function processTaskInputs() {
     return task;
 }
 
-/**The function is used to delete certain tasks or a different arrays.
+/**
+ * Deletes an element from an array, updates the data on the server,  and renders boards.
  * @param {dataArray} @type {Array}
  * @param {i} @type {Number}
  */
-
 function deleteTask(dataArray, i) {
     dataArray.splice(i, 1);
     renderBoards()
     saveTasks();
 }
 
+/**
+ * Renders the edit form in an overlay modal field
+ * @param {integer} i - index of an element of the tasks array
+ */
 function renderEditForm(i) {
     let overlay = getId('overlay');
     show('overlay');
     overlay.innerHTML = editFormHTML(i);
 }
 
-/**The function is used to edit already written tasks and save them as JSON in the backend.
- * @param {dataArray} @type {Array}
- * @param {i} @type {Number}
- * 
+/**
+ * Updates an element with given index i in the given array
+ * @param {Array} dataArray
+ * @param {integer} i - array index
  */
-
 async function saveEdit(dataArray, i) { // check: async no diff
     let task = await processTaskInputs();
     task.board = dataArray[i].board; // keep the right board
@@ -131,6 +134,7 @@ function renderForm() {
 }
 
 /* ****** render HTML option select fields ****** */
+
 /**
  * This function renders all options from a given array of values in an html select field
  * @param {string} selected - the pre-selected element/option
@@ -145,7 +149,9 @@ function renderOptionFields(selected, dataArray) {
     }
     return str;
 }
+
 // TODO: maybe include in function above (one fkt?)
+
 /**
  * Renders option fields and shows preselected values for all users in an html select field
  * @param {(string[] | undefined)} selectedUsers 
@@ -197,19 +203,18 @@ window.onload = async function () {
 }
 
 
-/**The function saves tasks in the backend in form of an JSON string */
-
-// ERROR: Uncaught (in promise) SyntaxError: Unexpected end of JSON input...
+/**
+ * Saves tasks in the backend in form of an JSON string */
 async function saveTasks() { //check async: no diff
-    event.preventDefault(); // prevent reload (forms)
+    if(event){
+        event.preventDefault(); 
+    }
     let tasksAsText = JSON.stringify(tasks);
-    //console.log(tasks); // check: json looks correct
-    //console.log(tasksAsText); //check: string looks correct
     await backend.setItem('tasks', tasksAsText);
 }
 
 /**
- *  The function is used to laod and convert the tasks from text-format to a JSON-array. 
+ *  This function loads and converts the tasks from text-format to a JSON-array. 
  *  The preventDefault() function is necessary to prevent the page from reloading when adding a new task.
  */
 function loadTasks() {
@@ -221,8 +226,9 @@ function loadTasks() {
         tasks = JSON.parse(tasksAsText);
     }
 }
+
 /**
- *  The function is used to show the description of the task who is clicked
+ *  The function is used to show the description of the clicked task
  */
 function showDescription(i) {
     let description = document.getElementById('showDescription' + i);
