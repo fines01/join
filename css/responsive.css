@@ -62,11 +62,7 @@
     .card {
         height: 19vh;
     }
-    /* adjust headline */
-    .board-sub-menu {
-        padding-top: 80px;
-        padding-left: 50px;
-    }
+    
     .backlog-buttons {
         display: flex;
         flex-direction: column;
@@ -87,6 +83,26 @@
     }
     .category {
         padding-left: 8px;
+    }
+    /* adjust headline */
+    .board-sub-menu {
+        padding-top: 85px;
+        padding-left: 0 !important;
+        text-align: center;
+    }
+
+    .backlog-sub-menu {
+        padding-top: 85px;
+    }
+
+    .backlog-sub-menu h1, .backlog-sub-menu p {
+        text-align: center;
+    }
+
+    .add-to-task-sub-menu {
+        text-align: center;
+        padding-top: 85px;
+        padding-bottom: 55px;
     }
 }
 
