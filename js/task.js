@@ -28,8 +28,6 @@ function taskSubmitSuccessful() {
     }, 2000);
 }
 
-
-
 /**
  * Empties the input fields in the task forms*/
 function clearInputs() {
