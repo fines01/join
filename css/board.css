@@ -19,8 +19,9 @@
     justify-content: center;
     margin-top: 4em;
     margin-bottom: 4em;
-    padding: 45px 50px;
-    padding-right: 0;
+    /* padding: 45px 50px;
+    padding-right: 0; */
+    padding-left: 16px;
     /* padding-left: 50px; align boards with headline */
     flex-wrap: wrap;
     gap: 24px 0;

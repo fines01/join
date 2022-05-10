@@ -110,6 +110,11 @@
     .task-input-wrap {
         margin-top: -2em;
     }
+    
+    .board-sub-menu {
+        padding-left: 0 !important;
+        text-align: center;
+    }
     /* overflow hidden while opening mobile-menu */
     .board-container {
         overflow: hidden;
