@@ -20,8 +20,12 @@ function addToTasks() {
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
-    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted`;
-    setTimeout(show('taskSubmitSuccessful'), 50);
+    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted to the <a href="02backlog.html" class="backlog-link"> Backlog</a>`;
+    show('taskSubmitSuccessful')
+    //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
+    window.setTimeout( function(){
+        hide('taskSubmitSuccessful')
+    }, 2000);
 }
 
 
