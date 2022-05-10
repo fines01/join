@@ -7,6 +7,7 @@
 function addToTasks() {
 
     let task = processTaskInputs();
+    taskSubmitSuccessfull();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
     task.board = 'backlog'; // default-board on task creation
@@ -15,6 +16,15 @@ function addToTasks() {
     clearAssignments(); // clear assigned users icons
 
 }
+
+function taskSubmitSuccessfull() {
+    let taskSuccess = getId('taskSubmitSuccessfull');
+    let taskName = processTaskInputs();
+    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted`;
+    setTimeout(show('taskSubmitSuccessfull'), 50);
+}
+
+
 
 /**
  * Empties the input fields in the task forms*/
@@ -180,7 +190,7 @@ function renderMultipleSelected(optionsArr, value) {
 }
 
 /* Backend Folder */
-window.onload = async function() {
+window.onload = async function () {
     downloadFromServer();
 }
 
