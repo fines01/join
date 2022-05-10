@@ -57,38 +57,50 @@ function showMoveButtons(i) {
 }
 
 /**
- * generated task will be moved to the todo board on responsive view
+ * Moves a given task to the passed target-board
+ * @param {integer} i - tasks index
+ * @param {string} targetBoard - name of board
  */
-function moveToTodo(i) {
-    const targetBoard = 'todo'
+function moveToBoard(i, targetBoard){
+    console.log(targetBoard);
     tasks[i]['board'] = targetBoard;
     saveTasks();
-    renderBoards()
+    renderBoards();
 }
-/**
- * generated task will be moved to the in progress board on responsive view
- */
-function moveToInProgress(i) {
-    const targetBoard = 'inProgress'
-    tasks[i]['board'] = targetBoard;
-    saveTasks();
-    renderBoards()
-}
-/**
- * generated task will be moved to the testing board on responsive view
- */
-function moveToTesting(i) {
-    const targetBoard = 'testing'
-    tasks[i]['board'] = targetBoard;
-    saveTasks();
-    renderBoards()
-}
-/**
- * generated task will be moved to the done board on responsive view
- */
-function moveToDone(i) {
-    const targetBoard = 'done'
-    tasks[i]['board'] = targetBoard;
-    saveTasks();
-    renderBoards()
-}
+
+// /**
+//  * generated task will be moved to the todo board on responsive view
+//  */
+// function moveToTodo(i) {
+//     const targetBoard = 'todo'
+//     tasks[i]['board'] = targetBoard;
+//     saveTasks();
+//     renderBoards()
+// }
+// /**
+//  * generated task will be moved to the in progress board on responsive view
+//  */
+// function moveToInProgress(i) {
+//     const targetBoard = 'inProgress'
+//     tasks[i]['board'] = targetBoard;
+//     saveTasks();
+//     renderBoards()
+// }
+// /**
+//  * generated task will be moved to the testing board on responsive view
+//  */
+// function moveToTesting(i) {
+//     const targetBoard = 'testing'
+//     tasks[i]['board'] = targetBoard;
+//     saveTasks();
+//     renderBoards()
+// }
+// /**
+//  * generated task will be moved to the done board on responsive view
+//  */
+// function moveToDone(i) {
+//     const targetBoard = 'done'
+//     tasks[i]['board'] = targetBoard;
+//     saveTasks();
+//     renderBoards()
+// }

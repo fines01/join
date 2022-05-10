@@ -42,7 +42,7 @@ let users = [{
     },
 ];
 
-// example or default categories, can be modified by the user
+// example or default categories, can be modified by the user (later)
 let categories = ['Management', 'Software Developement', 'UX/UI Design', 'Human Resources'];
 //
 let urgencies = ['High', 'Medium', 'Low'];

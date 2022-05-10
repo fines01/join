@@ -40,10 +40,10 @@ function boardTaskHTML(element, i) {
             <div class="move-to">
                 <img onclick="showMoveButtons(${i})" class="move-to-btn" src="img/arrow-204-48.png" alt="">
                 <div id="moveButtonBox${i}" class="move-button-box d-none">
-                    <div><button onclick="moveToTodo(${i})" class="move-button">Todo</button></div>
-                    <div><button onclick="moveToInProgress(${i})" class="move-button">In Progress</button></div>
-                    <div><button onclick="moveToTesting(${i})" class="move-button">Testing</button></div>
-                    <div><button onclick="moveToDone(${i})" class="move-button">Done</button></div>
+                    <div><button onclick="moveToBoard(${i},'todo')" class="move-button">Todo</button></div>
+                    <div><button onclick="moveToBoard(${i},'inProgress')" class="move-button">In Progress</button></div>
+                    <div><button onclick="moveToBoard(${i},'testing')" class="move-button">Testing</button></div>
+                    <div><button onclick="moveToBoard(${i},'done')" class="move-button">Done</button></div>
                 </div>
             </div>
             <div class="task-links">
