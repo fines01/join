@@ -1,7 +1,7 @@
 // users moved to data.js
 
 /**
- * function schowPassword() is used to show the password when clicking on the eye symbol
+ * this function schowPassword() is used to show the password when clicking on the eye symbol
  */
 
 function showPassword() {
@@ -19,6 +19,11 @@ function showPassword() {
         z.style.display = 'block';
     }
 }
+
+
+/**
+ * this function showPasswordRegister() is used to show the password when clicking on the eye symbol on the register card
+ */
 
 function showPasswordRegister() {
     var x = document.getElementById('new-password');
@@ -38,9 +43,8 @@ function showPasswordRegister() {
 
 
 /**
- * function checkLogin() checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
+ * this function checkLogin() checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
  */
-
 
 function checkLogin() {
     let username = document.getElementById('user');
@@ -60,15 +64,30 @@ function checkLogin() {
     alert('Username or Password is not correct!');
 }
 
+
+/**
+ * this function openRegisterWindow() opens the window to register a new user
+ */
+
 function openRegisterWindow() {
     document.getElementById('body-login2').classList.remove('display-none');
     document.getElementById('body-login1').classList.add('display-none');
 }
 
+
+/**
+ * this function closeRegisterWindow() closes the window to get to the login page
+ */
+
 function closeRegisterWindow() {
     document.getElementById('body-login2').classList.add('display-none');
     document.getElementById('body-login1').classList.remove('display-none');
 }
+
+
+/**
+ * this function is used to register a new user
+ */
 
 function registerNewUser() {
     let registerUser = document.getElementById('new-user');
@@ -98,11 +117,21 @@ function registerNewUser() {
     saveNewUser();
 }
 
+
+/**
+ * this function saves the new user in the local storage
+ */
+
 function saveNewUser() {
     let usersAsText = JSON.stringify(users);
 
     localStorage.setItem('users', usersAsText);
 }
+
+
+/**
+ * this function is used to load the users from the local storage
+ */
 
 function loadNewUser() {
     let usersAsText = localStorage.getItem('users');
