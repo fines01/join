@@ -7,7 +7,7 @@
 function addToTasks() {
 
     let task = processTaskInputs();
-    taskSubmitSuccessfull();
+    taskSubmitSuccessful();
     tasks.push(task);
     task.id = tasks.length; // set id when creating the task
     task.board = 'backlog'; // default-board on task creation
@@ -17,11 +17,11 @@ function addToTasks() {
 
 }
 
-function taskSubmitSuccessfull() {
-    let taskSuccess = getId('taskSubmitSuccessfull');
+function taskSubmitSuccessful() {
+    let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
     taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted`;
-    setTimeout(show('taskSubmitSuccessfull'), 50);
+    setTimeout(show('taskSubmitSuccessful'), 50);
 }
 
 
