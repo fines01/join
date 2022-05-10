@@ -30,7 +30,7 @@ function setURL(url) {
 }
 
 /**
- * Loads a JSON or JSON Array to the Server
+ * This function Loads a JSON or JSON Array to the Server
  * payload {JSON | Array} - The payload you want to store
  */
 
@@ -74,7 +74,7 @@ function loadJSONFromServerOld() {
 
 
 /**
- * Saves a JSON or JSON Array to the Server
+ * This function Saves a JSON or JSON Array to the Server
  */
 function saveJSONToServer() {
     return new Promise(function(resolve, reject) {
