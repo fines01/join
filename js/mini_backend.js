@@ -18,6 +18,9 @@ const backend = {
     }
 };
 
+/**
+ * this function downloads infos of the backend
+ */
 
 async function downloadFromServer() {
     let result = await loadJSONFromServer();

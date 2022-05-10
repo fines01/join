@@ -14,7 +14,7 @@ function getAssignedUsers() {
 }
 
 /**
- * Clears user icons when resetting the addToTask.html form
+ * This function Clears user icons when resetting the addToTask.html form
  */
 function clearAssignments() {
     getId('iconsContainer').innerHTML = renderAssignedUsers([]);

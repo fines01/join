@@ -17,6 +17,11 @@ function addToTasks() {
 
 }
 
+
+/**
+ * this function is showing the user if the task was successfully submitted
+ */
+
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
@@ -108,6 +113,10 @@ function compareDate() {
     document.getElementById('date').setAttribute('min', today);
 }
 
+
+/**
+ * this function is rendering the users 
+ */
 
 function renderUsers() {
     let assignmentBox = getId('assignmentBox');
