@@ -14,17 +14,9 @@ function addToTasks() {
     clearAssignments(); // clear assigned users icons
 }
 
-<<<<<<< HEAD
 /**
  * This function renders a notification after successfully submitting a new task
  */
-=======
-
-/**
- * this function is showing the user if the task was successfully submitted
- */
-
->>>>>>> refs/remotes/origin/main
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
@@ -41,7 +33,6 @@ function taskSubmitSuccessful() {
 function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
 }
-
 
 /**
  * This function gets input values and returns them as task objects.
