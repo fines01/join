@@ -6,7 +6,8 @@
     /* aligned with Logo on Sidenav (approximately as much as possible)*/
     padding-top: 40px;
     /* aligned with left edge of first board (try) */
-    padding-left: calc(50% - 590px); /* width 4 boards - 1180px*/
+    padding-left: calc(50% - 580px);
+    /* width 4 boards - 1180px*/
 }
 
 .board-sub-menu p {
