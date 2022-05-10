@@ -215,7 +215,9 @@ async function saveTasks() { //check async: no diff
  *  The preventDefault() function is necessary to prevent the page from reloading when adding a new task.
  */
 function loadTasks() {
-    event.preventDefault();
+    if(event){
+        event.preventDefault();
+    }
     let tasksAsText = backend.getItem('tasks');
     if (tasksAsText) {
         tasks = JSON.parse(tasksAsText);

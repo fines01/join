@@ -40,7 +40,7 @@ async function loadServerData() {
  */
 
 async function initBoard() {
-    await initTasksAndIncludeHTML();
+    initTasksAndIncludeHTML();
     await init();
     renderBoards();
 }
@@ -53,7 +53,7 @@ async function initBoard() {
  */
 
 async function initBacklog() {
-    await initTasksAndIncludeHTML();
+    initTasksAndIncludeHTML();
     await init();
     renderLogs();
 }
