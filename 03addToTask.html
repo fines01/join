@@ -48,12 +48,13 @@
         <div class="add-task-container">
             <div class="add-to-task-sub-wrap">
                 <div class="add-to-task-sub-menu">
+                    <div class="task-submit-success d-none" id="taskSubmitSuccessful"></div>
                     <h1>Add Task</h1>
                     <p>Learning Management System Project</p>
                 </div>
             </div>
 
-            <div class="task-input-wrap">
+            <div class="task-input-wrap" onclick="hide('taskSubmitSuccessful')">
                 <div class="task-input-container">
                     <form class="form-field" onsubmit="addToTasks(); clearAssignments()">
                         <div>
@@ -93,7 +94,7 @@
                                         onclick="clearAssignments()">CANCEL</button>
                                     <button type="submit" class="assign-button">CREATE TASK</button>
                                 </div>
-                                <div class="task-submit-success d-none" id="taskSubmitSuccessful"></div>
+                                <!-- <div class="task-submit-success d-none" id="taskSubmitSuccessful"></div> -->
                             </div>
                         </div>
                     </form>

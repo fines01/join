@@ -255,13 +255,25 @@ select {
 }
 
 .task-submit-success {
-    background-color: rgba(34, 49, 139);
+    background-color: var(--col-green1);
+    opacity:0.8;
     border-radius: 8px;
     border-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    width: 71%;
-    height: 50px;
+    /* margin-top: 20px;
+    width: 71%; */
+    /* height: 50px; */
+    position: fixed;
+    z-index: 1;
+    top:00px;
+    right:0;left:0;
+    padding:18px;
+}
+
+.backlog-link {
+    padding: 0 8px;
+    text-decoration: underline;
+    color: white;
 }
