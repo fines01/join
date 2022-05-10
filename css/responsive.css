@@ -4,11 +4,26 @@
     }
 }
 
+@media (max-width: 1363px){
+    .board-sub-menu {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+}
+
 @media (max-width: 1200px) {
     .form-field {
         flex-direction: column;
     }
+
+    .add-to-task-sub-menu {
+        text-align: center;
+        /* padding-top: 85px;
+        padding-bottom: 55px; */
+    }
 }
+
+@media (max-width: 1065px){}
 
 @media (max-width: 970px) {
     /* mobile-changes */
