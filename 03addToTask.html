@@ -73,7 +73,7 @@
                         <div>
                             <h2>DUE DATE</h2>
                             <input required id="date" type="date" name="setTodaysDate">
-                         
+
                             <h2>URCENCY</h2>
                             <select required id="urgency">
                                 <option value="High">High</option>
@@ -87,9 +87,13 @@
                                     <img src="img/icon-plus.png" alt="">
                                 </div>
                             </div>
-                            <div class="btn-box">
-                                <button type="reset" class="cancel-button" onclick="clearAssignments()">CANCEL</button>
-                                <button type="submit" class="assign-button">CREATE TASK</button>
+                            <div class="submit-fct-box">
+                                <div class="btn-box">
+                                    <button type="reset" class="cancel-button"
+                                        onclick="clearAssignments()">CANCEL</button>
+                                    <button type="submit" class="assign-button">CREATE TASK</button>
+                                </div>
+                                <div class="task-submit-success d-none" id="taskSubmitSuccessful"></div>
                             </div>
                         </div>
                     </form>

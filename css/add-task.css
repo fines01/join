@@ -125,7 +125,7 @@
 .user-icon
 /* ,.assignment-btn  */
 
-{
+    {
     height: 45px;
     width: 45px;
 }
@@ -254,4 +254,16 @@ select {
     background-repeat: no-repeat;
     background-position: calc(100% - 0.75rem) center !important;
     cursor: pointer;
+}
+
+.task-submit-success {
+    background-color: rgba(34, 49, 139);
+    border-radius: 8px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 71%;
+    height: 50px;
 }
