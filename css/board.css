@@ -5,7 +5,8 @@
 .board-sub-menu {
     padding-top: 32px;
     /* aligned with Logo on Sidenav (approximately as much as possible)*/
-    padding-left: 50px;
+    /* padding-left: 50px; */
+    padding-left: 24px;
 }
 
 .board-sub-menu p {
@@ -21,7 +22,7 @@
     margin-bottom: 4em;
     /* padding: 45px 50px;
     padding-right: 0; */
-    padding-left: 16px;
+    padding-left: 24px;
     /* padding-left: 50px; align boards with headline */
     flex-wrap: wrap;
     gap: 24px 0;
