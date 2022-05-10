@@ -3,51 +3,24 @@
  */
 function renderBoards() {
 
+    renderEachBoard('todoBoard', 'todo');
+    renderEachBoard('inProgressBoard', 'inProgress');
+    renderEachBoard('testingBoard', 'testing');
+    renderEachBoard('doneBoard', 'done');
+}
 
-    let todoBoard = tasks.filter(t => t['board'] == 'todo');
 
-    getId('todoBoard').innerHTML = '';
-
-    for (let i = 0; i < todoBoard.length; i++) {
-        const element = todoBoard[i];
+function renderEachBoard(boardName, boardId) {
+    boardName = tasks.filter(t => t['board'] == `${boardId}`);
+    getId(`${boardId}Board`).innerHTML = '';
+    for (let i = 0; i < boardName.length; i++) {
+        const element = boardName[i];
         const taskIndex = tasks.indexOf(element);
-        getId('todoBoard').innerHTML += boardTaskHTML(element, taskIndex);
-
-    }
-
-    let inProgressBoard = tasks.filter(t => t['board'] == 'inProgress');
-
-    getId('inProgressBoard').innerHTML = '';
-
-    for (let i = 0; i < inProgressBoard.length; i++) {
-        const element = inProgressBoard[i];
-        const taskIndex = tasks.indexOf(element);
-        getId('inProgressBoard').innerHTML += boardTaskHTML(element, taskIndex);
-
-    }
-
-    let testingBoard = tasks.filter(t => t['board'] == 'testing');
-
-    getId('testingBoard').innerHTML = '';
-
-    for (let i = 0; i < testingBoard.length; i++) {
-        const element = testingBoard[i];
-        const taskIndex = tasks.indexOf(element);
-        getId('testingBoard').innerHTML += boardTaskHTML(element, taskIndex);
-
-    }
-
-    let doneBoard = tasks.filter(t => t['board'] == 'done');
-
-    getId('doneBoard').innerHTML = '';
-
-    for (let i = 0; i < doneBoard.length; i++) {
-        const element = doneBoard[i];
-        const taskIndex = tasks.indexOf(element);
-        getId('doneBoard').innerHTML += boardTaskHTML(element, taskIndex);
-
+        getId(`${boardId}Board`).innerHTML += boardTaskHTML(element, taskIndex);
     }
 }
+
+
 
 /**
  * saves the current id of the dragged task 
@@ -73,12 +46,10 @@ function moveTo(board) {
  * shows move buttons on responsive view when arrow img is clicked 
  */
 function showMoveButtons(i) {
-    let taskBox = document.getElementById('task' + i);
     let moveButtonBox = document.getElementById('moveButtonBox' + i)
 
     if (moveButtonBox.classList.contains('d-none')) {
         moveButtonBox.classList.remove('d-none')
-        taskBox.classList.add('hide-scrollbar')
         moveButtonBox.classList.add('move-button-box-transition-in')
     } else {
         moveButtonBox.classList.add('d-none')
