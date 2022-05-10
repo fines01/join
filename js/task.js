@@ -1,5 +1,5 @@
 /** addToTaskJS 
- * The function is meant to enable the add of tasks to a json array.
+ * This function is meant to enable the add of tasks to a json array.
  * It also generates a certain ID for new tasks and sends them to the backlog board.
  */
 function addToTasks() {
@@ -14,16 +14,24 @@ function addToTasks() {
     clearAssignments(); // clear assigned users icons
 }
 
+<<<<<<< HEAD
 /**
  * This function renders a notification after successfully submitting a new task
  */
+=======
+
+/**
+ * this function is showing the user if the task was successfully submitted
+ */
+
+>>>>>>> refs/remotes/origin/main
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
     taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted to the <a href="02backlog.html" class="backlog-link"> Backlog</a>`;
     show('taskSubmitSuccessful')
-    //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
-    window.setTimeout( function(){
+        //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
+    window.setTimeout(function() {
         hide('taskSubmitSuccessful')
     }, 2000);
 }
@@ -112,6 +120,10 @@ function compareDate() {
 }
 
 
+/**
+ * this function is rendering the users 
+ */
+
 function renderUsers() {
     let assignmentBox = getId('assignmentBox');
     assignmentBox.innerHTML = '';
@@ -198,7 +210,7 @@ function renderMultipleSelected(optionsArr, value) {
 }
 
 /* Backend Folder */
-window.onload = async function () {
+window.onload = async function() {
     downloadFromServer();
 }
 
@@ -218,7 +230,7 @@ async function saveTasks() { //check async: no diff
  *  The preventDefault() function is necessary to prevent the page from reloading when adding a new task.
  */
 function loadTasks() {
-    if(event){
+    if (event) {
         event.preventDefault();
     }
     let tasksAsText = backend.getItem('tasks');

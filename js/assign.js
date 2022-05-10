@@ -15,7 +15,7 @@ function getAssignedUsers() {
 }
 
 /**
- * Clears user icons when resetting the addToTask.html form
+ * This function Clears user icons when resetting the addToTask.html form
  */
 function clearAssignments() {
     getId('iconsContainer').innerHTML = renderAssignedUsers([]);
@@ -76,7 +76,7 @@ function renderUserIcon(userName) {
 function showSelectedUserIcon() { // ...iconS !
     let selectedUsersArr = getAssignedUsers();
     //if(selectedUsersArr){
-        getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
+    getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
     //}
 }
 
@@ -87,7 +87,7 @@ function showSelectedUserIcon() { // ...iconS !
  * @issue - Only one border-color is shown, and for multiple assigned users always the user with the lowest index will be shown.
  */
 function getLogBorderColor(namesArr) {
-    if(namesArr){
+    if (namesArr) {
         let userName = namesArr[0]; // so right now only first user will be marked by border-color (which will always be user with index 0, need better ideas
         let user = users.filter(usr => usr.name == userName);
         if (user && user.length > 0) {
@@ -95,4 +95,3 @@ function getLogBorderColor(namesArr) {
         }
     }
 }
-

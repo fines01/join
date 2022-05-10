@@ -23,7 +23,7 @@ let currentDraggedElement;
 //let currentTask = tasks[tasks.length -1 ]; // default value last element
 
 /**
- * function init() gets data stored at the ftp server
+ * This function init() gets data stored at the ftp server
  */
 async function loadServerData() {
     setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
@@ -58,7 +58,7 @@ async function initBacklog() {
 
 
 /**
- * function initTasksAndIncludeHTML() executes on load of html body
+ * This function initTasksAndIncludeHTML() executes on load of html body
  */
 function initTasksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
@@ -89,7 +89,7 @@ function randomHexColor() {
 /* ********* generic functions ********* */
 
 /**
- * Returns an HTML element
+ * This function Returns an HTML element
  * @param {string} id - The id of an HTML element
  * @returns {Object} - The corresponding HTML element
  */
@@ -98,7 +98,7 @@ function getId(id) {
 }
 
 /**
- * Returns an array with one or several HTML elements
+ * This function Returns an array with one or several HTML elements
  * @param {...string} idsArr - The id of one or several HTML elements
  * @returns {Object[]} elementArr - All corresponding HTML elements in an array
  */
@@ -111,7 +111,7 @@ function getIds(...idsArr) { // rest-operator
 }
 
 /**
- * Hides all passed HTML elements
+ * This function Hides all passed HTML elements
  * @param  {...string} ids - The id of one or several HTML elements
  */
 function hide(...ids) {
@@ -121,7 +121,7 @@ function hide(...ids) {
 }
 
 /**
- * Displays all passed HTML elements
+ * This function Displays all passed HTML elements
  * @param  {...string} ids - The id of one or several HTML elements
  */
 function show(...ids) {
@@ -134,7 +134,7 @@ function show(...ids) {
 }
 
 /**
- * Toggles the view of all passed HTML elements
+ * This function Toggles the view of all passed HTML elements
  * @param  {...string} ids - The id of one or several HTML elements
  */
 function toggle(...ids) {
@@ -144,7 +144,7 @@ function toggle(...ids) {
 }
 
 /**
- * Capitalizes the first letter of a string and returns the capitalized string
+ * This Function Capitalizes the first letter of a string and returns the capitalized string
  * @param {string} str
  * @returns {string}
  */
@@ -163,7 +163,9 @@ function clearInputValues(...elements) {
 }
 
 /* ****** Navbar ****** */
-
+/**
+ * This function shows the navbar on responsive view
+ */
 function showNavbar() {
     getId('mobile-onclick-navbar').classList.remove('hide-mobile');
     hide('mobile-menu');
@@ -171,7 +173,9 @@ function showNavbar() {
     // getId('mobile-x').classList.remove('d-none');
     // getId('mobile-menu').classList.add('d-none')
 }
-
+/**
+ * This function hides the navbar on responsive view
+ */
 function closeNavbar() {
     getId('mobile-onclick-navbar').classList.add('hide-mobile');
     hide('mobile-x');
@@ -191,7 +195,7 @@ function displayStringsArr(stringsArray) {
     let strings = '';
     for (let i = 0; i < stringsArray.length; i++) {
         let element = stringsArray[i];
-        if (i == stringsArray.length - 1){
+        if (i == stringsArray.length - 1) {
             strings += stringsArray[i];
         } else {
             strings += stringsArray[i] + ', ';
