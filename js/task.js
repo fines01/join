@@ -20,7 +20,7 @@ function addToTasks() {
 function taskSubmitSuccessful() {
     let taskSuccess = getId('taskSubmitSuccessful');
     let taskName = processTaskInputs();
-    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted`;
+    taskSuccess.innerHTML = `The task '${taskName['title']}' was successfully submitted`;
     setTimeout(show('taskSubmitSuccessful'), 50);
 }
 
