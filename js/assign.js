@@ -1,4 +1,5 @@
-/**This function gets all selected user values from an html multiple select field and returns the values in an array
+
+/** This function gets all selected user values from an HTML multiple select field and returns the values in an array
  * @returns {string[]} - selected users
  */
 function getAssignedUsers() {
@@ -19,8 +20,11 @@ function getAssignedUsers() {
 function clearAssignments() {
     getId('iconsContainer').innerHTML = renderAssignedUsers([]);
 }
-/**This function renders all users in form of an icon to the tasks 
- *
+
+/**
+ * Renders several user icons for all passed users in an array
+ * @param {string[]} usersArr - array with usernames
+ * @returns {(string | string)} - user-icon  HTML code for all passed users | replacement image
  */
 function renderAssignedUsers(usersArr) {
     let iconsHTML = '';
@@ -34,9 +38,13 @@ function renderAssignedUsers(usersArr) {
     }
     return iconsHTML;
 }
-/**This function renders the initials (2 initials) of an user to the user icons
- *
+
+/**
+ * Extracts max 2 initials of a given username
+ * @param {string} userName - a username
+ * @returns {string} initials - the users initials
  */
+// returns up to 2 initials of a given user name
 function extractInitials(userName) {
     let splitNameArr = userName.split(' ');
     let initials = '';
@@ -49,8 +57,11 @@ function extractInitials(userName) {
     }
     return initials;
 }
-/**This function renders the icon for the rendered user
- *
+
+/**
+ * Searches a single userobject by name and returns their user icon HTML
+ * @param {string} userName - a username
+ * @returns {string} - HTML code for the users icon
  */
 function renderUserIcon(userName) {
     let user = users.filter(usr => usr.name == userName);
@@ -58,8 +69,9 @@ function renderUserIcon(userName) {
     let initials = extractInitials(userName);
     return /*html*/ `<span id="icon-${userName}" class="user-icon" alt="user icon" style="background-color: ${user[0].color}">${initials}</span>`;
 }
-/**This function renders the getAssignUser function to the html element
- *
+
+/**
+ * This function gets all selected users from a select field and shows their user icons
  */
 function showSelectedUserIcon() { // ...iconS !
     let selectedUsersArr = getAssignedUsers();
@@ -67,8 +79,12 @@ function showSelectedUserIcon() { // ...iconS !
     getId('iconsContainer').innerHTML = renderAssignedUsers(selectedUsersArr);
     //}
 }
-/**This function defines a color for the usericon
- *
+
+/**
+ * Finds userobject of given username strings, and returns the color code for the first assigned user
+ * @param {string[]} namesArr - array with all assigned users of a task
+ * @returns {string} - color code
+ * @issue - Only one border-color is shown, and for multiple assigned users always the user with the lowest index will be shown.
  */
 function getLogBorderColor(namesArr) {
     if (namesArr) {
