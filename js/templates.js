@@ -88,7 +88,7 @@ function editFormHTML(i) {
                         </div>
                     </div>
                     <div class="btn-box">
-                        <button class="cancel-button" onclick="hide('overlay')" type="reset">
+                        <button class="cancel-button" onclick="hide('overlay'); show('nav-bar')" type="reset">
                             CANCEL
                         </button>
                         <button class="assign-button" type="submit">

@@ -204,12 +204,14 @@
 
 ::-webkit-scrollbar-track {
     background: #333;
+    background: aliceblue;
     border-radius: 4px;
     margin: 10px 0;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, .5);
+    background: var(--col-blue1);
     border-radius: 4px;
 }
 
