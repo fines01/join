@@ -14,13 +14,9 @@ id="done"
 id="assignUser"
 id="assignmentBtn"
 id="iconsContainer"
-
 */
 
-/* ********* global scope - here we define global variables and constants *********  */
-
 let currentDraggedElement;
-//let currentTask = tasks[tasks.length -1 ]; // default value last element
 
 /**
  * This function init() gets data stored at the ftp server
