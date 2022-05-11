@@ -19,10 +19,10 @@ id="iconsContainer"
 let currentDraggedElement;
 
 /**
- * This function init() gets data stored at the ftp server
+ * This function gets data stored at the ftp server
  */
 async function loadServerData() {
-    setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
+    setURL('https://gruppe-228.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     //users = JSON.parse(backend.getItem('users')) || [];
