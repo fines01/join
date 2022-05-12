@@ -1,4 +1,3 @@
-
 /** This function gets all selected user values from an HTML multiple select field and returns the values in an array
  * @returns {string[]} - selected users
  */
@@ -22,7 +21,7 @@ function clearAssignments() {
 }
 
 /**
- * Renders several user icons for all passed users in an array
+ * This function Renders several user icons for all passed users in an array
  * @param {string[]} usersArr - array with usernames
  * @returns {(string | string)} - user-icon  HTML code for all passed users | replacement image
  */
@@ -40,7 +39,7 @@ function renderAssignedUsers(usersArr) {
 }
 
 /**
- * Extracts max 2 initials of a given username
+ * This function Extracts max 2 initials of a given username
  * @param {string} userName - a username
  * @returns {string} initials - the users initials
  */
@@ -59,7 +58,7 @@ function extractInitials(userName) {
 }
 
 /**
- * Searches a single userobject by name and returns their user icon HTML
+ * This function Searches a single userobject by name and returns their user icon HTML
  * @param {string} userName - a username
  * @returns {string} - HTML code for the users icon
  */
@@ -81,7 +80,7 @@ function showSelectedUserIcon() { // ...iconS !
 }
 
 /**
- * Finds userobject of given username strings, and returns the color code for the first assigned user
+ * This function Finds userobject of given username strings, and returns the color code for the first assigned user
  * @param {string[]} namesArr - array with all assigned users of a task
  * @returns {string} - color code
  * @issue - Only one border-color is shown, and for multiple assigned users always the user with the lowest index will be shown.

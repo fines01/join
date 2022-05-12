@@ -8,7 +8,8 @@
     padding: 40px 50px 95px 50px;
     max-width: 1000px;
     /* aligned with left edge of first board (try) */
-    padding-left: calc(50% - 476px); /* width form inkl p & m: 952px */
+    padding-left: calc(50% - 476px);
+    /* width form inkl p & m: 952px */
 }
 
 .add-to-task-sub-menu p {
@@ -123,7 +124,7 @@
 .user-icon
 /* ,.assignment-btn  */
 
-    {
+{
     height: 45px;
     width: 45px;
 }
@@ -214,7 +215,7 @@
 
 #assignUser {
     background-image: none;
-    height: 64px;
+    height: 90px;
 }
 
 #closeBtn {
@@ -256,7 +257,7 @@ select {
 
 .task-submit-success {
     background-color: var(--col-green1);
-    opacity:0.8;
+    opacity: 0.8;
     border-radius: 8px;
     border-style: none;
     display: flex;
@@ -267,9 +268,10 @@ select {
     /* height: 50px; */
     position: fixed;
     z-index: 1;
-    top:0px;
-    right:0;left:0;
-    padding:36px;
+    top: 0px;
+    right: 0;
+    left: 0;
+    padding: 36px;
     font-weight: bold;
 }
 
