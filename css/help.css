@@ -1,6 +1,8 @@
 .help-container {
     margin-left: 5em;
+    margin-right: 5em;
     margin-top: 4em;
+    margin-bottom: 4em;
 }
 
 .help-header p {
@@ -10,7 +12,7 @@
 }
 
 .help-list-container {
-    margin-left: 5em;
+    margin-left: 1em;
     margin-top: 3em;
     margin-bottom: 3em;
 }

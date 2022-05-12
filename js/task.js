@@ -25,17 +25,17 @@ function taskSubmitSuccessful() {
         //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
     window.setTimeout(function() {
         hide('taskSubmitSuccessful')
-    }, 2000);
+    }, 3000);
 }
 
 /**
- * Empties the input fields in the task forms*/
+ * Empties input fields in the task forms */
 function clearInputs() {
     clearInputValues(title, date, category, urgency, description);
 }
 
 /**
- * This function gets input values and returns them as task objects.
+ * Creates a task object from form inputs
  * @returns {Object} - task object
  */
 function processTaskInputs() {
@@ -75,6 +75,7 @@ function deleteTask(dataArray, i) {
 function renderEditForm(i) {
     let overlay = getId('overlay');
     show('overlay');
+    // hide('nav-bar');
     overlay.innerHTML = editFormHTML(i);
 }
 
@@ -97,8 +98,6 @@ async function saveEdit(dataArray, i) { // check: async no diff
     }
 }
 
-
-
 function showAssignBox() {
     toggle('assignmentBox');
     renderUsers();
@@ -109,7 +108,6 @@ function compareDate() {
     let today = new Date().toISOString().split('T')[0];
     document.getElementById('date').setAttribute('min', today);
 }
-
 
 /**
  * this function is rendering the users 

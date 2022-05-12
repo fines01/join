@@ -77,7 +77,7 @@
     /* start-page */
     .welcome-text {
         padding-top: 40px;
-        height: 28vh;
+        /* height: 28vh; */
     }
     .card {
         height: 18vh;

@@ -14,19 +14,15 @@ id="done"
 id="assignUser"
 id="assignmentBtn"
 id="iconsContainer"
-
 */
 
-/* ********* global scope - here we define global variables and constants *********  */
-
 let currentDraggedElement;
-//let currentTask = tasks[tasks.length -1 ]; // default value last element
 
 /**
- * This function init() gets data stored at the ftp server
+ * This function gets data stored at the ftp server
  */
 async function loadServerData() {
-    setURL('http://gruppe-228.developerakademie.net/smallest_backend_ever');
+    setURL('https://gruppe-228.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     //users = JSON.parse(backend.getItem('users')) || [];

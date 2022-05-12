@@ -34,7 +34,7 @@ function renderAssignedUsers(usersArr) {
             iconsHTML += renderUserIcon(user);
         }
     } else {
-        iconsHTML = '';
+        iconsHTML = '<img src="img/icon-plus.png" alt="" class="icon-replacement">';
     }
     return iconsHTML;
 }
