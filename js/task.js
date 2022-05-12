@@ -25,7 +25,7 @@ function taskSubmitSuccessful() {
         //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
     window.setTimeout(function() {
         hide('taskSubmitSuccessful')
-    }, 3000);
+    }, 4000);
 }
 
 /**
