@@ -1,21 +1,3 @@
-/* vergebene ID 
-id="title"
-id="category"
-id="urgency"
-id="discirption"
-id="assignment"
-id="date"
-id="logs"
-id="todoBoard"
-id="boardContainer"
-id="inProgress"
-id="testing"
-id="done"
-id="assignUser"
-id="assignmentBtn"
-id="iconsContainer"
-*/
-
 let currentDraggedElement;
 
 /**
@@ -147,6 +129,11 @@ function toggle(...ids) {
 function capitalizeFirst(str) {
     return str[0].toUpperCase() + str.slice(1);
 }
+
+function lowerFirstLetter(str) {
+    return str[0].toLowerCase() + str.slice(1);
+}
+
 
 /**
  * This function empties the values of all passed html form and input elements.

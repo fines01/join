@@ -1,27 +1,102 @@
+
+let boards = [{
+    'boardTitle': 'TODO',
+    'boardName': 'todoBoard',
+    'boardId': 'todo'
+},
+{
+    'boardTitle': 'IN PROGRESS',
+    'boardName': 'inProgressBoard',
+    'boardId': 'inProgress'
+}];
+
+
 /**
  * This Function used  for rendering the boards with filters
  */
 function renderBoards() {
 
-    renderEachBoard('todoBoard', 'todo');
-    renderEachBoard('inProgressBoard', 'inProgress');
-    renderEachBoard('testingBoard', 'testing');
-    renderEachBoard('doneBoard', 'done');
+    let boardsContent = document.getElementById('boardContent');
+    boardsContent.innerHTML = '';
+    for (let i = 0; i < boards.length; i++) {
+        boardsContent.innerHTML += `
+        <div>
+        <h2>${boards[i]['boardTitle']}</h2>
+        <div class="scroll-bar" id="scroll-bar">
+            <div id="${boards[i]['boardName']}" class="board-task-container" ondrop="moveTo('${boards[i]['boardId']}')" ondragover="allowDrop(event)"></div>
+        </div>
+           `
+        renderEachBoard(boards[i]['boardName'], boards[i]['boardId']);
+    }
+
+}
+/* Was fehlt input mit Knopf, ordentlicher json, style für das zeug. */
+/* boardId = todo boardName = todoBoard */
+
+function addNewBoard() {
+
+    let board = processBoardInputs();
+    boards.push(board);
+    renderBoards();
 }
 
-/**
- * This Function shows/refreshes all boards filtered with categorys to also allow drag and drop 
+function processBoardInputs() {
+
+    let boardInput = document.getElementById('newBoard').value;
+    boardId = boardInput.split(" ").join("");
+    let boardName = `${boardId}Board`;
+    boardTitle = boardId.toUpperCase();
+
+    let board = {
+        //'id' : id,
+        'boardTitle': boardTitle,
+        'boardName': lowerFirstLetter(boardName),
+        'boardId': lowerFirstLetter(boardId)
+    };
+    return board;
+}
+
+
+function clearInputsBoard() {
+    clearInputValues();
+}
+
+/** renderEachBoard
+ * This Function shows/refreshes all boards filtered with categorys and also allow drag and drop 
  */
-function renderEachBoard(boardName, boardId) {
-    boardName = tasks.filter(t => t['board'] == `${boardId}`);
-    getId(`${boardId}Board`).innerHTML = '';
-    for (let i = 0; i < boardName.length; i++) {
-        const element = boardName[i];
+
+function renderEachBoard(boardId, boardName) {
+    boardId = tasks.filter(t => t['board'] == `${boardName}`);
+    getId(`${boardName}Board`).innerHTML = '';
+    for (let i = 0; i < boardId.length; i++) {
+        const element = boardId[i];
         const taskIndex = tasks.indexOf(element);
-        getId(`${boardId}Board`).innerHTML += boardTaskHTML(element, taskIndex);
+        getId(`${boardName}Board`).innerHTML += boardTaskHTML(element, taskIndex);
     }
 }
 
+
+async function saveBoards() { //check async: no diff
+    if (event) {
+        event.preventDefault();
+    }
+    let boardsAsText = JSON.stringify(boards);
+    await backend.setItem('boards', boardsAsText);
+}
+
+/**
+ *  This function loads and converts boards from text-format to a JSON-array. 
+ *  The preventDefault() function is necessary to prevent the page from reloading when adding a new board.
+ */
+function loadBoards() {
+    if (event) {
+        event.preventDefault();
+    }
+    let boardsAsText = backend.getItem('boards');
+    if (boardsAsText) {
+        boards = JSON.parse(boardsAsText);
+    }
+}
 
 
 /**
