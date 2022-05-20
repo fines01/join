@@ -1,15 +1,5 @@
 
-let boards = [{
-    'boardTitle': 'TODO',
-    'boardName': 'todoBoard',
-    'boardId': 'todo'
-},
-{
-    'boardTitle': 'IN PROGRESS',
-    'boardName': 'inProgressBoard',
-    'boardId': 'inProgress'
-}];
-
+let boards = [];
 
 /**
  * This Function used  for rendering the boards with filters
@@ -48,11 +38,10 @@ function processBoardInputs() {
     boardTitle = boardId.toUpperCase();
 
     let board = {
-        //'id' : id,
         'boardTitle': boardTitle,
         'boardName': lowerFirstLetter(boardName),
         'boardId': lowerFirstLetter(boardId),
-        
+
     };
     return board;
 }
@@ -89,11 +78,11 @@ async function saveBoards() { //check async: no diff
  *  This function loads and converts boards from text-format to a JSON-array. 
  *  The preventDefault() function is necessary to prevent the page from reloading when adding a new board.
  */
-function loadBoards() {
+async function loadBoards() {
     if (event) {
         event.preventDefault();
     }
-    let boardsAsText = backend.getItem('boards');
+    let boardsAsText = await backend.getItem('boards');
     if (boardsAsText) {
         boards = JSON.parse(boardsAsText);
     }

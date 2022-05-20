@@ -49,7 +49,14 @@
                 <p>Learning Management System Project</p>
                 <div><input  id="newBoard" placeholder="Add new Board"><button onclick="addNewBoard()">+</button></div>
             </div>
-            <div class="board-content" id="boardContent">
+            <div class="board-content">
+                <div>
+                    <h2>TO DO</h2>
+                    <div class="scroll-bar" id="scroll-bar">
+                        <div id="todoBoard" class="board-task-container" ondrop="moveTo('todo')" ondragover="allowDrop(event)"></div>
+                    </div>
+                </div>
+                <div id="boardContent"></div>
             </div>
         </div>
     </div>
