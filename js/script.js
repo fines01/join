@@ -40,6 +40,7 @@ async function initBacklog() {
  */
 function initTasksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
+    loadBoards();
     loadTasks();
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();

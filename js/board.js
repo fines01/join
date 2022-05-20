@@ -28,7 +28,6 @@ function renderBoards() {
            `
         renderEachBoard(boards[i]['boardName'], boards[i]['boardId']);
     }
-
 }
 /* Was fehlt input mit Knopf, ordentlicher json, style für das zeug. */
 /* boardId = todo boardName = todoBoard */
@@ -37,6 +36,7 @@ function addNewBoard() {
 
     let board = processBoardInputs();
     boards.push(board);
+    saveBoards();
     renderBoards();
 }
 
@@ -51,7 +51,8 @@ function processBoardInputs() {
         //'id' : id,
         'boardTitle': boardTitle,
         'boardName': lowerFirstLetter(boardName),
-        'boardId': lowerFirstLetter(boardId)
+        'boardId': lowerFirstLetter(boardId),
+        
     };
     return board;
 }

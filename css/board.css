@@ -179,7 +179,7 @@
 }
 
 .scroll-bar {
-    overflow-y: auto;
+    overflow-x: auto;
     max-height: 560px;
     margin-right: 20px;
     box-shadow: 0 0 4px 3px rgb(251, 97, 0, 0.5);
