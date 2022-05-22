@@ -19,7 +19,6 @@ async function loadServerData() {
 async function initBoard() {
     initTasksAndIncludeHTML();
     await init();
-    await loadBoards();
     renderBoards();
 }
 
@@ -30,7 +29,7 @@ async function initBoard() {
  * 
  */
 async function initBacklog() {
-    initTasksAndIncludeHTML();
+    await initTasksAndIncludeHTML();
     await init();
     renderLogs();
 }
@@ -41,6 +40,7 @@ async function initBacklog() {
  */
 function initTasksAndIncludeHTML() {
     //loadServerData(); // get data from ftp server
+    loadBoards()
     loadTasks();
     // Todo: get all local data additionally or only if there is no data on the server? 
     includeHTML();

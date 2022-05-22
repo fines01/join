@@ -18,11 +18,34 @@ function renderLogs() {
 /**
  * This function sends the tasks from backlog to the board 'todo'
  */
-function backlogToBoard(i) {
-    tasks[i]['board'] = 'todo'
+
+ function renderBacklogToBoard() {
+    let boardSelector = document.getElementById("boardSelector");
+    boardSelector.innerHTML = '';
+    for (let j = 0; j < boards.length; j++) {
+        boardValue = boards[j]['boardsId'];
+        boardSelector.innerHTML += `
+        <option id="${boards[j]['boardsId']}" value ="${boards[j]['boardTitle']}" onclick="backlogToSelectedBoard(${boardValue})">${boards[j]['boardTitle']}</option>
+            `
+    }
+}
+
+
+function backlogToSelectedBoard(i, boardValue) {
+   
+    tasks[i]['board'] = boardValue;
     renderLogs()
     saveTasks();
 }
+
+
+function backlogToBoard(i) {
+    tasks[i]['board'] = 'todo';
+    renderLogs()
+    saveTasks();
+}
+
+
 /**
  * This function deletes a backlog task on click
  */

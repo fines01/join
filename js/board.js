@@ -5,8 +5,8 @@ let boards = [];
  * This Function used  for rendering the boards with filters
  */
 function renderBoards() {
-
-    let boardsContent = document.getElementById('boardContent');
+    renderEachBoard('todoBoard', 'todo');
+ let boardsContent = document.getElementById('boardContent');
     boardsContent.innerHTML = '';
     for (let i = 0; i < boards.length; i++) {
         boardsContent.innerHTML += `
@@ -15,9 +15,8 @@ function renderBoards() {
         <div class="scroll-bar" id="scroll-bar">
             <div id="${boards[i]['boardName']}" class="board-task-container" ondrop="moveTo('${boards[i]['boardId']}')" ondragover="allowDrop(event)"></div>
         </div>
-           `
-        renderEachBoard(boards[i]['boardName'], boards[i]['boardId']);
-    }
+           `      
+    } 
 }
 /* Was fehlt input mit Knopf, ordentlicher json, style für das zeug. */
 /* boardId = todo boardName = todoBoard */
@@ -41,7 +40,6 @@ function processBoardInputs() {
         'boardTitle': boardTitle,
         'boardName': lowerFirstLetter(boardName),
         'boardId': lowerFirstLetter(boardId),
-
     };
     return board;
 }

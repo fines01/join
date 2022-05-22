@@ -30,6 +30,7 @@
             setURL('https://gruppe-228.developerakademie.net/smallest_backend_ever');
             await downloadFromServer();
             tasks = JSON.parse(backend.getItem('tasks')) || [];
+            boards = JSON.parse(backend.getItem('boards')) || [];
         }
     </script>
     <script type="text/javascript"
