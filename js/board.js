@@ -15,7 +15,7 @@ function renderBoards() {
         <div>
         <h2>${boardTitle}</h2>
         <div class="scroll-bar" id="scroll-bar">
-            <div id="${boardId}" class="board-task-container" ondrop="moveTo('${boardTitle}')" ondragover="allowDrop(event)"></div>
+            <div id="${boardId}" class="board-task-container" ondrop="moveTo('${boardId}')" ondragover="allowDrop(event)"></div>
         </div>
            `  
         renderEachBoard(boardTitle, boardId);   
