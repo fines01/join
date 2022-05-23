@@ -9,14 +9,16 @@ function renderBoards() {
  let boardsContent = document.getElementById('boardContent');
     boardsContent.innerHTML = '';
     for (let i = 0; i < boards.length; i++) {
+        boardId = boards[i]['boardId'];
+        boardTitle = boards[i]['boardTitle'];
         boardsContent.innerHTML += `
         <div>
-        <h2>${boards[i]['boardTitle']}</h2>
+        <h2>${boardTitle}</h2>
         <div class="scroll-bar" id="scroll-bar">
-            <div id="${boards[i]['boardName']}" class="board-task-container" ondrop="moveTo('${boards[i]['boardId']}')" ondragover="allowDrop(event)"></div>
+            <div id="${boardId}" class="board-task-container" ondrop="moveTo('${boardTitle}')" ondragover="allowDrop(event)"></div>
         </div>
-           `   
-        renderEachBoard(boards[i]);   
+           `  
+        renderEachBoard(boardTitle, boardId);   
     } 
 }
 /* Was fehlt input mit Knopf, ordentlicher json, style für das zeug. */
@@ -33,14 +35,12 @@ function addNewBoard() {
 function processBoardInputs() {
 
     let boardInput = document.getElementById('newBoard').value;
-    let boardTitle = boardName.toUpperCase();
+    let boardTitle = boardInput.toUpperCase();
       /* `${boardName}Board`; */
+      
     let boardId = boardInput.split(" ").join("") + boards.length
-  
-
     let board = {
         'boardTitle': boardTitle,
-        'boardName': lowerFirstLetter(boardName),
         'boardId': lowerFirstLetter(boardId),
     };
     return board;
@@ -55,13 +55,13 @@ function clearInputsBoard() {
  * This Function shows/refreshes all boards filtered with categorys and also allow drag and drop 
  */
 
-function renderEachBoard(boardId, boardName) {
-    boardId = tasks.filter(t => t['board'] == `${boardName}`);
-    getId(`${boardName}Board`).innerHTML = '';
-    for (let i = 0; i < boardId.length; i++) {
-        const element = boardId[i];
+function renderEachBoard(boardTaskArray, boardId) {
+    boardTaskArray = tasks.filter(t => t['board'] == `${boardId}`);
+    getId(`${boardId}`).innerHTML = '';
+    for (let i = 0; i < boardTaskArray.length; i++) {
+        const element = boardTaskArray[i];
         const taskIndex = tasks.indexOf(element);
-        getId(`${boardName}Board`).innerHTML += boardTaskHTML(element, taskIndex);
+        getId(`${boardId}`).innerHTML += boardTaskHTML(element, taskIndex);
     }
 }
 
