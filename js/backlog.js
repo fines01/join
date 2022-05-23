@@ -25,15 +25,13 @@ function renderLogs() {
     for (let j = 0; j < boards.length; j++) {
         boardValue = boards[j]['boardId'];
         boardSelector.innerHTML += `
-        <option id="${boards[j]['boardId']}" value ="${boards[j]['boardTitle']}" onclick="backlogToSelectedBoard(${i})">${boards[j]['boardTitle']}</option>
+        <option id="${boards[j]['boardId']}" value ="${boards[j]['boardId']}" onclick="backlogToSelectedBoard(${i}, ${j})">${boards[j]['boardTitle']}</option>
             `
-    }
-    return boardValue;
+    }   
 }
 
-
-function backlogToSelectedBoard(i) {
-    boardValue = renderBacklogToBoard();
+function backlogToSelectedBoard(i, j) {
+    let boardValue = boards[j]['boardId'];
     tasks[i]['board'] = boardValue;
     renderLogs()
     saveTasks();

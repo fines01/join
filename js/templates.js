@@ -1,8 +1,9 @@
 function logsHTML(element, i) {
     return /*html*/ `
-        <div class="log background-urgency-${(element['urgency']).toLowerCase()}" onclick="renderEditForm(${i})" 
+        <div>
+        <div class="log background-urgency-${(element['urgency']).toLowerCase()}"  
         style = "border-color: ${getLogBorderColor(element['assignedTo'])}" >
-            <div class="">
+            <div onclick="renderEditForm(${i})>
                  <h4 class="log-name">${displayStringsArr(element['assignedTo'])}</h4>
             </div>
             <div class="">
@@ -14,10 +15,11 @@ function logsHTML(element, i) {
         
             </div>
             <div class="backlog-buttons">
-                    <img id = "backlog-${i}" onclick="renderBacklogToBoard(${i})" class="backlog-arrow" src="img/arrow-4-48.png">                                  
+                    <img id = "backlog-${i}" onclick="renderBacklogToBoard(${i}); event.stopPropagation()" class="backlog-arrow" src="img/arrow-4-48.png">                                  
                     <img onclick="deleteBacklogTask(${i}); event.stopPropagation()" class="delete-backlog" src="img/delete-128.png">
             </div>
             <selector id="boardSelector"></selector>
+        </div>
         </div>`;
 }
 
