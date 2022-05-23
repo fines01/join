@@ -28,12 +28,13 @@ function renderLogs() {
         <option id="${boards[j]['boardsId']}" value ="${boards[j]['boardTitle']}" onclick="backlogToSelectedBoard(${boardValue})">${boards[j]['boardTitle']}</option>
             `
     }
+    return boardValue;
 }
 
 
 function backlogToSelectedBoard(i, boardValue) {
-   
-    tasks[i]['board'] = boardValue;
+    let newBoard = renderBacklogToBoard();
+    tasks[i]['board'] = newBoard;
     renderLogs()
     saveTasks();
 }
