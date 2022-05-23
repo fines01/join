@@ -37,7 +37,6 @@ function processBoardInputs() {
     let boardInput = document.getElementById('newBoard').value;
     let boardTitle = boardInput.toUpperCase();
       /* `${boardName}Board`; */
-      
     let boardId = boardInput.split(" ").join("") + boards.length
     let board = {
         'boardTitle': boardTitle,

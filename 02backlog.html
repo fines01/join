@@ -30,14 +30,15 @@
 
 
     <script>
-       async function init() {
+        async function init() {
             setURL('https://gruppe-228.developerakademie.net/smallest_backend_ever');
             await downloadFromServer();
             tasks = JSON.parse(backend.getItem('tasks')) || [];
             boards = JSON.parse(backend.getItem('boards')) || [];
         }
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1&noGeoIp=1&blocking=1"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1&noGeoIp=1&blocking=1"></script>
 
     <title>Join</title>
     <!-- favicon -->
@@ -64,12 +65,10 @@
                 <div class="details">
                     <h2>Details</h2>
                 </div>
-                <button onclick="renderBacklogToBoard()">+</button>
-                <selector id="boardSelector"></selector>
             </div>
-            
+
             <div id="logs" class="backlog-tasks-container">
-                
+
             </div>
         </div>
 

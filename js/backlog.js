@@ -19,22 +19,22 @@ function renderLogs() {
  * This function sends the tasks from backlog to the board 'todo'
  */
 
- function renderBacklogToBoard() {
+ function renderBacklogToBoard(i) {
     let boardSelector = document.getElementById("boardSelector");
     boardSelector.innerHTML = '';
     for (let j = 0; j < boards.length; j++) {
-        boardValue = boards[j]['boardsId'];
+        boardValue = boards[j]['boardId'];
         boardSelector.innerHTML += `
-        <option id="${boards[j]['boardsId']}" value ="${boards[j]['boardTitle']}" onclick="backlogToSelectedBoard(${boardValue})">${boards[j]['boardTitle']}</option>
+        <option id="${boards[j]['boardId']}" value ="${boards[j]['boardTitle']}" onclick="backlogToSelectedBoard(${i})">${boards[j]['boardTitle']}</option>
             `
     }
     return boardValue;
 }
 
 
-function backlogToSelectedBoard(i, boardValue) {
-    let newBoard = renderBacklogToBoard();
-    tasks[i]['board'] = newBoard;
+function backlogToSelectedBoard(i) {
+    boardValue = renderBacklogToBoard();
+    tasks[i]['board'] = boardValue;
     renderLogs()
     saveTasks();
 }
