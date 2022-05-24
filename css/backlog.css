@@ -95,3 +95,8 @@
 .backlog-arrow:hover {
     transform: scale(1.03);
 }
+
+.board-selector {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

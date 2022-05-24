@@ -18,7 +18,7 @@ function logsHTML(element, i) {
                     <img id = "backlog-${i}" onclick="renderBacklogToBoard(${i}); event.stopPropagation()" class="backlog-arrow" src="img/arrow-4-48.png">                                  
                     <img onclick="deleteBacklogTask(${i}); event.stopPropagation()" class="delete-backlog" src="img/delete-128.png">
             </div>
-            <selector id="boardSelector"></selector>
+            <selector class="board-selector" id="boardSelector"></selector>
         </div>
         </div>`;
 }

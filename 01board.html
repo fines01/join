@@ -48,8 +48,10 @@
             <div class="board-sub-menu">
                 <h1>Board</h1>
                 <p>Learning Management System Project</p>
-                <div><input id="newBoard" placeholder="Add new Board"><button onclick="addNewBoard()">+</button></div>
-            </div>
+                <div class="input-bar">
+                <input minlength="5" class="input-bar" id="newBoard" placeholder="Add new Board">
+                <img onclick="addNewBoard()"src="img/icon-plus.png">
+                 </div>
             <div class="board-content" id="boardContent">
             </div>
         </div>
