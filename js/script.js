@@ -140,7 +140,7 @@ function toggle(...ids) {
 }
 
 /**
- * This Function Capitalizes the first letter of a string and returns the capitalized string
+ * Capitalizes the first letter of a string and returns the capitalized string
  * @param {string} str
  * @returns {string}
  */
@@ -149,7 +149,7 @@ function capitalizeFirst(str) {
 }
 
 /**
- * This function empties the values of all passed html form and input elements.
+ * Empties the values of all passed html form and input elements.
  * @param  {...Object} elements - HTML elements
  */
 function clearInputValues(...elements) {
@@ -166,9 +166,8 @@ function showNavbar() {
     getId('mobile-onclick-navbar').classList.remove('hide-mobile');
     hide('mobile-menu');
     show('mobile-x');
-    // getId('mobile-x').classList.remove('d-none');
-    // getId('mobile-menu').classList.add('d-none')
 }
+
 /**
  * This function hides the navbar on responsive view
  */
@@ -182,6 +181,7 @@ function closeNavbar() {
 
 /* ****** ****** */
 
+// siehe js fkt array.join()
 /**
  * This function splits an array of strings and displays them nicely (with ', ' in between strings)
  * @param {string[]} namesArray 

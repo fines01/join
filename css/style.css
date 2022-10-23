@@ -397,7 +397,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 100;
     /* background-color: rgba(75, 62, 133, 0.75); */
     background-color: rgba(14, 11, 167, 0.5);
     /* --opacity: 0.5;

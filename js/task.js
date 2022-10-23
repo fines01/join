@@ -1,4 +1,4 @@
-/** addToTaskJS 
+/**
  * This function is meant to enable the add of tasks to a json array.
  * It also generates a certain ID for new tasks and sends them to the backlog board.
  */
@@ -152,7 +152,6 @@ function renderOptionFields(selected, dataArray) {
 }
 
 // TODO: maybe include in function above (one fkt?)
-
 /**
  * Renders option fields and shows preselected values for all users in an html select field
  * @param {(string[] | undefined)} selectedUsers 
@@ -180,6 +179,7 @@ function renderSelected(option, value) {
         }
     }
 }
+
 // TODO: maybe include in function above (one fkt?)
 /**
  * This functions compares an array of passed options from a multiple select field with a given value and returns 'selected' if one of them matches the given value
@@ -216,7 +216,6 @@ async function saveTasks() { //check async: no diff
 
 /**
  *  This function loads and converts the tasks from text-format to a JSON-array. 
- *  The preventDefault() function is necessary to prevent the page from reloading when adding a new task.
  */
 function loadTasks() {
     if (event) {
@@ -235,6 +234,7 @@ function showDescription(i) {
     let description = document.getElementById('showDescription' + i);
     let descriptionPlaceholder = document.getElementById('clickMe' + i);
     let taskBox = document.getElementById('task' + i);
+
     description.classList.remove('description-transition-in')
 
     if (description.classList.contains('d-none')) {
