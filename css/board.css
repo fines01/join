@@ -1,34 +1,47 @@
 .board-container {
+    padding-top: var(--padding-top);
+    padding-bottom: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
     width: 100%;
+    overflow-x:auto;
 }
 
-.board-sub-menu {
+.board-header {
     /* aligned with Logo on Sidenav (approximately as much as possible)*/
     padding-top: 40px;
     /* aligned with left edge of first board (try) */
-    padding-left: calc(50% - 580px);
+    /* padding-left: calc(50% - 580px); */
     /* width 4 boards - 1180px*/
 }
 
-.board-sub-menu p {
+.board-header p {
     font-size: 14px;
     /* color: rgb(14, 11, 167); */
     color: var(--col-blue1);
 }
 
+.board-scroll-container {
+    overflow-x: auto;
+    position: relative;
+    box-shadow: 3px 3px 3px 0.5px rgb(201, 204, 213, 0.3);
+    
+}
+
 .board-content {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 4em;
     margin-bottom: 4em;
     /* padding: 45px 50px;
     padding-right: 0; */
-    padding-left: 20px;
+    /* padding-left: 20px; */
     /* padding-left: 50px; align boards with headline */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 24px 0;
     /* 24px top and bottom, 0px left and right between elements*/
     color: var(--col-main);
+    height: 100%;
 }
 
 .board-content h2 {
@@ -44,17 +57,17 @@
     padding: 5px;
     min-width: 265px;
     max-width: 265px;
+    height: 100%;
     min-height: 550px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0.5px 0.5px 4px 0.5px #b9b9b9;
+    /* box-shadow: 0.5px 0.5px 4px 1px rgba(0,0,0,0.5); */
     background-color: rgb(233, 233, 241);
     background: #C9CCD5;
-    background:white;
     background: #f5f5f5;
-    border: 1px solid aliceblue;
+    box-sizing: border-box;
 }
 
 .task {
@@ -184,9 +197,10 @@
 
 .scroll-bar {
     overflow-y: auto;
-    max-height: 560px;
+    /* max-height: 560px; */
+    height:100%;
     margin-right: 20px;
-    /* box-shadow: 0 0 4px 3px rgb(251, 97, 0, 0.5); */
+    box-shadow: 0.5px 0.5px 3px 1px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background-color: rgb(233, 233, 241);
 
@@ -201,32 +215,16 @@
 }
 
 
-/* scrollbar-mainpage */
 
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: aliceblue;
-    border-radius: 4px;
-    margin: 10px 0;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, .5);
-    background: var(--col-blue1);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, .75);
-    background: rgb(3, 4, 94,0.5);
-}
 
 
 /* Scrollbar small */
 
+.board-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* .board-scroll-container::-webkit-scrollbar, */
 .scroll-bar::-webkit-scrollbar {
     width: 6px;
     height: 0px;

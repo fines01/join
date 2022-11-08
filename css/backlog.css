@@ -1,12 +1,12 @@
-.backlog-sub-menu {
-    padding-top: 40px;
+.backlog-container {
+    padding-top: var(--padding-top);
     padding-bottom: 80px;
     padding-left: 50px;
     padding-right: 50px;
     width: 100%;
 }
 
-.backlog-sub-menu p {
+.backlog-container p {
     font-size: 14px;
     /* color: rgb(14, 11, 167); */
     color: var(--col-blue1);

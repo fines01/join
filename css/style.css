@@ -41,6 +41,7 @@
     /*--font-secondary: */
     /*** box-shadows ***/
     --shadow-light: 0 0 3px 1px rgba(0, 0, 0, 0.5);
+    --padding-top: 40px;
 }
 
 
@@ -113,9 +114,12 @@ option {
 
 /*** impressum ***/
 
+.impressum-container {
+    padding: var(--padding-top) 50px;
+}
+
 .impressum-sub-menu {
-    padding-top: 80px;
-    padding-left: 50px;
+    padding-bottom: 40px;
 }
 
 .impressum-sub-menu p {
@@ -129,14 +133,18 @@ option {
     display: flex;
     flex-direction: column;
     /* font-size: 20px; */
-    padding: 50px;
+    
 }
 
 /*** dataprotection ***/
 
-.datenschutz-sub-menu {
-    padding: 50px;
-    padding-bottom: 0;
+.datenschutz-container {
+    padding: var(--padding-top) 50px;
+}
+
+.security-warning {
+    padding: 40px 0 32px 0;
+    font-weight: 600;
 }
 
 .datenschutz-sub-menu p {
@@ -147,7 +155,6 @@ option {
 .datenschutz {
     display: flex;
     flex-direction: column;
-    padding: 50px;
 }
 
 
@@ -282,8 +289,14 @@ a {
 
 /* mobile-bar-onclick-navbar */
 
+.nav-bar-mobile {
+    height: 55px;
+    background-color: var(--col-lightblue);
+}
+
 .nav-bar-mobile-content {
     background-color: var(--col-lightblue);
+    padding:0 50px;
     box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.3);
 }
 
@@ -300,7 +313,8 @@ a {
 .mobile-onclick-navbar-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    padding-left: 50px;
     
 }
 
@@ -510,4 +524,27 @@ a {
 
 .edit-form .assignment-container {
     padding-top: 0;
+}
+
+/* scrollbar-mainpage */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: aliceblue;
+    background: #C9CCD5;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--col-blue1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, .75);
+    background: rgb(3, 4, 94, 0.5);
 }
