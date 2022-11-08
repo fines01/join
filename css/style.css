@@ -9,11 +9,14 @@
     --opacity0: 1;
     /* --opacity: 1; */
     /*** font-colors ***/
-    --col-main: #141E27;
+    --col-main: #42526E;
     --col-secondary: #515151;
     --col-tertiary: #9a9a9a;
     /*** colors ***/
     --col-blue1: rgb(3, 4, 94);
+    --col-lightblue: #4589FF;
+    --col-darkblue: #2A3647;
+    --col-white: rgb(233, 233, 241);
     /* TEST: can vars in vars be adapted as needed in classes? nope */
     /* --col-blue1: rgba(75, 62, 133, var(opacity)); */
     --col-blue2: #488FB1;
@@ -53,6 +56,7 @@
 body {
     /* color: var(--col-main); */
     color: white;
+    color: var(--col-main);
     font-family: var(--font-main);
     line-height: 1.5;
     margin: 0;
@@ -61,6 +65,8 @@ body {
     /* background-color: rgba(211, 222, 220,0.9); */
     /* background-color: rgba(200, 198, 198); */
     background-color: rgba(53, 87, 107, 0.6);
+    background: white; 
+    /* background: #C9CCD5; */
     overflow: auto;
 }
 
@@ -217,13 +223,14 @@ footer {
 .navbar-container {
     height: 100vh;
     width: 150px;
-    /* background-color: rgb(30, 30, 171); */
-    background-color: var(--col-blue1);
-    background-color: rgb(3, 4, 94, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 0 3px 1px rgba(128, 128, 128, 0.9);
+    
+    background-color: var(--col-blue1);
+    background-color: var(--col-darkblue);
+    background-color: var(--col-lightblue);
 }
 
 .navbar-header {
@@ -315,18 +322,17 @@ a {
 .main-wrap {
     width: 100vw;
     height: 100vh;
+
+    background-image: url("../img/create.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-attachment: fixed;
+    font-family: 'PT Sans';
 }
 
-/* .welcome-text {
-    text-align: center;
-    box-sizing: border-box;
-    padding-bottom: 24px;
-    outline-offset: -8px;
-    background-color: rgb(3, 4, 94, 0.5);
-    background-color: rgba(0, 0, 0, 0.3);
-} */
-
-.welcome {
+/* .welcome {
     padding-top: 4vh;
 }
 
@@ -385,6 +391,65 @@ a {
     z-index: 2;
     font-size: 20px;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+} */
+
+.welcome-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-wrapper {
+    width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    /*       margin: 12% auto; */
+    padding: 50px 0;
+    color: #fff;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-wrapper {
+    margin: 25px 50px 30px 50px;
+}
+
+.btn {
+    margin: 20px auto 20px;
+    width: 80%;
+    display: block;
+    outline: none;
+    padding: 10px 0;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: rgba(189, 189, 189, 0.5);
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+.main-wrap h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.main-wrap p {
+    text-align: center;
+    margin: 16px 0;
+    /* font-weight: bold; */
+}
+
+.main-wrap a {
+    color: white;
 }
 
 

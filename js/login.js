@@ -19,7 +19,7 @@ function showPassword() {
     }
 }
 /**
- * this function showPasswordRegister() is used to show the password when clicking on the eye symbol on the register card
+ * this function is used to show the password when clicking on the eye symbol on the register card
  */
 
 function showPasswordRegister() {
@@ -38,7 +38,7 @@ function showPasswordRegister() {
     }
 }
 /**
- * this function checkLogin() checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
+ * this function checks the data of the inout fields with the users in the JSON and if it is correct you will get to the mainpage
  */
 
 function checkLogin() {
@@ -50,7 +50,7 @@ function checkLogin() {
 
         if (username.value == element['email'] &&
             password.value == element['password']) {
-            window.open('index.html');
+            window.open('01board.html');
             username.value = '';
             password.value = '';
             return
@@ -59,7 +59,7 @@ function checkLogin() {
     alert('Username or Password is not correct!');
 }
 /**
- * this function openRegisterWindow() opens the window to register a new user
+ * opens the window to register a new user
  */
 
 function openRegisterWindow() {
@@ -98,6 +98,13 @@ function registerNewUser() {
         } else if (registerPassword.value.length < 3) {
             alert('that password is too short, include more than 3 characters');
             return;
+        }
+
+        else {
+            window.open('board.html');
+            newName.value = '';
+            registerUser.value = '';
+            registerPassword.value = '';
         }
 
     }

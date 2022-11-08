@@ -35,7 +35,7 @@
     padding-bottom: 8px;
     font-size: 17px;
     text-align: center;
-    color: white;
+    /* color: white; */
 }
 
 .board-task-container {
@@ -49,8 +49,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(233, 233, 241);
     box-shadow: 0.5px 0.5px 4px 0.5px #b9b9b9;
+    background-color: rgb(233, 233, 241);
+    background: #C9CCD5;
+    background:white;
+    background: #f5f5f5;
+    border: 1px solid aliceblue;
 }
 
 .task {
@@ -141,9 +145,9 @@
 /*Backrounds for the different urgency of the tasks */
 
 .background-urgency-high {
-    background-color: rgba(197, 197, 197);
-    /* border: 3px solid var(--col-red1); */
-    box-shadow: var(--led-priority2);
+    /* background-color: rgba(197, 197, 197); */
+    border: 3px solid var(--col-red1);
+    /* box-shadow: var(--led-priority2); */
     transition: all 225ms linear;
 }
 
@@ -155,9 +159,9 @@
 }
 
 .background-urgency-medium {
-    background-color: rgba(197, 197, 197);
-    /* border: 3px solid var(--col-yellow1); */
-    box-shadow: var(--led-priority1);
+    /* background-color: rgba(197, 197, 197); */
+    border: 3px solid var(--col-yellow1);
+    /* box-shadow: var(--led-priority1); */
     transition: all 225ms linear;
 }
 
@@ -167,9 +171,9 @@
 }
 
 .background-urgency-low {
-    background-color: rgba(197, 197, 197);
-    /* border: 3px solid var(--col-green1); */
-    box-shadow: var(--led-priority0);
+    /* background-color: rgba(197, 197, 197); */
+    border: 3px solid var(--col-green1);
+    /* box-shadow: var(--led-priority0); */
     transition: all 225ms linear;
 }
 
@@ -182,9 +186,10 @@
     overflow-y: auto;
     max-height: 560px;
     margin-right: 20px;
-    box-shadow: 0 0 4px 3px rgb(251, 97, 0, 0.5);
+    /* box-shadow: 0 0 4px 3px rgb(251, 97, 0, 0.5); */
     border-radius: 8px;
     background-color: rgb(233, 233, 241);
+
 }
 
 .scroll-bar-small {
@@ -203,7 +208,6 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #333;
     background: aliceblue;
     border-radius: 4px;
     margin: 10px 0;
@@ -217,6 +221,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, .75);
+    background: rgb(3, 4, 94,0.5);
 }
 
 
@@ -240,7 +245,7 @@
 }
 
 .scroll-bar::-webkit-scrollbar-thumb:hover {
-    background: #fb6100;
+    background: rgb(3, 4, 94, 0.5);
 }
 
 .move-to {
