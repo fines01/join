@@ -181,14 +181,16 @@ footer {
 .footer {
     position: absolute;
     bottom: 30px;
+    width:100%;
 }
 
 .footer-content a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     color: white;
+    color: rgb(233, 232, 232);
     cursor: pointer;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(153, 153, 153) 50%);
+    background: linear-gradient(to right, rgb(201, 201, 201) 0%, rgb(255, 255, 255) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -196,10 +198,12 @@ footer {
     background-position: 100%;
     transition: background-position 350ms ease;
     text-decoration: none;
+    width:100%;
+    padding-left:40px;
+    box-sizing: border-box;
 }
 
 .footer-content a:hover {
-    transform: scale(1.1);
     transition: 225ms ease-in-out;
     background-position: 0 100%;
     cursor: pointer;
@@ -214,6 +218,8 @@ footer {
 
 /* Board mainpage */
 
+/* NAVBAR & MENU */
+
 .nav-bar {
     position: sticky;
     top: 0;
@@ -227,9 +233,6 @@ footer {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 0 3px 1px rgba(128, 128, 128, 0.9);
-    
-    background-color: var(--col-blue1);
-    background-color: var(--col-darkblue);
     background-color: var(--col-lightblue);
 }
 
@@ -246,10 +249,12 @@ a {
 .navbar-menu-text {
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
+    color: red;
+    /* color: rgb(170, 170, 170); */
     margin-top: 2em;
     cursor: pointer;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(153, 153, 153) 50%);
+    background: linear-gradient(to right, var(--col-blue1), var(--col-blue1), rgb(255, 255, 255) 65%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -257,10 +262,13 @@ a {
     background-position: 100%;
     transition: background-position 350ms ease;
     text-decoration: none;
+    
+    width:100%;
+    padding-left:40px;
+    box-sizing: border-box;
 }
 
 .navbar-menu-text:hover {
-    transform: scale(1.1);
     transition: 225ms ease-in-out;
     background-position: 0 100%;
     cursor: pointer;
@@ -272,21 +280,28 @@ a {
     /* position:relative; */
 }
 
-
 /* mobile-bar-onclick-navbar */
+
+.nav-bar-mobile-content {
+    background-color: var(--col-lightblue);
+    box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.3);
+}
 
 .mobile-onclick-navbar {
     position: fixed;
     top: 50px;
     z-index: 50;
-    width: 100vw;
-    background-color: rgb(3, 4, 94, 0.75);
+    /* background-color: rgb(3, 4, 94, 0.75); */
+    background-color: var(--col-lightblue);
+    width: 100%;
+    padding: 16px 0;
 }
 
 .mobile-onclick-navbar-links {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .mobile-navbar-menu-text {
@@ -295,7 +310,7 @@ a {
     color: white;
     margin-top: 0.5em;
     cursor: pointer;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(153, 153, 153) 50%);
+    background: linear-gradient(to right, var(--col-blue1), var(--col-blue1), rgb(255, 255, 255) 65%);
     background-clip: text;
     -webkit-background-clip: text;
     background-size: 200% 100%;
@@ -305,13 +320,12 @@ a {
 }
 
 
-/* .mobile-navbar-menu-text:hover {
-    transform: scale(1.1);
+.mobile-navbar-menu-text:hover {
+    /* transform: scale(1.1); */
     transition: 225ms ease-in-out;
     background-position: 0 100%;
     cursor: pointer;
-} */
-
+}
 
 /* mainpage-style */
 

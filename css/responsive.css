@@ -36,10 +36,7 @@
         display: none;
     }
     .nav-bar-mobile {
-        /* background-color: rgb(30, 30, 171); */
-        /* background-color: var(--col-blue1); */
         background-color: rgb(3, 4, 94, 0.8);
-        box-shadow: 0 0 3px 1px rgb(128, 128, 128, 0.7);
         position: fixed;
         z-index: 100;
         top: 0;
@@ -50,6 +47,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
     .mobile-menu {
         height: 25px;
@@ -122,6 +120,15 @@
     }
     .task-submit-success {
         top: 50px;
+    }
+
+    .mobile-onclick-navbar-footer{
+        text-align: center;
+        margin: 8px 0;
+    }
+
+    .mobile-onclick-navbar-footer a {
+        padding-left:0;
     }
 }
 
