@@ -5,6 +5,8 @@
 errors.txt
 notes.txt
 todo.txt
+impressum.html
+datenschutz.html
 
 ### gitignore template from: https://github.com/github/gitignore/blob/main/Node.gitignore 
 # Logs

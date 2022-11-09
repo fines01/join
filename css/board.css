@@ -84,14 +84,6 @@
     cursor: grab;
 }
 
-.task:hover {
-    /* cursor: pointer; */
-}
-
-.task p {
-    /* cursor: pointer; */
-}
-
 .task-headline-text {
     padding-left: 47px;
     padding-right: 47px;

@@ -44,7 +44,7 @@ function deleteBacklogTask(i) {
 function showSubmitSuccess() {
     let taskSuccess = getId('submitSuccessModal');
     let taskName = processTaskInputs();
-    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted to the <a href="01board.html" class="board-link">Board</a>`;
+    taskSuccess.innerHTML = `The Task '${taskName['title']}' was moved to the <a href="01board.html" class="board-link">board</a>`;
     show('submitSuccessModal')
     //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
     window.setTimeout(function () {

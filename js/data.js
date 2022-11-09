@@ -1,13 +1,13 @@
-// example data for testing purposes
+// fake example data for testing purposes.
 let tasks = [];
 let users = [
     {
         name: 'Marco Beer',
-        email: 'MarcoBeer@mail.de',
+        email: 'MarcoBeer@mail.de', // FAKE email
         color: '#993600',
         img: '',
         status: false,
-        password: 'MarcoB.Join',
+        password: 'MarcoB.Join', // FAKE password
     },
     {
         name: 'Fabian Eichhorn',
@@ -20,7 +20,7 @@ let users = [
     {
         name: 'Ines Fritsch',
         email: 'InesFritsch@mail.de',
-        color: '#00D7FF', //#94B49F
+        color: '#00D7FF',
         img: '',
         status: false,
         password: 'InesF.Join',
