@@ -6,6 +6,7 @@
     font-size: 14px;
     /* color: rgb(14, 11, 167); */
     color: var(--col-blue1);
+    margin-bottom: 16px;
 }
 
 .help-list-container {

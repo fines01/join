@@ -41,7 +41,7 @@
     }
     .nav-bar-mobile {
         position: fixed;
-        z-index: 100;
+        z-index: 10;
         top: 0;
         right: 0;
         left: 0;
@@ -140,6 +140,32 @@
     }
 }
 
+@media (max-width: 700px){
+    .board-content{
+        flex-wrap: wrap;
+        gap: 60px  0px;
+        justify-content: center;
+    }
+    .board-scroll-container {
+        box-shadow: 0px 3px 3px 1px rgb(201, 204, 213, 0.3);
+    }
+    .board-container{
+        text-align: center;
+        padding-left:25px;
+        padding-right:25px;
+    }
+}
+
+@media (max-width: 626px){
+    .board-content{
+        gap: 60px 8px;
+    }
+    .board-container {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+
 @media (max-width: 600px) {
     /* Add Task mobile view */
     .form-field div {
@@ -167,6 +193,9 @@
     /* overflow hidden while opening mobile-menu */
     .board-container {
         overflow: hidden;
+    }
+    .board-scroll-container{
+        box-shadow: none;
     }
     .backlog-sub-menu {
         overflow: hidden;
@@ -300,6 +329,8 @@
     .scroll-bar {
         overflow-y: auto;
         max-height: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .board-task-container {
         min-height: 200px;

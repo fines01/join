@@ -18,7 +18,9 @@
     <title>Join Help</title>
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1&noGeoIp=1&blocking=1"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?thirdparty=1&always=1&noGeoIp=1&blocking=1">
+    </script>
 </head>
 
 <body onload="includeHTML()">
@@ -29,52 +31,62 @@
                 <h1>Help</h1>
                 <p>Kanban Project Management Tool</p>
             </div>
+            <!-- <div class="help-list-container"> -->
+            <p>Join is a Kanban board. It can help you to give an overview of the current work status and illustrate the
+                project flow in agile project management.</p>
+            <br>
+            <p>The client - server functionality in this project was simulated with a mini-backend script (See the
+                GitHub repository <a
+                    href="https://github.com/JunusErgin/smallest_backend_ever">smallest_backend_ever</a>). No security
+                layer has been implemented. <br>This is an example app and should not be used with sensitive data. <b>
+                    Do not enter any personal or confidential data.</b></p>
+
             <div class="help-list-container">
-                <p>Join is a Kanban board. It can help you to give an overview of the current work status and illustrate the project flow in agile project management.</p>
-                <br>
-                 <p>No security layer has been implemented. <br>This is an example app and should not be used with real data. <b> Do not enter any personal or confidential data!</b></p>
-                <ul>
-                    <li class="help-list">
-                        <h2>Add Task:</h2>
-                        <p>Here you can create tasks, assign them to a category and set the priority.</p>
-                        <p>Optionally, one or more (hold Ctrl) users can be assigned to a task.</p>
-                        <p>But you can always assign the tasks later.</p>
-                    </li>
+            <ul>
+                <li class="help-list">
+                    <h2>Add Task:</h2>
+                    <p>Here you can create tasks, assign them to a category and set the priority.</p>
+                    <p>Optionally, one or more (hold Ctrl) users can be assigned to a task.</p>
+                    <p>But you can always assign the tasks later.</p>
+                </li>
 
-                    <li class="help-list">
-                        <h2>Backlog:</h2>
-                        <p>Here you can view all tasks and activities created by you or your colleagues but not yet started.</p>
-                        <p>Click on a task to edit it or start the ticket by sending the task to the board.</p>
-                        <h3 class="help-subheadlines">Features</h3>
-                        <ul class="help-sublist">
-                            <li>Here you can see to whom the task is assigned or you can assign tasks.</li>
-                            <li>For quicker assignment, you can easily recognize the corresponding category. </li>
-                            <li>Under Details you can see the title and description.</li>
-                            <li>Click on a task to edit it.</li>
-                        </ul>
+                <li class="help-list">
+                    <h2>Backlog:</h2>
+                    <p>Here you can view all tasks and activities created by you or your colleagues but not yet started.
+                    </p>
+                    <p>Click on a task to edit it or start the ticket by sending the task to the board.</p>
+                    <h3 class="help-subheadlines">Features</h3>
+                    <ul class="help-sublist">
+                        <li>Here you can see to whom the task is assigned or you can assign tasks.</li>
+                        <li>For quicker assignment, you can easily recognize the corresponding category. </li>
+                        <li>Under Details you can see the title and description.</li>
+                        <li>Click on a task to edit it.</li>
+                    </ul>
 
-                    </li>
+                </li>
 
-                    <li class="help-list">
-                        <h2>Board:</h2>
-                        <p>Here you have an overview of your tasks to be processed</p>
+                <li class="help-list">
+                    <h2>Board:</h2>
+                    <p>Here you have an overview of your tasks to be processed</p>
 
-                        <h3 class="help-subheadlines">Features</h3>
-                        <ul class="help-sublist">
-                            <li>Easily move your tasks from one list, e.g. <b>Todo</b> to another list, e.g. <b>Progress</b> by drag and drop.</li>
-                            <li>Click the pen icon, to edit the task.</li>
-                            <li>Click the trash can icon to delete the task.</li>
-                        </ul>
-                        <h3 class="help-subheadlines">Colors</h3>
-                        <div class="help-description">For a better overview, the different tasks are color-coded according to their importance.</div>
-                        <ul class="help-sublist">
+                    <h3 class="help-subheadlines">Features</h3>
+                    <ul class="help-sublist">
+                        <li>Easily move your tasks from one list, e.g. <b>Todo</b> to another list, e.g. <b>Progress</b>
+                            by drag and drop.</li>
+                        <li>Click the pen icon, to edit the task.</li>
+                        <li>Click the trash can icon to delete the task.</li>
+                    </ul>
+                    <h3 class="help-subheadlines">Colors</h3>
+                    <div class="help-description">For a better overview, the different tasks are color-coded according
+                        to their importance.</div>
+                    <ul class="help-sublist">
 
-                            <li>Priority: High = <b class="help-colors-red">Red</b></li>
-                            <li>Priority: Medium = <b class="help-colors-yellow">Yellow</b></li>
-                            <li>Priority: Low = <b class="help-colors-green">Green</b></li>
-                        </ul>
-                    </li>
-                </ul>
+                        <li>Priority: High = <b class="help-colors-red">Red</b></li>
+                        <li>Priority: Medium = <b class="help-colors-yellow">Yellow</b></li>
+                        <li>Priority: Low = <b class="help-colors-green">Green</b></li>
+                    </ul>
+                </li>
+            </ul>
 
-            </div>
         </div>
+    </div>
