@@ -48,7 +48,8 @@
 
     <div class="menu">
         <div w3-include-html="navbar.html"></div>
-        <div class="backlog-container">
+        <div class="backlog-container" onclick="hide('taskSubmitSuccessful')">
+            <div class="submit-success d-none" id="submitSuccessModal"></div>
             <h1>Backlog</h1>
             <p>Kanban Project Management Tool</p>
 
@@ -63,13 +64,8 @@
                     <h2>Details</h2>
                 </div>
             </div>
-            <div id="logs" class="backlog-tasks-container">
-            </div>
+            <div id="logs" class="backlog-tasks-container"></div>
         </div>
-
-
-        <!-- <div class=""> -->
-        <!-- </div> -->
 
     </div>
 

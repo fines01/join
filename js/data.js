@@ -1,13 +1,6 @@
 // example data for testing purposes
 let tasks = [];
-let users = [{
-        name: 'Fabian Eichhorn',
-        email: 'FabianEichhorn@mail.de',
-        color: '#00e6c7',
-        img: '',
-        status: false,
-        password: 'FabianE.Join',
-    },
+let users = [
     {
         name: 'Marco Beer',
         email: 'MarcoBeer@mail.de',
@@ -15,6 +8,22 @@ let users = [{
         img: '',
         status: false,
         password: 'MarcoB.Join',
+    },
+    {
+        name: 'Fabian Eichhorn',
+        email: 'FabianEichhorn@mail.de',
+        color: '#0008C1',
+        img: '',
+        status: false,
+        password: 'FabianE.Join',
+    },
+    {
+        name: 'Ines Fritsch',
+        email: 'InesFritsch@mail.de',
+        color: '#00D7FF', //#94B49F
+        img: '',
+        status: false,
+        password: 'InesF.Join',
     },
     {
         name: 'Stefan Herrmann',
@@ -25,17 +34,9 @@ let users = [{
         password: 'StefanH.Join',
     },
     {
-        name: 'Ines Fritsch',
-        email: 'InesFritsch@mail.de',
-        color: '#FFE61B',
-        img: '',
-        status: false,
-        password: 'InesF.Join',
-    },
-    {
         name: 'Testuser',
         email: 'Test@mail.de',
-        color: '#0C1E7F',
+        color: '#3F0071',
         img: '',
         status: false,
         password: 'Test',

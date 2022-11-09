@@ -12,17 +12,30 @@
 }
 
 @media (max-width: 1200px) {
+    .add-task-form {
+        flex-direction: column;
+    }
+    .add-to-task-sub-menu {
+        text-align: center;
+    } 
+}
+
+@media (max-width: 1025px) {
     .form-field {
         flex-direction: column;
     }
+    .edit-form{
+        flex-direction: column !important;
+        overflow: auto;
+        height: 75vh !important;
+    }
+
     .add-to-task-sub-menu {
         text-align: center;
         /* padding-top: 85px;
         padding-bottom: 55px; */
     }
 }
-
-@media (max-width: 1065px) {}
 
 @media (max-width: 720px) {
     .welcome-text {
@@ -53,7 +66,7 @@
         padding: 0 50px;
     }
     .mobile-menu {
-        height: 35px;
+        height: 32px;
         position: absolute;
         top: 11px;
         right: 50px;
@@ -153,6 +166,10 @@
         text-align: center;
         padding-left:25px;
         padding-right:25px;
+    }
+    
+    .backlog-container{
+        text-align: center;
     }
 }
 
@@ -338,4 +355,78 @@
     .members {
         margin-bottom: 5px;
     }
+}
+
+@media (max-width: 500px){
+    .card-wrapper{
+        width: 100%;
+        background: transparent;
+    }
+    .welcome-card {
+        background-color: rgba(0,0,0,0.8);
+        height:100%;
+    }
+}
+
+@media (max-width: 400px){
+
+    .mobile-menu {
+        right:25px;
+    }
+
+    .mobile-logo{
+        left: 25px;
+    }
+
+    .backlog-container {
+        padding-left: 25px;
+        padding-right: 25px;
+
+        overflow-x: hidden;
+    }
+
+    .backlog-container h2{
+        font-size: 14px;
+    }
+
+    .log{
+        width: 90%;
+        height:125px;
+        height:auto;
+        padding-bottom: 40px;
+        padding-right: 8px;
+        margin-right: 0;
+        justify-content:center;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .log p {
+        font-size: 13px;
+    }
+
+    .log-section::-webkit-scrollbar{
+        height:6px;
+    }
+
+    .backlog-buttons {
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 6px;
+        left: 8px; right: 8px;
+        box-sizing: border-box;
+    }
+
+    .backlog-arrow{
+        margin:0; padding:0;
+        /* position: relative;
+        top:8px; */
+    }
+
+    .delete-backlog {
+        margin:0;
+    }
+
 }

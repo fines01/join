@@ -181,7 +181,6 @@ function closeNavbar() {
 
 /* ****** ****** */
 
-// siehe js fkt array.join()
 /**
  * This function splits an array of strings and displays them nicely (with ', ' in between strings)
  * @param {string[]} namesArray 
@@ -194,7 +193,7 @@ function displayStringsArr(stringsArray) {
         if (i == stringsArray.length - 1) {
             strings += stringsArray[i];
         } else {
-            strings += stringsArray[i] + ', ';
+            strings += stringsArray[i] + ', </br>';
         }
     }
     return strings;

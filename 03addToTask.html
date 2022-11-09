@@ -50,13 +50,14 @@
 
             <div class="task-input-wrap" onclick="hide('taskSubmitSuccessful')">
                 <div class="task-input-container">
-                    <form class="form-field" onsubmit="addToTasks(); clearAssignments()">
+                    <form class="form-field add-task-form" onsubmit="addToTasks(); clearAssignments()">
                         <div>
                             <!-- <div id="assignmentBox" class="assignment-box d-none"></div> -->
                             <h2>TITLE</h2>
                             <input required id="title" placeholder="Enter a title" oninput="init();loadTasks()">
                             <h2>CATEGORY</h2>
                             <select required id="category">
+                                <option value=""></option>
                                 <option value="Management"> Management</option>
                                 <option value="Software Developement">Software Developement</option>
                                 <option value="UX/UI Design">UX/UI Design</option>
@@ -71,6 +72,7 @@
 
                             <h2>URCENCY</h2>
                             <select required id="urgency">
+                                <option value=""></option>
                                 <option value="High">High</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>

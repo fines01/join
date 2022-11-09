@@ -71,27 +71,6 @@ body {
     overflow: auto;
 }
 
-
-/* background: transparent bg (picture) or overlay */
-
-/* body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url('../img/bg.jpg');
-    background-size: cover;
-    z-index: -1;
-    opacity: 0.35;
-} */
-
-
-/* p {
-    color: var(--col-secondary);
-} */
-
 img {
     /* ensures that the image is never larger than its container */
     max-width: 100%;
@@ -484,11 +463,13 @@ a {
 /* modal-overlay */
 
 #overlay {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    inset: 0;
+    /* top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; */
+    /* padding-top:30px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -497,6 +478,7 @@ a {
     background-color: rgba(14, 11, 167, 0.5);
     /* --opacity: 0.5;
     background-color: var(--col-blue1); */
+    /* overflow: auto; */
 }
 
 

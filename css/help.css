@@ -34,13 +34,19 @@
 }
 
 .help-colors-yellow {
-    background-color: rgba(255, 255, 0, 0.6);
+    background-color: var(--col-yellow1);
+    color: black;
+    padding: 2px 4px;
 }
 
 .help-colors-red {
-    background-color: rgba(228, 87, 87, 0.6);
+    background-color: var(--col-red1);
+    color: black;
+    padding: 2px 4px;
 }
 
 .help-colors-green {
-    background-color: rgba(0, 128, 0, 0.6);
+    background-color: var(--col-green1);
+    color: black;
+    padding: 2px 4px;
 }

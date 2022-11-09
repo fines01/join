@@ -81,15 +81,15 @@
     /* TEST: */
     text-align: center;
     position: relative;
-    cursor: pointer;
+    cursor: grab;
 }
 
 .task:hover {
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .task p {
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .task-headline-text {
@@ -136,7 +136,8 @@
 .delete-task:hover,
 .edit-task:hover {
     cursor: pointer;
-    transform: scale(1.25);
+    transform: scale(1.02);
+    opacity: 0.8;
 }
 
 .members {
@@ -154,6 +155,10 @@
     font-size: 0.8rem;
 }
 
+/* .user-icon{
+    cursor:default;
+} */
+
 
 /*Backrounds for the different urgency of the tasks */
 
@@ -168,7 +173,7 @@
     /* background-color: rgba(228, 87, 87, 0.2); */
     /* background-color: rgba(168, 67, 60, 0.3); */
     background-color: rgba(173, 123, 126, 0.4);
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
 }
 
 .background-urgency-medium {
@@ -180,7 +185,7 @@
 
 .background-urgency-medium:hover {
     background-color: rgba(255, 255, 0, 0.2);
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
 }
 
 .background-urgency-low {
@@ -192,7 +197,7 @@
 
 .background-urgency-low:hover {
     background-color: rgba(0, 128, 0, 0.2);
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
 }
 
 .scroll-bar {

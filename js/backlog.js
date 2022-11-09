@@ -1,7 +1,7 @@
 /* ********* Backlog ********* */
 
 /**
- * This function renders all logs on the backlog site
+ * Rnders all logs on the backlog site
  */
 function renderLogs() {
     let backlog = tasks.filter(t => t['board'] == 'backlog');
@@ -15,19 +15,39 @@ function renderLogs() {
 
     }
 }
+
+
 /**
- * This function sends the tasks from backlog to the board 'todo'
+ * Sends the tasks from backlog to the board 'todo'
  */
 function backlogToBoard(i) {
     tasks[i]['board'] = 'todo'
-    renderLogs()
+    renderLogs();
     saveTasks();
+    showSubmitSuccess();
 }
+
+
 /**
- * This function deletes a backlog task on click
+ * Deletes a backlog task on click
  */
 function deleteBacklogTask(i) {
     tasks.splice(i, 1);
     renderLogs();
     saveTasks();
+}
+
+
+/**
+ * Renders a notification after successfully submitting a new task to the board
+ */
+function showSubmitSuccess() {
+    let taskSuccess = getId('submitSuccessModal');
+    let taskName = processTaskInputs();
+    taskSuccess.innerHTML = `The Task '${taskName['title']}' was successfully submitted to the <a href="01board.html" class="board-link">Board</a>`;
+    show('submitSuccessModal')
+    //window.setTimeout(hide('taskSubmitSuccessful'), 5000);
+    window.setTimeout(function () {
+        hide('submitSuccessModal')
+    }, 4000);
 }

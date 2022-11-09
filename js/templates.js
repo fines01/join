@@ -1,14 +1,14 @@
 function logsHTML(element, i) {
     return /*html*/ `
         <div class="log background-urgency-${(element['urgency']).toLowerCase()}" onclick="renderEditForm(${i})" 
-        style = "border-color: ${getLogBorderColor(element['assignedTo'])}" >
-            <div class="">
-                 <h4 class="log-name">${displayStringsArr(element['assignedTo'])}</h4>
+        style = "border-color: ${element['urgency']};border-left: 4px solid ${getLogBorderColor(element['assignedTo'])}" >
+            <div class="log-section">
+                <h4 class="log-name">${displayStringsArr(element['assignedTo'])}</h4>
             </div>
-            <div class="">
+            <div class="log-section">
                 <h4 class="">${element['category']}</h4>
             </div>
-            <div class="">
+            <div class="log-section">
                 <h5 class="">${capitalizeFirst(element['title'])}</h5>
                 <p class="">${capitalizeFirst(element['description'])}</p>
         
