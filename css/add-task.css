@@ -34,37 +34,41 @@
 }
 
 .form-field {
+    width: 60vw;
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin: 20px;
     padding: 16px;
     padding-bottom: 40px;
     gap: 0 50px;
+    /* flex: 1 1 0px; */
 }
 
-.form-field input {
+.form-field > div {
+    width: 50%;
+}
+
+.form-field input, .form-field select{
     height: 50px;
-    width: 400px;
+    width: 95%;
     outline: none;
-    padding-left: 10px;
+    padding: 0 10px;
+    box-sizing:border-box;
 }
 
 .form-field select {
-    height: 50px;
-    width: 415px;
-    outline: none;
-    padding-left: 10px;
+    width:100%
 }
 
 .form-field textarea {
     resize: none;
     outline: none;
-    width: 405px;
+    width: 95%;
     height: 180px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
 }
 
 .form-field h2 {

@@ -124,3 +124,12 @@
     color: white;
 }
 
+.form-field > div {
+    width: 100% !important;
+}
+
+@media (max-width: 1200px){
+    .form-field > div {
+        width:55% !important;
+    }
+}

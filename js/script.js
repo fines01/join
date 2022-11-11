@@ -90,7 +90,8 @@ function randomHexColor() {
  * @returns {Object} - The corresponding HTML element
  */
 function getId(id) {
-    return document.getElementById(id);
+    let el = document.getElementById(id);
+    if (el) return el;
 }
 
 /**
@@ -112,7 +113,8 @@ function getIds(...idsArr) { // rest-operator
  */
 function hide(...ids) {
     for (let i = 0; i < ids.length; i++) {
-        getId(ids[i]).classList.add('d-none');
+        let el = getId(ids[i]);
+        if (el) el.classList.add('d-none');
     }
 }
 
