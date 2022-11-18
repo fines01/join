@@ -337,6 +337,9 @@ a {
     margin: 0;
     background-attachment: fixed;
     font-family: 'PT Sans';
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card::after {

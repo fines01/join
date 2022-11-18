@@ -22,7 +22,7 @@ let currentDraggedElement;
  * This function gets data stored at the ftp server
  */
 async function loadServerData() {
-    setURL('https://gruppe-228.developerakademie.net/smallest_backend_ever');
+    setURL('https://ines-fritsch.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
     //users = JSON.parse(backend.getItem('users')) || [];
